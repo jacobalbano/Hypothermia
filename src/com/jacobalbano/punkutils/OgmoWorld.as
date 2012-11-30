@@ -9,6 +9,7 @@ package com.jacobalbano.punkutils
 	import flash.utils.Dictionary;
 	import net.flashpunk.Entity;
 	import net.flashpunk.Graphic;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	

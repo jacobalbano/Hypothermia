@@ -3,17 +3,19 @@
 <!--http://www.thaumaturgistgames.com/FLAkit-->
 <library>
     <images>
+        <image>ogmo/ambiance.png</image>
         <image>ogmo/background.png</image>
         <image>ogmo/camera.png</image>
         <image>ogmo/emitter.png</image>
-        <image>ogmo/fish.png</image>
         <image>art/particles/snowflake.png</image>
         <image>art/backgrounds/start.png</image>
     </images>
-    <sounds />
+    <sounds>
+        <sound>sounds/windHowl.mp3</sound>
+    </sounds>
     <xmls>
         <xml>Library.xml</xml>
-        <xml>start/script.xml</xml>
-        <xml>start/map.oel</xml>
+        <xml>worlds/start/script.xml</xml>
+        <xml>worlds/start/map.oel</xml>
     </xmls>
 </library>

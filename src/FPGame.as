@@ -1,5 +1,6 @@
 package  
 {
+	import com.jacobalbano.cold.Ambiance;
 	import com.jacobalbano.cold.Background;
 	import com.jacobalbano.cold.Hotspot;
 	import com.jacobalbano.cold.ParticleEmitter;
@@ -41,6 +42,7 @@ package
 			world.addClass("Background", Background);
 			world.addClass("Hotspot", Hotspot);
 			world.addClass("ParticleEmitter", ParticleEmitter);
+			world.addClass("Ambiance", Ambiance);
 			
 			Game.instance.console.slang.addFunction("world", loadWorld, [String], this, "Load a world from an Ogmo level");
 			Game.instance.console.slang.addFunction("worlds", listWorlds, [], this, "Load a world from an Ogmo level");
@@ -60,7 +62,7 @@ package
 			{
 				if (item.indexOf("map.oel") >= 0)
 				{
-					Game.instance.console.print(item.substring(0, item.indexOf("/")));
+					Game.instance.console.print(item.substring(0, item.lastIndexOf("/")));
 				}
 			}
 		}
@@ -88,8 +90,8 @@ package
 				return;
 			}
 			
-			world.buildWorld(name + ".map.oel");
-			world.add(new ScriptTick(Game.instance.console.slang, name + ".script.xml"));
+			world.buildWorld("worlds." + name + ".map.oel");
+			world.add(new ScriptTick(Game.instance.console.slang, "worlds." + name + ".script.xml"));
 			world.add(new Transition);
 		}
 		

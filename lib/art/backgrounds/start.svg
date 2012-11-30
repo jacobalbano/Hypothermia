@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.2 r9819"
-   sodipodi:docname="start_bg.svg"
+   sodipodi:docname="start.svg"
    inkscape:export-filename="C:\Users\Jake\Documents\FlashDevelop\Cold\lib\art\start_bg.png"
    inkscape:export-xdpi="300"
    inkscape:export-ydpi="300">
@@ -27,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.55787213"
-     inkscape:cx="562.93265"
-     inkscape:cy="105.6535"
+     inkscape:zoom="3.1558013"
+     inkscape:cx="529.64413"
+     inkscape:cy="160.30061"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -64,28 +64,21 @@
        y="1.4285712"
        transform="translate(0,652.36218)" />
     <rect
-       style="fill:#fffeff;fill-opacity:1;stroke:none;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:#fffeff;fill-opacity:1;stroke:none"
        id="rect3757"
        width="1292.8571"
        height="239.99995"
-       x="-41.428574"
-       y="200"
-       transform="translate(0,652.36218)" />
+       x="-27.088369"
+       y="852.36218" />
     <path
        style="fill:#333333;fill-opacity:1;stroke:none"
-       d="m 541.77783,823.47551 79.17275,0 0,31.7785 -79.17275,0 z"
+       d="m 412.87822,806.75254 268.8507,0 0,107.91178 -268.8507,0 z"
        id="rect3782"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
        style="fill:#333333;fill-opacity:1;stroke:none"
-       d="m 546.10941,805.15656 66.55132,0.44194 11.77303,18.38115 -2.79851,1.0936 -79.90307,0 -1.85197,-1.27037 z"
-       id="rect3784"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccc" />
-    <path
-       style="fill:#333333;fill-opacity:1;stroke:none"
-       d="m 639.39712,829.65861 9.30404,0.19856 0,25.89783 L 639,854.36508 z"
+       d="m 744.36873,827.74879 31.59416,0.67426 0,87.94251 -32.94269,-4.71982 z"
        id="rect3787"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
@@ -93,15 +86,21 @@
        sodipodi:nodetypes="ccccc"
        inkscape:connector-curvature="0"
        id="path3790"
-       d="m 650.88532,830.45285 -2.35446,-0.79424 0,25.89783 2.75158,-1.58848 z"
+       d="m 783.37976,830.44582 -7.99516,-2.69703 0,87.94251 9.34367,-5.39409 z"
        style="fill:#333333;fill-opacity:1;stroke:none" />
     <rect
-       style="opacity:0.66371681000000005;fill:#fffeff;fill-opacity:1;stroke:none"
+       style="opacity:0.66371681;fill:#fffeff;fill-opacity:1;stroke:none"
        id="rect3780"
        width="1248.5714"
-       height="262.85715"
+       height="330.97311"
        x="-5.5721512"
        y="643.79077" />
+    <path
+       style="fill:#333333;fill-opacity:1;stroke:none"
+       d="m 427.58717,744.546 225.99151,1.50073 39.97824,62.41774 -9.50303,3.71359 -271.33068,0 -6.28883,-4.31385 z"
+       id="rect3784"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
     <text
        xml:space="preserve"
        style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Andalus;-inkscape-font-specification:Andalus"
@@ -114,5 +113,19 @@
          id="tspan3797"
          x="-188.06635"
          y="-553.9574" /></text>
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path3796"
+       d="m 693.55692,808.46447 -9.50303,3.71359 -271.33068,0 -6.28883,-4.31385 z"
+       style="fill:#1a1a1a;fill-opacity:1;stroke:none" />
+    <rect
+       style="fill:#1a1a1a;fill-opacity:1;stroke:#333333;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3798"
+       width="41.510853"
+       height="72.881645"
+       x="514.60779"
+       y="184.20695"
+       transform="translate(0,652.36218)" />
   </g>
 </svg>
