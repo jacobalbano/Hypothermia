@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OgmoVersion>2.1.0.5</OgmoVersion>
+  <Name>Cold</Name>
+  <BackgroundColor A="255" R="0" G="0" B="0" />
+  <GridColor A="255" R="0" G="0" B="255" />
+  <LevelDefaultSize>
+    <Width>800</Width>
+    <Height>400</Height>
+  </LevelDefaultSize>
+  <LevelMinimumSize>
+    <Width>800</Width>
+    <Height>400</Height>
+  </LevelMinimumSize>
+  <LevelMaximumSize>
+    <Width>1600</Width>
+    <Height>400</Height>
+  </LevelMaximumSize>
+  <Filename>C:\Users\Jake\Documents\FlashDevelop\Cold\lib\project.oep</Filename>
+  <AngleMode>Degrees</AngleMode>
+  <CameraEnabled>false</CameraEnabled>
+  <CameraSize>
+    <Width>800</Width>
+    <Height>400</Height>
+  </CameraSize>
+  <ExportCameraPosition>false</ExportCameraPosition>
+  <LevelValueDefinitions />
+  <LayerDefinitions>
+    <LayerDefinition xsi:type="EntityLayerDefinition">
+      <Name>UI</Name>
+      <Grid>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Grid>
+      <ScrollFactor>
+        <X>1</X>
+        <Y>1</Y>
+      </ScrollFactor>
+    </LayerDefinition>
+    <LayerDefinition xsi:type="EntityLayerDefinition">
+      <Name>World</Name>
+      <Grid>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Grid>
+      <ScrollFactor>
+        <X>1</X>
+        <Y>1</Y>
+      </ScrollFactor>
+    </LayerDefinition>
+  </LayerDefinitions>
+  <Tilesets />
+  <EntityDefinitions>
+    <EntityDefinition Name="CameraPan" Limit="1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>32</Width>
+        <Height>32</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="ogmo\camera.png" Tiled="false">
+        <RectColor A="255" R="255" G="0" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="BoolValueDefinition" Name="wrapAround" Default="false" />
+        <ValueDefinition xsi:type="IntValueDefinition" Name="scrollSpeed" Default="10" Min="1" Max="100" ShowSlider="false" />
+        <ValueDefinition xsi:type="IntValueDefinition" Name="buffer" Default="75" Min="10" Max="100" ShowSlider="false" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Background" Limit="1" ResizableX="true" ResizableY="true" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>64</Width>
+        <Height>64</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="ogmo\background.png" Tiled="false">
+        <RectColor A="255" R="64" G="0" B="128" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="StringValueDefinition" Name="source" Default="" MaxChars="-1" MultiLine="false" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Hotspot" Limit="-1" ResizableX="true" ResizableY="true" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>64</Width>
+        <Height>64</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Rectangle" ImagePath="" Tiled="false">
+        <RectColor A="255" R="128" G="128" B="128" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="StringValueDefinition" Name="onClick" Default="" MaxChars="-1" MultiLine="true" />
+        <ValueDefinition xsi:type="StringValueDefinition" Name="onEnter" Default="" MaxChars="-1" MultiLine="true" />
+        <ValueDefinition xsi:type="StringValueDefinition" Name="onExit" Default="" MaxChars="-1" MultiLine="true" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+  </EntityDefinitions>
+</project>

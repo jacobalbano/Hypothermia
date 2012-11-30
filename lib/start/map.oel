@@ -1,0 +1,8 @@
+<level width="1200" height="400">
+  <UI>
+    <CameraPan id="1" x="704" y="0" wrapAround="False" scrollSpeed="10" buffer="75" />
+    <Background id="0" x="0" y="0" width="64" height="64" source="" />
+    <Hotspot id="2" x="400" y="160" width="112" height="80" onClick="world &quot;start&quot;;&#xD;&#xA;print &quot;next line!&quot;" onEnter="print &quot;Enter spot&quot;" onExit="print &quot;Exit spot&quot;" />
+  </UI>
+  <World />
+</level>

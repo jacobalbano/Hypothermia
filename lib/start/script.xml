@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<script>
+	<launch>
+		
+	</launch>
+	<tick>
+		
+	</tick>
+	<message>
+		<onClick>
+			
+		</onClick>
+		<onGet>
+			world start
+		</onGet>
+		<onDoorClicked>
+			
+		</onDoorClicked>
+	</message>
+</script>
