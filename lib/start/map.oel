@@ -1,8 +1,12 @@
 <level width="1200" height="400">
   <UI>
     <CameraPan id="1" x="704" y="0" wrapAround="False" scrollSpeed="10" buffer="75" />
-    <Background id="0" x="0" y="0" width="64" height="64" source="" />
-    <Hotspot id="2" x="400" y="160" width="112" height="80" onClick="world &quot;start&quot;;&#xD;&#xA;print &quot;next line!&quot;" onEnter="print &quot;Enter spot&quot;" onExit="print &quot;Exit spot&quot;" />
   </UI>
-  <World />
+  <World>
+    <Hotspot id="0" x="400" y="160" width="112" height="80" onClick="world &quot;start&quot;;&#xD;&#xA;print &quot;next line!&quot;" onEnter="print &quot;Enter spot&quot;" onExit="print &quot;Exit spot&quot;" />
+    <Background id="3" x="0" y="0" width="64" height="64" source="start" />
+    <ParticleEmitter id="1" x="-32" y="320" angle="15" max="300" particleType="snowflake" distance="1500" distanceRange="100" duration="1.5" durationRange="0.5" angleRange="25" />
+    <ParticleEmitter id="2" x="-80" y="144" angle="15" max="300" particleType="snowflake" distance="1500" distanceRange="10" duration="1.5" durationRange="0.5" angleRange="25" />
+    <ParticleEmitter id="4" x="-96" y="16" angle="15" max="300" particleType="snowflake" distance="1500" distanceRange="10" duration="1.5" durationRange="0.5" angleRange="25" />
+  </World>
 </level>

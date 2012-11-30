@@ -2,6 +2,7 @@ package
 {
 	import com.jacobalbano.cold.Background;
 	import com.jacobalbano.cold.Hotspot;
+	import com.jacobalbano.cold.ParticleEmitter;
 	import com.jacobalbano.punkutils.OgmoWorld;
 	import com.jacobalbano.punkutils.ScriptTick;
 	import com.thaumaturgistgames.slang.Memory;
@@ -39,6 +40,7 @@ package
 			world.addClass("CameraPan", CameraPan);
 			world.addClass("Background", Background);
 			world.addClass("Hotspot", Hotspot);
+			world.addClass("ParticleEmitter", ParticleEmitter);
 			
 			Game.instance.console.slang.addFunction("world", loadWorld, [String], this, "Load a world from an Ogmo level");
 			Game.instance.console.slang.addFunction("worlds", listWorlds, [], this, "Load a world from an Ogmo level");

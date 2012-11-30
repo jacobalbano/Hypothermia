@@ -117,16 +117,16 @@ package com.jacobalbano.punkutils
 					if (ent.graphic)
 					{
 						var image:Image = ent.graphic as Image;
-						var angle:int = entity.@angle;
-						var size:Point = new Point(entity.@width, entity.@height);
-						image.angle = -angle;
-						image.scaleX = size.x / image.width || 1;
-						image.scaleY = size.y / image.height || 1;
+						if (image)
+						{
+							var angle:int = entity.@angle;
+							var size:Point = new Point(entity.@width, entity.@height);
+							image.angle = -angle;
+							image.scaleX = size.x / image.width || 1;
+							image.scaleY = size.y / image.height || 1;
+						}
 					}
 					
-					var position:Point = new Point(entity.@x, entity.@y);
-					ent.x = position.x;
-					ent.y = position.y;
 					ent.layer = numLayers;
 					
 					add(ent);

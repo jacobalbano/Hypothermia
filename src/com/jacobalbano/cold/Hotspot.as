@@ -15,9 +15,9 @@ package com.jacobalbano.cold
 	{
 		private var size:Point;
 		private var contains:Boolean;
-		private var onClick:String;
-		private var onEnter:String;
-		private var onExit:String;
+		public var onClick:String;
+		public var onEnter:String;
+		public var onExit:String;
 		
 		public function Hotspot() 
 		{
@@ -28,9 +28,6 @@ package com.jacobalbano.cold
 			super.load(entity);
 			
 			size = new Point(entity.@width, entity.@height);
-			onClick = entity.@onClick;
-			onEnter = entity.@onEnter;
-			onExit = entity.@onExit;
 			
 			trace(onClick);
 		}

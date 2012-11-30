@@ -21,7 +21,7 @@ package com.jacobalbano.cold
 			x = 0;
 			y = 0;
 			
-			graphic = new Image(Library.getImage("art." + (world as OgmoWorld).levelName + "_bg.png"));
+			graphic = new Image(Library.getImage("art.backgrounds." + (world as OgmoWorld).levelName + ".png"));
 		}
 		
 	}
