@@ -16,6 +16,7 @@ package com.jacobalbano.cold
 		public var loop:Boolean;
 		public var source:String;
 		public var tween:Number;
+		public var volume:Number;
 		private var sound:Sfx;
 		private var fader:SfxFader;
 		
@@ -36,7 +37,7 @@ package com.jacobalbano.cold
 		{
 			sound.play(0);
 			fader = new SfxFader(sound, null, Tween.ONESHOT);
-			fader.fadeTo(1, tween);
+			fader.fadeTo(volume, tween);
 			addTween(fader, true);
 		}
 		
