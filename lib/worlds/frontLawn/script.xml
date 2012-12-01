@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <script>
 	<launch>
-		if inBag "axe"
-			
+		if hasInvItem "axe"
+			remWorldItem "axe"
 	</launch>
 	<tick>
 		

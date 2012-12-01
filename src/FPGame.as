@@ -3,7 +3,9 @@ package
 	import com.jacobalbano.cold.Ambiance;
 	import com.jacobalbano.cold.Background;
 	import com.jacobalbano.cold.Hotspot;
+	import com.jacobalbano.cold.Inventory;
 	import com.jacobalbano.cold.ParticleEmitter;
+	import com.jacobalbano.cold.WorldItem;
 	import com.jacobalbano.punkutils.OgmoWorld;
 	import com.jacobalbano.punkutils.ScriptTick;
 	import com.thaumaturgistgames.slang.Memory;
@@ -24,11 +26,13 @@ package
 	{
 		private var currentWorld:String;
 		private var world:OgmoWorld;
+		private var inventory:Inventory;
 		
 		public function FPGame(width:uint, height:uint) 
 		{
 			super(width, height);
 			currentWorld = "";
+			inventory = new Inventory();
 		}
 		
 		override public function init():void 
@@ -43,12 +47,22 @@ package
 			world.addClass("Hotspot", Hotspot);
 			world.addClass("ParticleEmitter", ParticleEmitter);
 			world.addClass("Ambiance", Ambiance);
+			world.addClass("WorldItem", WorldItem);
 			
 			Game.instance.console.slang.addFunction("world", loadWorld, [String], this, "Load a world from an Ogmo level");
 			Game.instance.console.slang.addFunction("worlds", listWorlds, [], this, "Load a world from an Ogmo level");
+			
 			Game.instance.console.slang.addFunction("message", message, [String], this, "Sends a message to all scripted entities");
+			
+			Game.instance.console.slang.addFunction("hasInvItem", inventory.hasItem, [String], inventory, "Check if an item exists in the inventory");
+			Game.instance.console.slang.addFunction("addInvItem", inventory.addItem, [String], inventory, "Add an item to the inventory");
+			Game.instance.console.slang.addFunction("remInvItem", inventory.removeItem, [String], inventory, "Remove an item from the inventory");
+			
+			Game.instance.console.slang.addFunction("remWorldItem", remWorldItem, [String], this, "Remove an item from the world");
+			
 			Game.instance.console.slang.importModule(new Stdlib);
 			Game.instance.console.slang.importModule(new Memory);
+			
 			Game.instance.onReload = function():void { loadWorld(currentWorld); };
 			
 			loadWorld("start");
@@ -63,6 +77,21 @@ package
 				if (item.indexOf("map.oel") >= 0)
 				{
 					Game.instance.console.print(item.substring(0, item.lastIndexOf("/")));
+				}
+			}
+		}
+		
+		private function remWorldItem(worldItem:String):void
+		{
+			var list:Array = [];
+			FP.world.getClass(WorldItem, list);
+			
+			for each (var item:WorldItem in list) 
+			{
+				if (item.typeName == worldItem)
+				{
+					world.remove(item);
+					return;
 				}
 			}
 		}
@@ -93,6 +122,7 @@ package
 			world.buildWorld("worlds." + name + ".map.oel");
 			world.add(new ScriptTick(Game.instance.console.slang, "worlds." + name + ".script.xml"));
 			world.add(new Transition);
+			world.add(inventory);
 		}
 		
 	}
