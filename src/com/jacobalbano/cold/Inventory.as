@@ -19,7 +19,6 @@ package com.jacobalbano.cold
 	import net.flashpunk.utils.Input;
 	
 	/**
-	 * ...
 	 * @author Jake Albano
 	 */
 	public class Inventory extends XMLEntity 
@@ -29,6 +28,9 @@ package com.jacobalbano.cold
 		private var items:Dictionary;
 		private var extended:Boolean;
 		private var contains:Boolean;
+		private var mouseEntity:Entity;
+		static private const ITEM_PADDING:Number = 20;
+		static private const ITEM_SIZE:Number = 100;
 		
 		public function Inventory() 
 		{
@@ -64,8 +66,16 @@ package com.jacobalbano.cold
 			var count:int = 0;
 			for each (var item:InventoryItem in items) 
 			{
-				item.x = count++ * 100 + 20;
-				item.y = y + 15;
+				if (item.typeName == mouseItem)
+				{
+					item.x = Input.mouseX;
+					item.y = Input.mouseY;
+				}
+				else
+				{
+					item.x = count++ * ITEM_SIZE + ITEM_PADDING + (ITEM_SIZE / 2);
+					item.y = y + (ITEM_SIZE / 2) + 15;
+				}
 			}
 			
 			if (lastContain != contains)
@@ -82,19 +92,47 @@ package com.jacobalbano.cold
 			
 			if (Input.mouseReleased && contains)
 			{
-				var tween:VarTween = new VarTween(null, Tween.ONESHOT);
+				_mouseItem = "";
+				
 				if (extended)
 				{
-					tween.tween(this, "y", y - 150, 0.7, Ease.bounceOut);
+					close();
 				}
 				else
 				{
-					tween.tween(this, "y", 0, 0.8, Ease.bounceOut);
+					open();
 				}
-				
-				extended = !extended;
-				addTween(tween, true);
 			}
+		}
+		
+		private function open():void 
+		{
+			trace(mouseItem);
+			
+			if (isOpen)
+			{
+				return;
+			}
+			
+			var tween:VarTween = new VarTween(null, Tween.ONESHOT);
+			tween.tween(this, "y", 0, 0.8, Ease.bounceOut);			
+			addTween(tween, true);
+			extended = true;
+		}
+		
+		private function close():void 
+		{
+			trace(mouseItem);
+			
+			if (!isOpen)
+			{
+				return;
+			}
+			
+			var tween:VarTween = new VarTween(null, Tween.ONESHOT);
+			tween.tween(this, "y", y - 150, 0.7, Ease.bounceOut);
+			addTween(tween, true);
+			extended = false;
 		}
 		
 		public function hasItem(name:String):Boolean
@@ -114,8 +152,20 @@ package com.jacobalbano.cold
 				return;
 			}
 			
-			var image:Image = new Image(Library.getImage("art.worlditems." + name + ".png"));
+			var image:Image;
+			
+			try
+			{
+				image = new Image(Library.getImage("art.invitems." + name + ".png"));
+			}
+			catch (e:Error)
+			{
+				//	Alternate image doesn't exist; don't worry about it
+				image = new Image(Library.getImage("art.worlditems." + name + ".png"));
+			}
+			
 			var item:InventoryItem = new InventoryItem();
+			item.typeName = name;
 			item.graphic = image;
 			item.onAdded(this);
 			world.add(item);
@@ -143,6 +193,11 @@ package com.jacobalbano.cold
 				return;
 			}
 			
+			if (name == mouseItem)
+			{
+				mouseItem = "";
+			}
+			
 			_itemCount--;
 			world.remove(items[name]);
 			delete items[name];
@@ -153,14 +208,28 @@ package com.jacobalbano.cold
 			return _itemCount;
 		}
 		
+		public function get isOpen():Boolean
+		{
+			return extended;
+		}
+		
 		public function get mouseItem():String 
 		{
 			return _mouseItem;
 		}
 		
-		public function get isOpen():Boolean
+		public function set mouseItem(typeName:String):void
 		{
-			return extended;
+			if (typeName == mouseItem)
+			{
+				return;
+			}
+			
+			if (items[typeName])
+			{
+				_mouseItem = typeName;
+				close();
+			}
 		}
 		
 	}

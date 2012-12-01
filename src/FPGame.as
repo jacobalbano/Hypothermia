@@ -68,7 +68,7 @@ package
 			Game.instance.console.slang.addFunction("addInvItem", inventory.addItem, [String], inventory, "Add an item to the inventory");
 			Game.instance.console.slang.addFunction("remInvItem", inventory.removeItem, [String], inventory, "Remove an item from the inventory");
 			
-			Game.instance.console.slang.addFunction("remInvReaction", remWorldReaction, [String], this, "Remove a reaction trigger from the world");
+			Game.instance.console.slang.addFunction("remWorldReaction", remWorldReaction, [String], this, "Remove a reaction trigger from the world");
 			
 			Game.instance.console.slang.addFunction("remWorldItem", remWorldItem, [String, Boolean], this, "Remove an item from the world");
 			
@@ -83,11 +83,11 @@ package
 		private function remWorldReaction(itemName:String):void 
 		{
 			var list:Array = [];
-			FP.world.getClass(WorldItem, list);
+			FP.world.getClass(WorldReaction, list);
 			
-			for each (var item:WorldItem in list) 
+			for each (var item:WorldReaction in list) 
 			{
-				if (item.typeName == itemName)
+				if (item.match == itemName)
 				{
 					world.remove(item);
 					return;
