@@ -1,13 +1,13 @@
-<level width="1200" height="400">
+<level width="1400" height="400">
   <UI>
-    <CameraPan id="1" x="704" y="0" wrapAround="False" scrollSpeed="10" buffer="75" />
+    <CameraPan id="1" x="624" y="0" wrapAround="False" scrollSpeed="10" buffer="75" />
   </UI>
   <World>
     <Hotspot id="0" x="528" y="160" width="128" height="80" onClick="world halfway" onEnter="" onExit="" />
     <Background id="3" x="0" y="0" width="64" height="64" source="start" />
-    <ParticleEmitter id="1" x="-32" y="288" angle="15" max="300" particleType="snowflake" distance="1500" distanceRange="100" duration="1.5" durationRange="0.5" angleRange="25" />
-    <ParticleEmitter id="2" x="-80" y="64" angle="15" max="300" particleType="snowflake" distance="1500" distanceRange="10" duration="1.5" durationRange="0.5" angleRange="25" />
-    <ParticleEmitter id="4" x="-128" y="192" angle="0" max="300" particleType="snowflake" distance="1500" distanceRange="10" duration="1.5" durationRange="0.5" angleRange="25" />
+    <ParticleEmitter id="1" x="-32" y="288" angle="15" max="300" particleType="snowflake" distance="1600" distanceRange="100" duration="1.7" durationRange="0.5" angleRange="25" />
+    <ParticleEmitter id="2" x="-80" y="64" angle="15" max="300" particleType="snowflake" distance="1600" distanceRange="10" duration="1" durationRange="0.5" angleRange="25" />
+    <ParticleEmitter id="4" x="-128" y="192" angle="0" max="300" particleType="snowflake" distance="1600" distanceRange="10" duration="1.7" durationRange="0.5" angleRange="25" />
     <Ambiance id="5" x="560" y="-80" source="windHowl.mp3" loop="True" tween="0.7" volume="1" />
   </World>
 </level>
