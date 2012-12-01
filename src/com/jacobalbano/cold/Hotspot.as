@@ -40,10 +40,26 @@ package com.jacobalbano.cold
 		{
 			super.update();
 			
-			var rect:Rectangle = new Rectangle(x, y, size.x, size.y);
+			
+			var all:Array = [];
+			var inventory:Inventory;
+			
+			world.getClass(Inventory, all);
+			if (all.length > 0)
+			{
+				inventory = all[0];	
+			}
+			
+			if (inventory)
+			{
+				if (inventory.isOpen)
+				{
+					return;
+				}
+			}
 			
 			var lastContain:Boolean = contains;
-			contains = rect.contains(world.mouseX, world.mouseY);
+			contains = collidePoint(x, y, world.mouseX, world.mouseY);
 			
 			if (lastContain != contains)
 			{

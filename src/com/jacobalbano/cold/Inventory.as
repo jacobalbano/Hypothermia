@@ -158,6 +158,11 @@ package com.jacobalbano.cold
 			return _mouseItem;
 		}
 		
+		public function get isOpen():Boolean
+		{
+			return extended;
+		}
+		
 	}
 
 }
