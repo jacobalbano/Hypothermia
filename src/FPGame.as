@@ -2,6 +2,7 @@ package
 {
 	import com.jacobalbano.cold.Ambiance;
 	import com.jacobalbano.cold.Background;
+	import com.jacobalbano.cold.Decal;
 	import com.jacobalbano.cold.Hotspot;
 	import com.jacobalbano.cold.Inventory;
 	import com.jacobalbano.cold.InventoryItem;
@@ -54,6 +55,7 @@ package
 			world.addClass("Ambiance", Ambiance);
 			world.addClass("WorldItem", WorldItem);
 			world.addClass("InventoryItem", InventoryItem);
+			world.addClass("Decal", Decal);
 			
 			Game.instance.console.slang.addFunction("world", loadWorld, [String], this, "Load a world from an Ogmo level");
 			Game.instance.console.slang.addFunction("worlds", listWorlds, [], this, "Load a world from an Ogmo level");

@@ -45,6 +45,16 @@ package com.jacobalbano.cold
 			graphic.scrollY = 0;
 		}
 		
+		override public function added():void 
+		{
+			super.added();
+			
+			for each (var item:InventoryItem in items) 
+			{
+				world.add(item);
+			}
+		}
+		
 		override public function update():void 
 		{
 			super.update();
