@@ -25,7 +25,9 @@ package com.jacobalbano.cold
 			super.load(entity);
 			hotSpot.load(entity);
 			
-			graphic = new Image(Library.getImage("art.worlditems." + typeName + ".png"));
+			var image:Image = new Image(Library.getImage("art.worlditems." + typeName + ".png"));
+			graphic = image;
+			image.smooth = true;
 		}
 		
 		override public function added():void 

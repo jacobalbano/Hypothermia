@@ -10,6 +10,7 @@ package com.jacobalbano.cold
 	 */
 	public class Background extends XMLEntity
 	{
+		public var source:String;
 		
 		public function Background() 
 		{
@@ -21,7 +22,7 @@ package com.jacobalbano.cold
 			x = 0;
 			y = 0;
 			
-			graphic = new Image(Library.getImage("art.backgrounds." + (world as OgmoWorld).levelName + ".png"));
+			graphic = new Image(Library.getImage("art.backgrounds." + source + ".png"));
 		}
 		
 	}

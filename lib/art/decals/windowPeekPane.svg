@@ -22,6 +22,18 @@
   <defs
      id="defs4146">
     <linearGradient
+       inkscape:collect="always"
+       id="linearGradient6002">
+      <stop
+         style="stop-color:#000000;stop-opacity:0.30530973"
+         offset="0"
+         id="stop6004" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0"
+         offset="1"
+         id="stop6006" />
+    </linearGradient>
+    <linearGradient
        gradientTransform="matrix(4.0328491,0,0,4.048276,-2075.5814,251.52952)"
        inkscape:collect="always"
        xlink:href="#linearGradient5033"
@@ -63,6 +75,60 @@
        y1="98.5"
        x2="726"
        y2="196" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6002"
+       id="linearGradient6008"
+       x1="783.87842"
+       y1="78.771492"
+       x2="784.88855"
+       y2="185.84766"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.9509804,0,0,1,-1813.6522,-171.48289)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6002"
+       id="linearGradient6012"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.9509804,0,0,1,-1611.5093,-33.625747)"
+       x1="783.87842"
+       y1="78.771492"
+       x2="784.88855"
+       y2="185.84766" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6002"
+       id="linearGradient6016"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.9509804,0,0,1,-1514.3664,176.37425)"
+       x1="783.87842"
+       y1="78.771492"
+       x2="784.88855"
+       y2="185.84766" />
+    <filter
+       inkscape:collect="always"
+       id="filter6042">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.8792173"
+         id="feGaussianBlur6044" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter6046">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.8792173"
+         id="feGaussianBlur6048" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter6050">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.8792173"
+         id="feGaussianBlur6052" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -71,9 +137,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="802.30739"
-     inkscape:cy="170.24692"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="799.36705"
+     inkscape:cy="-9.1357478"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -103,6 +169,33 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(434.28125,69.65625)">
+    <g
+       id="g6054">
+      <rect
+         transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
+         y="-92.711403"
+         x="-562.20209"
+         height="114.14724"
+         width="603.0611"
+         id="rect5492"
+         style="fill:url(#linearGradient6008);fill-opacity:1;stroke:none;opacity:0.65044248000000005;filter:url(#filter6042)" />
+      <rect
+         style="opacity:0.65044250000000003;fill:url(#linearGradient6012);fill-opacity:1;stroke:none;filter:url(#filter6046)"
+         id="rect6010"
+         width="603.0611"
+         height="114.14724"
+         x="-360.05923"
+         y="45.145741"
+         transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)" />
+      <rect
+         transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
+         y="255.14574"
+         x="-262.91638"
+         height="114.14724"
+         width="603.0611"
+         id="rect6014"
+         style="opacity:0.65044250000000003;fill:url(#linearGradient6016);fill-opacity:1;stroke:none;filter:url(#filter6050)" />
+    </g>
     <path
        sodipodi:nodetypes="ccccc"
        inkscape:connector-curvature="0"

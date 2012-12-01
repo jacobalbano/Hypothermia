@@ -9,15 +9,17 @@
         <image>ogmo/Decal.png</image>
         <image>ogmo/emitter.png</image>
         <image>ogmo/invitem.png</image>
-        <image>ogmo/UIDecal.png</image>
         <image>art/worlditems/axe.png</image>
+        <image>art/worlditems/book.png</image>
         <image>art/ui/inventory.png</image>
         <image>art/ui/inventoryMask.png</image>
         <image>art/particles/snowflake.png</image>
         <image>art/decals/cabinThroughWindow.png</image>
+        <image>art/decals/outhouse.png</image>
         <image>art/decals/windowPeekPane.png</image>
         <image>art/backgrounds/frontLawn.png</image>
         <image>art/backgrounds/halfway.png</image>
+        <image>art/backgrounds/outhouse.png</image>
         <image>art/backgrounds/start.png</image>
     </images>
     <sounds>
@@ -25,11 +27,10 @@
     </sounds>
     <xmls>
         <xml>Library.xml</xml>
-        <xml>worlds/start/script.xml</xml>
         <xml>worlds/start/map.oel</xml>
-        <xml>worlds/peekWindow/script.xml</xml>
         <xml>worlds/peekWindow/map.oel</xml>
-        <xml>worlds/halfway/script.xml</xml>
+        <xml>worlds/outhouse/script.xml</xml>
+        <xml>worlds/outhouse/map.oel</xml>
         <xml>worlds/halfway/map.oel</xml>
         <xml>worlds/frontLawn/script.xml</xml>
         <xml>worlds/frontLawn/map.oel</xml>

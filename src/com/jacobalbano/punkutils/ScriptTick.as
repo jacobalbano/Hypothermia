@@ -15,10 +15,21 @@ package com.jacobalbano.punkutils
 		private var messages:Dictionary;
 		private var slang:SlangInterpreter;
 		private var delay:int;
+		private var failed:Boolean;
 		
 		public function ScriptTick(slang:SlangInterpreter, script:String) 
 		{
-			var xml:XML = Library.getXML(script);
+			try
+			{
+				var xml:XML = Library.getXML(script);
+			}
+			catch (e:Error)
+			{
+				trace("Failed to load script file \"", script, "\"");
+				failed = true;
+				return;
+			}
+			
 			delay = 0;
 			
 			this.slang = slang;
@@ -36,6 +47,12 @@ package com.jacobalbano.punkutils
 		override public function added():void 
 		{
 			super.added();
+			
+			if (failed)
+			{
+				world.remove(this);
+				return;
+			}
 			
 			slang.doLine(launch);
 		}

@@ -1,0 +1,14 @@
+<level width="800" height="400">
+  <UI>
+    <Ambiance id="0" x="336" y="-80" source="windHowl.mp3" loop="True" tween="1.7" volume="1" />
+  </UI>
+  <World>
+    <Background id="1" x="0" y="0" width="64" height="64" source="outhouse" />
+    <Hotspot id="0" x="-1" y="336" width="802" height="64" onClick="world frontLawn" onEnter="" onExit="" />
+    <ParticleEmitter id="9" x="-112" y="76" angle="15" max="300" particleType="snowflake" distance="1500" distanceRange="10" duration="1.5" durationRange="0.5" angleRange="25" />
+    <ParticleEmitter id="9" x="-64" y="300" angle="15" max="300" particleType="snowflake" distance="1500" distanceRange="100" duration="1.5" durationRange="0.5" angleRange="25" />
+    <ParticleEmitter id="9" x="-160" y="204" angle="0" max="300" particleType="snowflake" distance="1500" distanceRange="10" duration="1.5" durationRange="0.5" angleRange="25" />
+    <Decal id="2" x="112" y="-142" source="outhouse" scrollX="0" scrollY="0" />
+    <WorldItem id="3" x="479" y="249" width="75" height="85" typeName="book" onClick="addInvItem &quot;book&quot;&#xD;&#xA;remWorldItem &quot;book&quot;" onEnter="" onExit="" />
+  </World>
+</level>
