@@ -2,7 +2,7 @@
 <script>
 	<launch>
 		if hasInvItem "book"
-			remWorldItem "book"
+			remWorldItem "book" true
 	</launch>
 	<tick>
 		

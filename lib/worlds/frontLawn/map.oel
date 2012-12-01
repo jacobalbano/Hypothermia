@@ -9,7 +9,7 @@
     <Ambiance id="5" x="560" y="-80" source="windHowl.mp3" loop="True" tween="0.7" volume="1" />
     <Hotspot id="6" x="288" y="83" width="177" height="300" onClick="" onEnter="" onExit="" />
     <Hotspot id="7" x="1059" y="126" width="108" height="252" onClick="world outhouse" onEnter="" onExit="" />
-    <WorldItem id="8" x="904" y="167" width="110" height="118" typeName="axe" onClick="addInvItem &quot;axe&quot;&#xD;&#xA;remWorldItem &quot;axe&quot;" onEnter="" onExit="" />
+    <WorldItem id="8" x="904" y="167" width="110" height="118" typeName="axe" onClick="addInvItem &quot;axe&quot;&#xD;&#xA;remWorldItem &quot;axe&quot; false" onEnter="" onExit="" />
     <ParticleEmitter id="1" x="-300" y="270" angle="15" max="300" particleType="snowflake" distance="1500" distanceRange="100" duration="1.5" durationRange="0.5" angleRange="25" />
     <ParticleEmitter id="2" x="-348" y="46" angle="15" max="300" particleType="snowflake" distance="1500" distanceRange="10" duration="1.5" durationRange="0.5" angleRange="25" />
     <ParticleEmitter id="4" x="-396" y="174" angle="0" max="300" particleType="snowflake" distance="1500" distanceRange="10" duration="1.5" durationRange="0.5" angleRange="25" />

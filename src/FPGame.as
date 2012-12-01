@@ -66,7 +66,7 @@ package
 			Game.instance.console.slang.addFunction("addInvItem", inventory.addItem, [String], inventory, "Add an item to the inventory");
 			Game.instance.console.slang.addFunction("remInvItem", inventory.removeItem, [String], inventory, "Remove an item from the inventory");
 			
-			Game.instance.console.slang.addFunction("remWorldItem", remWorldItem, [String], this, "Remove an item from the world");
+			Game.instance.console.slang.addFunction("remWorldItem", remWorldItem, [String, Boolean], this, "Remove an item from the world");
 			
 			Game.instance.console.slang.importModule(new Stdlib);
 			Game.instance.console.slang.importModule(new Memory);
@@ -89,7 +89,7 @@ package
 			}
 		}
 		
-		private function remWorldItem(worldItem:String):void
+		private function remWorldItem(worldItem:String, instant:Boolean):void
 		{
 			var list:Array = [];
 			FP.world.getClass(WorldItem, list);
@@ -98,6 +98,12 @@ package
 			{
 				if (item.typeName == worldItem)
 				{
+					if (instant)
+					{
+						world.remove(item);
+						return;
+					}
+					
 					function realRemoveWorldItem():void 
 					{
 						world.remove(item);
