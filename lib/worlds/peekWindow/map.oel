@@ -1,7 +1,7 @@
 <level width="900" height="400">
   <UI>
-    <CameraPan id="0" x="64" y="-32" wrapAround="False" scrollSpeed="10" buffer="75" />
     <Decal id="1" x="32" y="0" source="windowPeekPane" scrollX="0.1" scrollY="0" />
+    <CameraPan id="0" x="240" y="-32" wrapAround="False" scrollSpeed="10" buffer="75" />
   </UI>
   <World>
     <Ambiance id="1" x="400" y="-96" source="windHowl.mp3" loop="True" tween="1.7" volume="1" />

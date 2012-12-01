@@ -36,14 +36,11 @@ S'text'
 p18
 V[[Walk towards house|Halfway]]
 p19
-sS'tags'
-p20
-(lp21
 sS'created'
-p22
+p20
 ctime
 struct_time
-p23
+p21
 ((I2012
 I11
 I30
@@ -53,17 +50,20 @@ I38
 I4
 I335
 I0
+tp22
+(dp23
 tp24
-(dp25
-tp26
-Rp27
+Rp25
+sS'title'
+p26
+VStart
+p27
 sS'modified'
 p28
-g27
-sS'title'
+g25
+sS'tags'
 p29
-VStart
-p30
+(lp30
 sbsa(dp31
 g12
 I00
@@ -80,9 +80,7 @@ g18
 V[[Walk towards house|FrontLawn]]
 p35
 sg20
-(lp36
-sg22
-g23
+g21
 ((I2012
 I11
 I30
@@ -92,15 +90,17 @@ I10
 I4
 I335
 I0
-tp37
-(dp38
-tp39
-Rp40
-sg28
-g40
-sg29
+tp36
+(dp37
+tp38
+Rp39
+sg26
 VHalfway
-p41
+p40
+sg28
+g39
+sg29
+(lp41
 sbsa(dp42
 g12
 I00
@@ -117,9 +117,7 @@ g18
 VInventory item: Axe (in stump)\u000a\u000a[[Locked door (needs doorKey)]]\u000a[[Outhouse]]\u000a[[Window]]
 p46
 sg20
-(lp47
-sg22
-g23
+g21
 ((I2012
 I11
 I30
@@ -129,15 +127,17 @@ I38
 I4
 I335
 I0
-tp48
-(dp49
-tp50
-Rp51
-sg28
-g51
-sg29
+tp47
+(dp48
+tp49
+Rp50
+sg26
 VFrontLawn
-p52
+p51
+sg28
+g50
+sg29
+(lp52
 sbsa(dp53
 g12
 I00
@@ -154,10 +154,9 @@ g18
 VIf key is in bag, go to [[Living room]]
 p57
 sg29
-VLocked door (needs doorKey)
-p58
-sg28
-g23
+(lp58
+sg20
+g21
 ((I2012
 I11
 I30
@@ -171,13 +170,14 @@ tp59
 (dp60
 tp61
 Rp62
-sg20
-(lp63
-sg22
+sg28
 g62
+sg26
+VLocked door (needs doorKey)
+p63
 sbsa(dp64
 g12
-I00
+I01
 sg13
 (lp65
 F990.0
@@ -188,13 +188,12 @@ Tiddler
 p66
 (dp67
 g18
-VInventory item: Half-torn apart book
+VInventory item: Book
 p68
 sg29
-VOuthouse
-p69
-sg28
-g23
+(lp69
+sg20
+g21
 ((I2012
 I11
 I30
@@ -208,10 +207,11 @@ tp70
 (dp71
 tp72
 Rp73
-sg20
-(lp74
-sg22
+sg28
 g73
+sg26
+VOuthouse
+p74
 sbsa(dp75
 g12
 I00
@@ -228,10 +228,9 @@ g18
 VCan see stove through window
 p79
 sg29
-VWindow
-p80
-sg28
-g23
+(lp80
+sg20
+g21
 ((I2012
 I11
 I30
@@ -245,10 +244,11 @@ tp81
 (dp82
 tp83
 Rp84
-sg20
-(lp85
-sg22
+sg28
 g84
+sg26
+VWindow
+p85
 sbsa(dp86
 g12
 I00
@@ -264,8 +264,11 @@ p88
 g18
 V\u000a[[Closeup on stove]]\u000a[[Pantry]]\u000a[[Bedroom door (locked)]]\u000a
 p90
-sg22
-g23
+sg26
+VLiving room
+p91
+sg28
+g21
 ((I2012
 I11
 I30
@@ -275,17 +278,14 @@ I9
 I4
 I335
 I0
-tp91
-(dp92
-tp93
-Rp94
+tp92
+(dp93
+tp94
+Rp95
 sg29
-VLiving room
-p95
-sg28
-g94
-sg20
 (lp96
+sg20
+g95
 sbsa(dp97
 g12
 I00
@@ -301,8 +301,11 @@ p99
 g18
 V[[Trapdoor in floor]] (requires key)\u000a
 p101
-sg22
-g23
+sg26
+VPantry
+p102
+sg28
+g21
 ((I2012
 I11
 I30
@@ -312,17 +315,14 @@ I21
 I4
 I335
 I0
-tp102
-(dp103
-tp104
-Rp105
+tp103
+(dp104
+tp105
+Rp106
 sg29
-VPantry
-p106
-sg28
-g105
-sg20
 (lp107
+sg20
+g106
 sbsa(dp108
 g12
 I00
@@ -337,8 +337,11 @@ p110
 (dp111
 g18
 g2
-sg22
-g23
+sg26
+VBedroom door (locked)
+p112
+sg28
+g21
 ((I2012
 I11
 I30
@@ -348,17 +351,14 @@ I7
 I4
 I335
 I0
-tp112
-(dp113
-tp114
-Rp115
+tp113
+(dp114
+tp115
+Rp116
 sg29
-VBedroom door (locked)
-p116
-sg28
-g115
-sg20
 (lp117
+sg20
+g116
 sbsa(dp118
 g12
 I00
@@ -373,8 +373,11 @@ p120
 (dp121
 g18
 g2
-sg22
-g23
+sg26
+VCloseup on stove
+p122
+sg28
+g21
 ((I2012
 I11
 I30
@@ -384,20 +387,17 @@ I22
 I4
 I335
 I0
-tp122
-(dp123
-tp124
-Rp125
+tp123
+(dp124
+tp125
+Rp126
 sg29
-VCloseup on stove
-p126
-sg28
-g125
-sg20
 (lp127
+sg20
+g126
 sbsa(dp128
 g12
-I01
+I00
 sg13
 (lp129
 F570.0
@@ -410,9 +410,7 @@ p130
 g18
 g2
 sg20
-(lp132
-sg22
-g23
+g21
 ((I2012
 I11
 I30
@@ -422,15 +420,17 @@ I17
 I4
 I335
 I0
-tp133
-(dp134
-tp135
-Rp136
-sg28
-g136
-sg29
+tp132
+(dp133
+tp134
+Rp135
+sg26
 VTrapdoor in floor
-p137
+p136
+sg28
+g135
+sg29
+(lp137
 sbsasS'scale'
 p138
 F0.80000000000000004

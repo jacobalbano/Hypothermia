@@ -61,6 +61,7 @@ package com.jacobalbano.cold
 			
 			if (Input.mouseReleased && contains)
 			{
+				trace(onClick);
 				callback(onClick);
 			}
 		}

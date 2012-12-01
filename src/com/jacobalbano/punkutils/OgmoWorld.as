@@ -23,7 +23,7 @@ package com.jacobalbano.punkutils
 		private var numLayers:int;
 		private var defaultImage:Bitmap;
 		
-		public var levelName:String;
+		//public var levelName:String;
 		public var wraparound:Boolean;
 		public var size:Point;
 		
@@ -78,9 +78,6 @@ package com.jacobalbano.punkutils
 			var level:XML = Library.getXML(source);
 			
 			removeAll();
-			
-			camera.x = level.camera.@x;
-			camera.y = level.camera.@y;
 			
 			size.x = level.@width;
 			size.y = level.heigh;
@@ -143,9 +140,6 @@ package com.jacobalbano.punkutils
 		override public function begin():void 
 		{
 			super.begin();
-			
-			FP.camera.x = camera.x;
-			FP.camera.y = camera.y;
 		}
 		
 		override public function render():void 

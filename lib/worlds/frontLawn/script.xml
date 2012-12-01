@@ -2,7 +2,9 @@
 <script>
 	<launch>
 		if hasInvItem "axe"
-			remWorldItem "axe" true
+			remWorldItem "axe" true;
+		if var doorOpen
+			remWorldReaction "doorKey"
 	</launch>
 	<tick>
 		

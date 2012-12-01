@@ -67,12 +67,11 @@ package com.jacobalbano.punkutils
 				}
 			}
 			
-			
 			FP.camera.x += speed;
 			
 			if (!wrapAround)
 			{
-				if (FP.width < worldWidth)
+				if (FP.width <= worldWidth)
 				{
 					if (FP.camera.x < 0)
 					{

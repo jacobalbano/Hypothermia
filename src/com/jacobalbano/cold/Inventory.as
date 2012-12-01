@@ -24,16 +24,15 @@ package com.jacobalbano.cold
 	 */
 	public class Inventory extends XMLEntity 
 	{
+		private var _mouseItem:String;
 		private var _itemCount:int;
 		private var items:Dictionary;
 		private var extended:Boolean;
 		private var contains:Boolean;
-		private var types:Dictionary;
 		
 		public function Inventory() 
 		{
 			items = new Dictionary;
-			types = new Dictionary;
 			
 			var image:Bitmap = Library.getImage("art.ui.inventory.png");
 			graphic = new Image(image);
@@ -65,7 +64,6 @@ package com.jacobalbano.cold
 			var count:int = 0;
 			for each (var item:InventoryItem in items) 
 			{
-				//var image:Image = item.graphic as Image;
 				item.x = count++ * 100 + 20;
 				item.y = y + 15;
 			}
@@ -150,14 +148,14 @@ package com.jacobalbano.cold
 			delete items[name];
 		}
 		
-		public function addType(typeName:String, xml:XML):void 
-		{
-			types[typeName] = xml;
-		}
-		
 		public function get itemCount():int 
 		{
 			return _itemCount;
+		}
+		
+		public function get mouseItem():String 
+		{
+			return _mouseItem;
 		}
 		
 	}

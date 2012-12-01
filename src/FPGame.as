@@ -8,6 +8,7 @@ package
 	import com.jacobalbano.cold.InventoryItem;
 	import com.jacobalbano.cold.ParticleEmitter;
 	import com.jacobalbano.cold.WorldItem;
+	import com.jacobalbano.cold.WorldReaction;
 	import com.jacobalbano.punkutils.Image;
 	import com.jacobalbano.punkutils.OgmoWorld;
 	import com.jacobalbano.punkutils.ScriptTick;
@@ -56,6 +57,7 @@ package
 			world.addClass("WorldItem", WorldItem);
 			world.addClass("InventoryItem", InventoryItem);
 			world.addClass("Decal", Decal);
+			world.addClass("WorldReaction", WorldReaction);
 			
 			Game.instance.console.slang.addFunction("world", loadWorld, [String], this, "Load a world from an Ogmo level");
 			Game.instance.console.slang.addFunction("worlds", listWorlds, [], this, "Load a world from an Ogmo level");
@@ -66,6 +68,8 @@ package
 			Game.instance.console.slang.addFunction("addInvItem", inventory.addItem, [String], inventory, "Add an item to the inventory");
 			Game.instance.console.slang.addFunction("remInvItem", inventory.removeItem, [String], inventory, "Remove an item from the inventory");
 			
+			Game.instance.console.slang.addFunction("remInvReaction", remWorldReaction, [String], this, "Remove a reaction trigger from the world");
+			
 			Game.instance.console.slang.addFunction("remWorldItem", remWorldItem, [String, Boolean], this, "Remove an item from the world");
 			
 			Game.instance.console.slang.importModule(new Stdlib);
@@ -74,6 +78,21 @@ package
 			Game.instance.onReload = function():void { loadWorld(currentWorld); };
 			
 			loadWorld("start");
+		}
+		
+		private function remWorldReaction(itemName:String):void 
+		{
+			var list:Array = [];
+			FP.world.getClass(WorldItem, list);
+			
+			for each (var item:WorldItem in list) 
+			{
+				if (item.typeName == itemName)
+				{
+					world.remove(item);
+					return;
+				}
+			}
 		}
 		
 		private function listWorlds():void 
@@ -131,7 +150,6 @@ package
 		private function loadWorld(name:String):void 
 		{
 			currentWorld = name;
-			world.levelName = name;
 			
 			if (currentWorld == "")
 			{
