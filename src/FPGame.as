@@ -4,14 +4,19 @@ package
 	import com.jacobalbano.cold.Background;
 	import com.jacobalbano.cold.Hotspot;
 	import com.jacobalbano.cold.Inventory;
+	import com.jacobalbano.cold.InventoryItem;
 	import com.jacobalbano.cold.ParticleEmitter;
 	import com.jacobalbano.cold.WorldItem;
+	import com.jacobalbano.punkutils.Image;
 	import com.jacobalbano.punkutils.OgmoWorld;
 	import com.jacobalbano.punkutils.ScriptTick;
 	import com.thaumaturgistgames.slang.Memory;
 	import com.thaumaturgistgames.slang.Stdlib;
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
+	import net.flashpunk.Tween;
+	import net.flashpunk.tweens.misc.VarTween;
+	import net.flashpunk.utils.Ease;
 	import net.flashpunk.utils.Input;
 	import flash.ui.Keyboard;
 	import com.thaumaturgistgames.flakit.Library;
@@ -48,6 +53,7 @@ package
 			world.addClass("ParticleEmitter", ParticleEmitter);
 			world.addClass("Ambiance", Ambiance);
 			world.addClass("WorldItem", WorldItem);
+			world.addClass("InventoryItem", InventoryItem);
 			
 			Game.instance.console.slang.addFunction("world", loadWorld, [String], this, "Load a world from an Ogmo level");
 			Game.instance.console.slang.addFunction("worlds", listWorlds, [], this, "Load a world from an Ogmo level");
@@ -90,7 +96,14 @@ package
 			{
 				if (item.typeName == worldItem)
 				{
-					world.remove(item);
+					function realRemoveWorldItem():void 
+					{
+						world.remove(item);
+					}
+					
+					var tween:VarTween = new VarTween(realRemoveWorldItem, Tween.ONESHOT);
+					tween.tween(item.graphic, "alpha", 0, 1, Ease.backOut);
+					world.addTween(tween, true);
 					return;
 				}
 			}
@@ -111,8 +124,6 @@ package
 		{
 			currentWorld = name;
 			world.levelName = name;
-			
-			trace(this["currentWorld"]);
 			
 			if (currentWorld == "")
 			{

@@ -28,8 +28,6 @@ package com.jacobalbano.cold
 			super.load(entity);
 			
 			size = new Point(entity.@width, entity.@height);
-			
-			trace(onClick);
 		}
 		
 		override public function removed():void 
