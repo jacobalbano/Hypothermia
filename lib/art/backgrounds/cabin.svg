@@ -531,9 +531,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.8027388"
-     inkscape:cx="8.9219074"
-     inkscape:cy="-29.551162"
+     inkscape:zoom="2.6889424"
+     inkscape:cx="1814.3689"
+     inkscape:cy="233.19225"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -576,13 +576,11 @@
        d="M 0 -10.21875 L 0 468.40625 L 1069.6875 468.40625 L 1121.6562 468.40625 L 3201.5312 468.40625 L 3201.5312 -10.21875 L 1121.6562 -10.21875 L 1069.6875 -10.21875 L 0 -10.21875 z M 1743.2188 93.90625 L 1933.5938 93.90625 L 1933.5938 205.90625 L 1743.2188 205.90625 L 1743.2188 93.90625 z "
        transform="translate(0,652.36218)"
        id="rect3782" />
-    <rect
+    <path
        style="fill:#585045;fill-opacity:1;stroke:#444444;stroke-width:1.99999988;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect4987"
-       width="1131.1208"
-       height="162.3772"
-       x="-4.63061"
-       y="960.79846" />
+       d="M -4.625 308.4375 L -4.625 470.8125 L 1065.3125 470.8125 L 1126.5 470.8125 L 3210.2812 470.8125 L 3210.2812 308.4375 L 2609.2188 308.4375 L 1126.5 308.4375 L 1065.3125 308.4375 L -4.625 308.4375 z "
+       transform="translate(0,652.36218)"
+       id="rect4987" />
     <path
        transform="matrix(1.0742246,0,0,1,191.8185,714.77686)"
        style="fill:#000000;fill-opacity:1;stroke:none;filter:url(#filter5015)"
@@ -855,12 +853,6 @@
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="ccccc" />
     </g>
-    <path
-       style="fill:#585045;fill-opacity:1;stroke:#444444;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
-       d="m 3210.2699,960.79846 -601.0656,0 -1543.8783,0 0,162.37724 2144.9439,0 z"
-       id="rect3135"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccc" />
     <path
        transform="matrix(0,0.84917383,0.84783053,0,1120.0933,523.68706)"
        inkscape:connector-curvature="0"
@@ -1269,5 +1261,63 @@
        inkscape:export-filename="C:\Users\Jake\Documents\FlashDevelop\Cold\lib\art\decals\path5303.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:169.20808411px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Andalus;-inkscape-font-specification:Andalus"
+       x="40.058235"
+       y="881.45062"
+       id="text5492"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5494"
+         x="40.058235"
+         y="881.45062">0</tspan></text>
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:none"
+       id="rect5501"
+       width="13.388164"
+       height="98.551758"
+       x="0.74378687"
+       y="770.46698" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:none"
+       id="rect5503"
+       width="7.4378686"
+       height="142.06329"
+       x="3190.8457"
+       y="702.78235" />
+    <text
+       xml:space="preserve"
+       style="font-size:169.20808411px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Andalus;-inkscape-font-specification:Andalus"
+       x="2807.3513"
+       y="832.93433"
+       id="text5492-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5494-1"
+         x="2807.3513"
+         y="832.93433">3200</tspan><tspan
+         sodipodi:role="line"
+         x="2807.3513"
+         y="1044.4443"
+         id="tspan5526" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:169.20808411px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Andalus;-inkscape-font-specification:Andalus"
+       x="1633.2731"
+       y="870.32416"
+       id="text5492-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="1633.2731"
+         y="870.32416"
+         id="tspan5552">1600</tspan></text>
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:none"
+       id="rect5501-9"
+       width="13.388164"
+       height="98.551758"
+       x="1593.9586"
+       y="759.34052" />
   </g>
 </svg>

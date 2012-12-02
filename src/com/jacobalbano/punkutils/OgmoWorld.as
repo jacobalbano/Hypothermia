@@ -151,11 +151,40 @@ package com.jacobalbano.punkutils
 				super.render();
 				FP.camera.x = original - size.x;
 				super.render();
-				
 				FP.camera.x = original % size.x;
 			}
 			
 			super.render();
+		}
+		
+		override public function get mouseX():int 
+		{
+			var mx:int = super.mouseX;
+			
+			if (wraparound)
+			{
+				if (mx < 0)
+				{
+					mx += size.x;
+				}
+			}
+			
+			return mx;
+		}
+		
+		override public function get mouseY():int 
+		{
+			var my:int = super.mouseY;
+			
+			if (wraparound)
+			{
+				if (my < 0)
+				{
+					my += size.x;
+				}
+			}
+			
+			return my;
 		}
 	}
 }
