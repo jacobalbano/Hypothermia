@@ -367,6 +367,162 @@
          stdDeviation="1.0605"
          id="feGaussianBlur5283-2" />
     </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter5281-5-9"
+       x="-2.5452001"
+       width="6.0904002"
+       y="-0.010605"
+       height="1.02121">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.0605"
+         id="feGaussianBlur5283-7-8" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter5277-8-3"
+       x="-2.5452001"
+       width="6.0904002"
+       y="-0.01906517"
+       height="1.0381303">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.0605"
+         id="feGaussianBlur5279-8-8" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter5273-0-6"
+       x="-2.5452001"
+       width="6.0904002"
+       y="-0.01906517"
+       height="1.0381303">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.0605"
+         id="feGaussianBlur5275-3-9" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter5269-2-8"
+       x="-2.5452001"
+       width="6.0904002"
+       y="-0.011237086"
+       height="1.0224742">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.0605"
+         id="feGaussianBlur5271-9-6" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter5281-5-2"
+       x="-2.5452001"
+       width="6.0904002"
+       y="-0.010605"
+       height="1.02121">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.0605"
+         id="feGaussianBlur5283-7-6" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter5277-8-2"
+       x="-2.5452001"
+       width="6.0904002"
+       y="-0.01906517"
+       height="1.0381303">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.0605"
+         id="feGaussianBlur5279-8-7" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter5273-0-5"
+       x="-2.5452001"
+       width="6.0904002"
+       y="-0.01906517"
+       height="1.0381303">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.0605"
+         id="feGaussianBlur5275-3-7" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter5269-2-82"
+       x="-2.5452001"
+       width="6.0904002"
+       y="-0.011237086"
+       height="1.0224742">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.0605"
+         id="feGaussianBlur5271-9-7" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter5281-5-8"
+       x="-2.5452001"
+       width="6.0904002"
+       y="-0.010605"
+       height="1.02121">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.0605"
+         id="feGaussianBlur5283-7-9" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter5277-8-28"
+       x="-2.5452001"
+       width="6.0904002"
+       y="-0.01906517"
+       height="1.0381303">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.0605"
+         id="feGaussianBlur5279-8-2" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter5273-0-0"
+       x="-2.5452001"
+       width="6.0904002"
+       y="-0.01906517"
+       height="1.0381303">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.0605"
+         id="feGaussianBlur5275-3-5" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter5269-2-5"
+       x="-2.5452001"
+       width="6.0904002"
+       y="-0.011237086"
+       height="1.0224742">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.0605"
+         id="feGaussianBlur5271-9-2" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -375,9 +531,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.5154415"
-     inkscape:cx="2325.6282"
-     inkscape:cy="258.49284"
+     inkscape:zoom="3.8027388"
+     inkscape:cx="8.9219074"
+     inkscape:cy="-29.551162"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -386,7 +542,18 @@
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:snap-global="false" />
+     inkscape:snap-global="false"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       orientation="1,0"
+       position="3200.884,77.455795"
+       id="guide4652" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="-0.32993685,136.59386"
+       id="guide4654" />
+  </sodipodi:namedview>
   <metadata
      id="metadata2997">
     <rdf:RDF>
@@ -410,11 +577,11 @@
        transform="translate(0,652.36218)"
        id="rect3782" />
     <rect
-       style="fill:#585045;fill-opacity:1;stroke:#444444;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:#585045;fill-opacity:1;stroke:#444444;stroke-width:1.99999988;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect4987"
-       width="1125.182"
+       width="1131.1208"
        height="162.3772"
-       x="1.3082533"
+       x="-4.63061"
        y="960.79846" />
     <path
        transform="matrix(1.0742246,0,0,1,191.8185,714.77686)"
@@ -690,10 +857,10 @@
     </g>
     <path
        style="fill:#585045;fill-opacity:1;stroke:#444444;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
-       d="m 3210.2699,960.79846 -2144.9439,0 0,162.37724 2144.9439,0 z"
+       d="m 3210.2699,960.79846 -601.0656,0 -1543.8783,0 0,162.37724 2144.9439,0 z"
        id="rect3135"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="cccccc" />
     <path
        transform="matrix(0,0.84917383,0.84783053,0,1120.0933,523.68706)"
        inkscape:connector-curvature="0"
@@ -967,5 +1134,140 @@
        id="path4600"
        d="m 2223.4234,896.77035 0,53.26645 5.0584,0 0,-53.26645 z"
        style="fill:#121212;fill-opacity:1;stroke:#111111;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1" />
+    <path
+       id="path4614"
+       d="m 52.087327,637.29968 0.4687,323.34375 -52.43298928,79.33757 -0.13351853,8.3088 53.87910781,-87.64637 0,-323.34375 z"
+       style="opacity:0.4424779;fill:#121212;fill-opacity:1;stroke:none"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       id="path4616"
+       d="m 1007.0248,637.29968 0.4688,323.34375 23.7938,162.99997 9.2812,0 -31.7626,-162.99997 0,-323.34375 z"
+       style="opacity:0.4424779;fill:#121212;fill-opacity:1;stroke:none"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       id="path4614-6"
+       d="m 1660.4311,641.2139 0.4687,323.34375 -26.4685,162.99995 9.2813,0 18.4998,-162.99995 0,-323.34375 z"
+       style="opacity:0.4424779;fill:#121212;fill-opacity:1;stroke:none"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       id="path4616-2"
+       d="m 2615.3686,641.2139 0.4688,323.34375 49.4207,162.99995 9.2812,0 -57.3895,-162.99995 0,-323.34375 z"
+       style="opacity:0.4424779;fill:#121212;fill-opacity:1;stroke:none"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       style="opacity:0.4424779;fill:#121212;fill-opacity:1;stroke:none"
+       d="m 3200.8809,1037.981 -50.077,85.6624 9.2813,0 40.6622,-77.3536 z"
+       id="path4639" />
+    <path
+       transform="matrix(0,-0.84917383,-1.2406518,0,2761.7159,1539.2199)"
+       inkscape:connector-curvature="0"
+       id="path5303-6"
+       d="m 557.1132,631.81039 0,240 1,0 0,-240 -1,0 z"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:0.6504425;color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter5281-5-9);enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0,-0.84917383,-1.2406518,0,2761.7159,1539.2199)"
+       inkscape:connector-curvature="0"
+       id="path5305-2"
+       d="m 651.6132,663.31039 0,226.5 1,0 0,-226.5 -1,0 z"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:0.6504425;color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter5269-2-8);enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       inkscape:export-filename="C:\Users\Jake\Documents\FlashDevelop\Cold\lib\art\decals\path5303.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0,-0.84917383,-1.2406518,0,2761.7159,1539.2199)"
+       inkscape:connector-curvature="0"
+       id="path5307-3"
+       d="m 609.1132,709.31039 0,133.5 1,0 0,-133.5 -1,0 z"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:0.6504425;color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter5273-0-6);enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       inkscape:export-filename="C:\Users\Jake\Documents\FlashDevelop\Cold\lib\art\decals\path5303.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0,-0.84917383,-1.2406518,0,2761.7159,1539.2199)"
+       inkscape:connector-curvature="0"
+       id="path5309-8"
+       d="m 578.6132,675.32321 0,133.5 1,0 0,-133.5 -1,0 z"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:0.6504425;color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter5277-8-3);enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       inkscape:export-filename="C:\Users\Jake\Documents\FlashDevelop\Cold\lib\art\decals\path5303.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0,-0.84917383,-1.2406518,0,3294.2673,1554.0956)"
+       inkscape:connector-curvature="0"
+       id="path5303-8"
+       d="m 557.1132,631.81039 0,240 1,0 0,-240 -1,0 z"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:0.6504425;color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter5281-5-2);enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0,-0.84917383,-1.2406518,0,3294.2673,1554.0956)"
+       inkscape:connector-curvature="0"
+       id="path5305-0"
+       d="m 651.6132,663.31039 0,226.5 1,0 0,-226.5 -1,0 z"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:0.6504425;color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter5269-2-82);enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       inkscape:export-filename="C:\Users\Jake\Documents\FlashDevelop\Cold\lib\art\decals\path5303.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0,-0.84917383,-1.2406518,0,3294.2673,1554.0956)"
+       inkscape:connector-curvature="0"
+       id="path5307-2"
+       d="m 609.1132,709.31039 0,133.5 1,0 0,-133.5 -1,0 z"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:0.6504425;color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter5273-0-5);enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       inkscape:export-filename="C:\Users\Jake\Documents\FlashDevelop\Cold\lib\art\decals\path5303.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0,-0.84917383,-1.2406518,0,3294.2673,1554.0956)"
+       inkscape:connector-curvature="0"
+       id="path5309-0"
+       d="m 578.6132,675.32321 0,133.5 1,0 0,-133.5 -1,0 z"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:0.6504425;color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter5277-8-2);enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       inkscape:export-filename="C:\Users\Jake\Documents\FlashDevelop\Cold\lib\art\decals\path5303.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0,-0.84917383,-1.2406518,0,3883.3464,1539.2199)"
+       inkscape:connector-curvature="0"
+       id="path5303-7"
+       d="m 557.1132,631.81039 0,240 1,0 0,-240 -1,0 z"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:0.6504425;color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter5281-5-8);enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0,-0.84917383,-1.2406518,0,3883.3464,1539.2199)"
+       inkscape:connector-curvature="0"
+       id="path5305-6"
+       d="m 651.6132,663.31039 0,226.5 1,0 0,-226.5 -1,0 z"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:0.6504425;color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter5269-2-5);enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       inkscape:export-filename="C:\Users\Jake\Documents\FlashDevelop\Cold\lib\art\decals\path5303.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0,-0.84917383,-1.2406518,0,3883.3464,1539.2199)"
+       inkscape:connector-curvature="0"
+       id="path5307-7"
+       d="m 609.1132,709.31039 0,133.5 1,0 0,-133.5 -1,0 z"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:0.6504425;color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter5273-0-0);enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       inkscape:export-filename="C:\Users\Jake\Documents\FlashDevelop\Cold\lib\art\decals\path5303.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0,-0.84917383,-1.2406518,0,3883.3464,1539.2199)"
+       inkscape:connector-curvature="0"
+       id="path5309-87"
+       d="m 578.6132,675.32321 0,133.5 1,0 0,-133.5 -1,0 z"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:0.6504425;color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter5277-8-28);enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       inkscape:export-filename="C:\Users\Jake\Documents\FlashDevelop\Cold\lib\art\decals\path5303.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
   </g>
 </svg>

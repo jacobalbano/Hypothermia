@@ -1,0 +1,14 @@
+<level width="900" height="400">
+  <UI>
+    <Decal id="1" x="0" y="0" source="windowPeekPane" scrollX="0" scrollY="0" />
+    <CameraPan id="0" x="0" y="-32" wrapAround="False" scrollSpeed="10" buffer="75" />
+  </UI>
+  <World>
+    <Ambiance id="1" x="400" y="-96" source="windHowl.mp3" loop="True" tween="1.7" volume="0.2" />
+    <Hotspot id="0" x="-1" y="337" width="900" height="69" onClick="lastWorld" onEnter="" onExit="" />
+    <Background id="2" x="1" y="-2" width="64" height="64" source="outhouse" />
+    <ParticleEmitter id="6" x="1056" y="208" angle="195" max="300" particleType="snowflake" distance="1600" distanceRange="100" duration="1.7" durationRange="0.5" angleRange="25" />
+    <ParticleEmitter id="6" x="1008" y="-16" angle="165" max="300" particleType="snowflake" distance="1600" distanceRange="10" duration="1" durationRange="0.5" angleRange="25" />
+    <ParticleEmitter id="6" x="960" y="112" angle="180" max="300" particleType="snowflake" distance="1600" distanceRange="10" duration="1.7" durationRange="0.5" angleRange="25" />
+  </World>
+</level>

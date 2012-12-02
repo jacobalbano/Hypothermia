@@ -32,12 +32,14 @@ package
 	public class FPGame extends Engine 
 	{
 		private var currentWorld:String;
+		private var lastWorld:String;
 		private var world:OgmoWorld;
 		private var inventory:Inventory;
 		
 		public function FPGame(width:uint, height:uint) 
 		{
 			super(width, height);
+			lastWorld = "";
 			currentWorld = "";
 			inventory = new Inventory();
 		}
@@ -60,6 +62,7 @@ package
 			world.addClass("WorldReaction", WorldReaction);
 			
 			Game.instance.console.slang.addFunction("world", loadWorld, [String], this, "Load a world from an Ogmo level");
+			Game.instance.console.slang.addFunction("lastWorld", loadLastWorld, [], this, "Load the previous world");
 			Game.instance.console.slang.addFunction("worlds", listWorlds, [], this, "Load a world from an Ogmo level");
 			
 			Game.instance.console.slang.addFunction("message", message, [String], this, "Sends a message to all scripted entities");
@@ -81,6 +84,11 @@ package
 			//loadWorld("start");
 			
 			loadWorld("cabin");
+		}
+		
+		private function loadLastWorld():void 
+		{
+			loadWorld(lastWorld);
 		}
 		
 		private function remWorldReaction(itemName:String):void 
@@ -152,6 +160,7 @@ package
 		
 		private function loadWorld(name:String):void 
 		{
+			lastWorld = currentWorld;
 			currentWorld = name;
 			
 			if (currentWorld == "")

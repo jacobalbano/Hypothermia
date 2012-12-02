@@ -5,7 +5,7 @@
   </UI>
   <World>
     <Ambiance id="1" x="400" y="-96" source="windHowl.mp3" loop="True" tween="1.7" volume="1" />
-    <Hotspot id="0" x="-1" y="337" width="900" height="69" onClick="world frontLawn" onEnter="" onExit="" />
+    <Hotspot id="0" x="-1" y="337" width="900" height="69" onClick="lastWorld" onEnter="" onExit="" />
     <Decal id="2" x="106" y="0" source="cabinThroughWindow" scrollX="-0.5" scrollY="0" />
   </World>
 </level>

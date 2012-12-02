@@ -3,12 +3,12 @@
     <CameraPan id="0" x="1648" y="0" wrapAround="True" scrollSpeed="10" buffer="75" />
   </UI>
   <World>
-    <Ambiance id="0" x="539" y="-67" source="windHowl.mp3" loop="True" tween="1.7" volume="0.5" />
+    <Ambiance id="0" x="1585" y="-112" source="windHowl.mp3" loop="True" tween="1.7" volume="0.2" />
     <Background id="1" x="1515" y="-3" width="64" height="64" source="outhouse" />
     <Background id="2" x="0" y="0" width="64" height="64" source="cabin" />
     <ParticleEmitter id="3" x="2217" y="56" angle="180" max="200" particleType="snowflake" distance="600" distanceRange="0" duration="1" durationRange="0" angleRange="25" />
     <Background id="2" x="0" y="0" width="64" height="64" source="cabin" />
-    <Hotspot id="4" x="1754" y="77" width="178" height="126" onClick="world lookOutside" onEnter="" onExit="" />
+    <Hotspot id="4" x="1754" y="77" width="178" height="126" onClick="world lookOutsideSouth" onEnter="" onExit="" />
     <Hotspot id="5" x="2054" y="15" width="175" height="305" onClick="world frontLawn" onEnter="" onExit="" />
   </World>
 </level>

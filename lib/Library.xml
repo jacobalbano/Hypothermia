@@ -35,6 +35,8 @@
         <xml>worlds/peekWindow/map.oel</xml>
         <xml>worlds/outhouse/script.xml</xml>
         <xml>worlds/outhouse/map.oel</xml>
+        <xml>worlds/lookOutsideSouth/map.oel</xml>
+        <xml>worlds/lookOutsideNorth/map.oel</xml>
         <xml>worlds/halfway/map.oel</xml>
         <xml>worlds/frontLawn/script.xml</xml>
         <xml>worlds/frontLawn/map.oel</xml>
