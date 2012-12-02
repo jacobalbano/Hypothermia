@@ -4,18 +4,14 @@ package com.jacobalbano.cold
 	import com.jacobalbano.punkutils.XMLEntity;
 	import com.thaumaturgistgames.flakit.Library;
 	import flash.display.Bitmap;
+	import flash.ui.Mouse;
+	import flash.ui.MouseCursor;
 	import flash.utils.Dictionary;
 	import net.flashpunk.Entity;
-	import net.flashpunk.FP;
-	import net.flashpunk.graphics.Graphiclist;
-	import net.flashpunk.Mask;
 	import net.flashpunk.masks.Pixelmask;
 	import net.flashpunk.Tween;
 	import net.flashpunk.tweens.misc.VarTween;
 	import net.flashpunk.utils.Ease;
-	import flash.ui.Mouse;
-	import flash.ui.MouseCursor;
-	import flash.geom.Rectangle;
 	import net.flashpunk.utils.Input;
 	
 	/**
@@ -27,10 +23,12 @@ package com.jacobalbano.cold
 		private var _itemCount:int;
 		private var items:Dictionary;
 		private var extended:Boolean;
-		private var contains:Boolean;
+		private var everUsed:Boolean;
 		private var mouseEntity:Entity;
+		private var contains:Boolean;
 		static private const ITEM_PADDING:Number = 20;
 		static private const ITEM_SIZE:Number = 100;
+		private var nextExtendState:Boolean;
 		
 		public function Inventory() 
 		{
@@ -60,6 +58,8 @@ package com.jacobalbano.cold
 		override public function update():void 
 		{
 			super.update();
+			
+			extended = nextExtendState = nextExtendState;
 			
 			var lastContain:Boolean = contains;
 			contains = collidePoint(x, y, Input.mouseX, Input.mouseY);
@@ -93,7 +93,11 @@ package com.jacobalbano.cold
 			
 			if (Input.mouseReleased && contains)
 			{
-				_mouseItem = "";
+				if (mouseItem != "")
+				{
+					_mouseItem = "";
+					return;
+				}
 				
 				if (extended)
 				{
@@ -116,7 +120,7 @@ package com.jacobalbano.cold
 			var tween:VarTween = new VarTween(null, Tween.ONESHOT);
 			tween.tween(this, "y", 0, 0.8, Ease.bounceOut);			
 			addTween(tween, true);
-			extended = true;
+			nextExtendState = true;
 		}
 		
 		private function close():void 
@@ -129,7 +133,7 @@ package com.jacobalbano.cold
 			var tween:VarTween = new VarTween(null, Tween.ONESHOT);
 			tween.tween(this, "y", y - 150, 0.7, Ease.bounceOut);
 			addTween(tween, true);
-			extended = false;
+			nextExtendState = false;
 		}
 		
 		public function hasItem(name:String):Boolean
@@ -165,17 +169,19 @@ package com.jacobalbano.cold
 			image.scrollX = 0;
 			image.scrollY = 0;
 			image.smooth = true;
-			image.scale = 100 / Math.min(image.width, image.height);
+			image.scale = ITEM_SIZE / Math.min(image.width, image.height);
 			
 			items[name] = item;
 			
-			if (++_itemCount == 1)
+			if (!everUsed && ++_itemCount == 1)
 			{
 				//	First item added to inventory, so show the button in a way that it'll be noticed.
 				var tween:VarTween = new VarTween(null, Tween.ONESHOT);
 				tween.tween(this, "y", y + 50, 0.9, Ease.bounceOut);
 				addTween(tween, true);
 			}
+			
+			everUsed = true;
 		}
 		
 		public function removeItem(name:String):void

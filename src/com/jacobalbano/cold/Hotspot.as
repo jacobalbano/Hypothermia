@@ -50,22 +50,30 @@ package com.jacobalbano.cold
 				inventory = all[0];	
 			}
 			
-			if (inventory)
+			var lastContain:Boolean = contains;
+			contains = collidePoint(x, y, world.mouseX, world.mouseY);
+			
+			if (contains)
 			{
-				if (inventory.isOpen)
+				if (inventory && inventory.isOpen)
 				{
 					return;
 				}
+				else
+				{
+					if (Input.mouseReleased)
+					{
+						callback(onClick);
+					}
+				}
+				
+				Mouse.cursor = MouseCursor.BUTTON;
 			}
-			
-			var lastContain:Boolean = contains;
-			contains = collidePoint(x, y, world.mouseX, world.mouseY);
 			
 			if (lastContain != contains)
 			{
 				if (contains)
 				{
-					Mouse.cursor = MouseCursor.BUTTON;
 					callback(onEnter);
 				}
 				else
@@ -73,11 +81,6 @@ package com.jacobalbano.cold
 					Mouse.cursor = MouseCursor.ARROW;
 					callback(onExit);
 				}
-			}
-			
-			if (Input.mouseReleased && contains)
-			{
-				callback(onClick);
 			}
 		}
 		

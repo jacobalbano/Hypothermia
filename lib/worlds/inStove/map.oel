@@ -6,6 +6,6 @@
   <World>
     <Background id="0" x="0" y="0" width="64" height="64" source="inStove" />
     <WorldItem id="2" x="314" y="223" width="223" height="136" typeName="tinder" onClick="" onEnter="" onExit="" />
-    <WorldReaction id="1" x="203" y="151" width="429" height="193" match="book" onMatch="remInvItem &quot;book&quot;;&#xD;&#xA;remWorldReaction &quot;tinder&quot;&#xD;&#xA;remember bookInFire true;&#xD;&#xA;world inStove;" />
+    <WorldReaction id="1" x="203" y="151" width="430" height="177" match="book" onMatch="remInvItem &quot;book&quot;;&#xD;&#xA;remWorldReaction &quot;tinder&quot;&#xD;&#xA;remember bookInFire true;&#xD;&#xA;world inStove;" />
   </World>
 </level>
