@@ -77,7 +77,10 @@ package
 			
 			Game.instance.onReload = function():void { loadWorld(currentWorld); };
 			
-			loadWorld("start");
+			//	TODO: Revert this
+			//loadWorld("start");
+			
+			loadWorld("cabin");
 		}
 		
 		private function remWorldReaction(itemName:String):void 

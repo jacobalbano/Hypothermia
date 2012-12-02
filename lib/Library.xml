@@ -20,6 +20,7 @@
         <image>art/decals/cabinThroughWindow.png</image>
         <image>art/decals/outhouse.png</image>
         <image>art/decals/windowPeekPane.png</image>
+        <image>art/backgrounds/cabin.png</image>
         <image>art/backgrounds/frontLawn.png</image>
         <image>art/backgrounds/halfway.png</image>
         <image>art/backgrounds/outhouse.png</image>
@@ -37,5 +38,6 @@
         <xml>worlds/halfway/map.oel</xml>
         <xml>worlds/frontLawn/script.xml</xml>
         <xml>worlds/frontLawn/map.oel</xml>
+        <xml>worlds/cabin/map.oel</xml>
     </xmls>
 </library>

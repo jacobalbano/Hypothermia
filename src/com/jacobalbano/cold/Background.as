@@ -19,9 +19,6 @@ package com.jacobalbano.cold
 		override public function added():void 
 		{
 			super.added();
-			x = 0;
-			y = 0;
-			
 			graphic = new Image(Library.getImage("art.backgrounds." + source + ".png"));
 		}
 		

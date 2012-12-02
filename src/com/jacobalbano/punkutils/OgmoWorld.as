@@ -147,7 +147,6 @@ package com.jacobalbano.punkutils
 			if (wraparound)
 			{
 				var original:int = FP.camera.x;
-				
 				FP.camera.x = original + size.x
 				super.render();
 				FP.camera.x = original - size.x;

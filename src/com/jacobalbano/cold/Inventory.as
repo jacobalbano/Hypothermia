@@ -35,6 +35,7 @@ package com.jacobalbano.cold
 		public function Inventory() 
 		{
 			items = new Dictionary;
+			_mouseItem = "";
 			
 			var image:Bitmap = Library.getImage("art.ui.inventory.png");
 			graphic = new Image(image);
@@ -107,8 +108,6 @@ package com.jacobalbano.cold
 		
 		private function open():void 
 		{
-			trace(mouseItem);
-			
 			if (isOpen)
 			{
 				return;
@@ -122,8 +121,6 @@ package com.jacobalbano.cold
 		
 		private function close():void 
 		{
-			trace(mouseItem);
-			
 			if (!isOpen)
 			{
 				return;
@@ -137,17 +134,12 @@ package com.jacobalbano.cold
 		
 		public function hasItem(name:String):Boolean
 		{
-			if (items[name])
-			{
-				return true;
-			}
-			
-			return false;
+			return items[name] != null;
 		}
 		
 		public function addItem(name:String):void
 		{
-			if (items[name])
+			if (hasItem(name))
 			{
 				return;
 			}

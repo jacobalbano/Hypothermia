@@ -13,7 +13,7 @@
     <Height>400</Height>
   </LevelMinimumSize>
   <LevelMaximumSize>
-    <Width>1600</Width>
+    <Width>3200</Width>
     <Height>400</Height>
   </LevelMaximumSize>
   <Filename>C:\Users\Jake\Documents\FlashDevelop\Cold\lib\project.oep</Filename>
@@ -70,7 +70,7 @@
       </ValueDefinitions>
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
     </EntityDefinition>
-    <EntityDefinition Name="Background" Limit="1" ResizableX="true" ResizableY="true" Rotatable="false" RotateIncrement="15">
+    <EntityDefinition Name="Background" Limit="-1" ResizableX="true" ResizableY="true" Rotatable="false" RotateIncrement="15">
       <Size>
         <Width>64</Width>
         <Height>64</Height>

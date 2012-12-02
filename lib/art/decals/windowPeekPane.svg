@@ -137,9 +137,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="799.36705"
-     inkscape:cy="-9.1357478"
+     inkscape:zoom="0.7"
+     inkscape:cx="879.42331"
+     inkscape:cy="74.286954"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -160,7 +160,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -171,30 +171,27 @@
      transform="translate(434.28125,69.65625)">
     <g
        id="g6054">
-      <rect
+      <path
          transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
-         y="-92.711403"
-         x="-562.20209"
-         height="114.14724"
-         width="603.0611"
+         style="opacity:0.6504425;fill:url(#linearGradient6008);fill-opacity:1;stroke:none;filter:url(#filter6042)"
+         d="m -529.30731,-92.711403 570.166319,0 0,114.14724 -510.062239,0 z"
          id="rect5492"
-         style="fill:url(#linearGradient6008);fill-opacity:1;stroke:none;opacity:0.65044248000000005;filter:url(#filter6042)" />
-      <rect
-         style="opacity:0.65044250000000003;fill:url(#linearGradient6012);fill-opacity:1;stroke:none;filter:url(#filter6046)"
-         id="rect6010"
-         width="603.0611"
-         height="114.14724"
-         x="-360.05923"
-         y="45.145741"
-         transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)" />
-      <rect
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+      <path
          transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
-         y="255.14574"
-         x="-262.91638"
-         height="114.14724"
-         width="603.0611"
+         style="opacity:0.6504425;fill:url(#linearGradient6012);fill-opacity:1;stroke:none;filter:url(#filter6046)"
+         d="m -360.05923,45.145741 547.95913,0 55.10196,114.147239 -574.06673,-0.75761 -28.23675,-27.72693 z"
+         id="rect6010"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccc" />
+      <path
+         transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
+         style="opacity:0.6504425;fill:url(#linearGradient6016);fill-opacity:1;stroke:none;filter:url(#filter6050)"
+         d="m -226.74016,255.04914 493.22585,-1.31757 -112.8715,114.13288 -265.36283,0.91011 z"
          id="rect6014"
-         style="opacity:0.65044250000000003;fill:url(#linearGradient6016);fill-opacity:1;stroke:none;filter:url(#filter6050)" />
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
     </g>
     <path
        sodipodi:nodetypes="ccccc"

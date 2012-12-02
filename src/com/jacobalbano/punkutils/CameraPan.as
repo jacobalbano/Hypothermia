@@ -83,6 +83,10 @@ package com.jacobalbano.punkutils
 					}
 				}
 			}
+			else
+			{
+				FP.camera.x = FP.camera.x % worldWidth;
+			}
 		}
 		
 		private function onEnterRight():void 
