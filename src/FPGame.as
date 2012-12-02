@@ -9,6 +9,7 @@ package
 	import com.jacobalbano.cold.ParticleEmitter;
 	import com.jacobalbano.cold.WorldItem;
 	import com.jacobalbano.cold.WorldReaction;
+	import com.jacobalbano.cold.WorldSound;
 	import com.jacobalbano.punkutils.Image;
 	import com.jacobalbano.punkutils.OgmoWorld;
 	import com.jacobalbano.punkutils.ScriptTick;
@@ -25,6 +26,7 @@ package
 	import com.jacobalbano.punkutils.Transition;
 	import com.jacobalbano.punkutils.CameraPan;
 	import com.jacobalbano.punkutils.ScriptTick;
+	import net.flashpunk.World;
 	
 	/**
 	 * @author Jacob Albano
@@ -60,10 +62,13 @@ package
 			world.addClass("InventoryItem", InventoryItem);
 			world.addClass("Decal", Decal);
 			world.addClass("WorldReaction", WorldReaction);
+			world.addClass("WorldSound", WorldSound);
 			
 			Game.instance.console.slang.addFunction("world", loadWorld, [String], this, "Load a world from an Ogmo level");
 			Game.instance.console.slang.addFunction("lastWorld", loadLastWorld, [], this, "Load the previous world");
 			Game.instance.console.slang.addFunction("worlds", listWorlds, [], this, "Load a world from an Ogmo level");
+			
+			Game.instance.console.slang.addFunction("playWorldSound", playWorldSound, [String], this, "Play a sound effect that was added to the world");
 			
 			Game.instance.console.slang.addFunction("message", message, [String], this, "Sends a message to all scripted entities");
 			
@@ -84,6 +89,20 @@ package
 			//loadWorld("start");
 			
 			loadWorld("cabin");
+		}
+		
+		private function playWorldSound(type:String):void 
+		{
+			var all:Array = [];
+			FP.world.getClass(WorldSound, all);
+			
+			for each (var item:WorldSound in all) 
+			{
+				if (item.typeName == type)
+				{
+					item.play();
+				}
+			}
 		}
 		
 		private function loadLastWorld():void 

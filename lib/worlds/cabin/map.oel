@@ -9,7 +9,8 @@
     <ParticleEmitter id="3" x="2217" y="56" angle="180" max="200" particleType="snowflake" distance="600" distanceRange="0" duration="1" durationRange="0" angleRange="25" />
     <Background id="2" x="0" y="0" width="64" height="64" source="cabin" />
     <Hotspot id="4" x="1754" y="77" width="178" height="126" onClick="world lookOutsideSouth" onEnter="" onExit="" />
-    <Hotspot id="5" x="2054" y="15" width="175" height="305" onClick="world frontLawn;&#xD;&#xA;remember doorOpen true;" onEnter="" onExit="" />
+    <Hotspot id="5" x="2054" y="15" width="175" height="305" onClick="world frontLawn;&#xD;&#xA;remember doorOpen true;&#xD;&#xA;playWorldSound &quot;door&quot;" onEnter="" onExit="" />
     <Hotspot id="6" x="525" y="250" width="148" height="82" onClick="world inStove" onEnter="" onExit="" />
+    <WorldSound id="7" x="1703" y="-85" typeName="door" source="door.mp3" />
   </World>
 </level>
