@@ -1,0 +1,11 @@
+<level width="800" height="400">
+  <UI>
+    <Hotspot id="0" x="0" y="336" width="800" height="64" onClick="lastWorld" onEnter="" onExit="" />
+    <CameraPan id="1" x="0" y="-32" wrapAround="False" scrollSpeed="10" buffer="75" />
+  </UI>
+  <World>
+    <Background id="0" x="0" y="0" width="64" height="64" source="inStove" />
+    <WorldItem id="2" x="314" y="223" width="223" height="136" typeName="tinder" onClick="" onEnter="" onExit="" />
+    <WorldReaction id="1" x="203" y="151" width="429" height="193" match="book" onMatch="remInvItem &quot;book&quot;;&#xD;&#xA;remWorldReaction &quot;tinder&quot;&#xD;&#xA;remember bookInFire true;&#xD;&#xA;world inStove;" />
+  </World>
+</level>

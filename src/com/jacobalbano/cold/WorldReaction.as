@@ -28,6 +28,10 @@ package com.jacobalbano.cold
 				{
 					inventory = all[0];
 				}
+				else
+				{
+					return;
+				}
 				
 				if (inventory.mouseItem == match)
 				{

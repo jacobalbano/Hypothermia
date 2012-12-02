@@ -40,7 +40,12 @@ package com.thaumaturgistgames.slang
 		
 		private function getVar(s:String):Object
 		{
-			return vars[s];
+			if (vars[s])
+			{
+				return vars[s];
+			}
+			
+			return false;
 		}
 		
 		

@@ -13,6 +13,7 @@
         <image>art/worlditems/axe.png</image>
         <image>art/worlditems/book.png</image>
         <image>art/worlditems/key.png</image>
+        <image>art/worlditems/tinder.png</image>
         <image>art/ui/inventory.png</image>
         <image>art/ui/inventoryMask.png</image>
         <image>art/particles/snowflake.png</image>
@@ -23,6 +24,7 @@
         <image>art/backgrounds/cabin.png</image>
         <image>art/backgrounds/frontLawn.png</image>
         <image>art/backgrounds/halfway.png</image>
+        <image>art/backgrounds/inStove.png</image>
         <image>art/backgrounds/outhouse.png</image>
         <image>art/backgrounds/start.png</image>
     </images>
@@ -31,12 +33,15 @@
     </sounds>
     <xmls>
         <xml>Library.xml</xml>
+        <xml>worlds/start/script.xml</xml>
         <xml>worlds/start/map.oel</xml>
         <xml>worlds/peekWindow/map.oel</xml>
         <xml>worlds/outhouse/script.xml</xml>
         <xml>worlds/outhouse/map.oel</xml>
         <xml>worlds/lookOutsideSouth/map.oel</xml>
         <xml>worlds/lookOutsideNorth/map.oel</xml>
+        <xml>worlds/inStove/script.xml</xml>
+        <xml>worlds/inStove/map.oel</xml>
         <xml>worlds/halfway/map.oel</xml>
         <xml>worlds/frontLawn/script.xml</xml>
         <xml>worlds/frontLawn/map.oel</xml>

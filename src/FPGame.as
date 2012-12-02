@@ -130,7 +130,7 @@ package
 				{
 					if (instant)
 					{
-						world.remove(item);
+						realRemoveWorldItem();
 						return;
 					}
 					
@@ -160,7 +160,11 @@ package
 		
 		private function loadWorld(name:String):void 
 		{
-			lastWorld = currentWorld;
+			if (name != currentWorld)
+			{
+				lastWorld = currentWorld;
+			}
+			
 			currentWorld = name;
 			
 			if (currentWorld == "")

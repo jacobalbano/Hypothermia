@@ -260,7 +260,12 @@ package com.thaumaturgistgames.slang
 		{
 			if (functions[funcID][ARG_TYPES][param] == Boolean)
 			{
-				if (value is String)
+				
+				if (value == null || value == undefined)
+				{
+					return value;
+				}
+				else if (value is String)
 				{
 					var string:String = value as String;
 					return (string.search("true") >= 0 || string.search("1") >= 0);

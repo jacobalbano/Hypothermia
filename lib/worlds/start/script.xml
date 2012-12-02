@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <script>
 	<launch>
-		if hasInvItem "book"
-			remWorldItem "book" true;
-		if var bookInFire
-			remWorldItem "book" true;
 	</launch>
 	<tick>
 		
@@ -13,6 +9,9 @@
 		<onClick>
 			
 		</onClick>
+		<onGet>
+			world halfway
+		</onGet>
 		<onDoorClicked>
 			
 		</onDoorClicked>
