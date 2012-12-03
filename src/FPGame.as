@@ -191,6 +191,15 @@ package
 		
 		private function loadWorld(name:String):void 
 		{
+			try
+			{
+				Library.getXML("worlds." + name + ".map.oel");
+			}
+			catch (e:Error)
+			{
+				return;
+			}
+			
 			if (name != currentWorld)
 			{
 				lastWorld = currentWorld;
