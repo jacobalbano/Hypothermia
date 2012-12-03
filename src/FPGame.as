@@ -12,23 +12,19 @@ package
 	import com.jacobalbano.cold.WorldItem;
 	import com.jacobalbano.cold.WorldReaction;
 	import com.jacobalbano.cold.WorldSound;
-	import com.jacobalbano.punkutils.Image;
+	import com.jacobalbano.punkutils.CameraPan;
 	import com.jacobalbano.punkutils.OgmoWorld;
 	import com.jacobalbano.punkutils.ScriptTick;
+	import com.jacobalbano.punkutils.Transition;
+	import com.thaumaturgistgames.flakit.Library;
 	import com.thaumaturgistgames.slang.Memory;
 	import com.thaumaturgistgames.slang.Stdlib;
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.Tween;
 	import net.flashpunk.tweens.misc.VarTween;
 	import net.flashpunk.utils.Ease;
-	import net.flashpunk.utils.Input;
-	import flash.ui.Keyboard;
-	import com.thaumaturgistgames.flakit.Library;
-	import com.jacobalbano.punkutils.Transition;
-	import com.jacobalbano.punkutils.CameraPan;
-	import com.jacobalbano.punkutils.ScriptTick;
-	import net.flashpunk.World;
 	
 	/**
 	 * @author Jacob Albano
@@ -48,6 +44,7 @@ package
 			currentWorld = "";
 			inventory = new Inventory();
 			climate = new Climate();
+			FP.screen.smoothing = true;
 		}
 		
 		override public function init():void 
@@ -92,9 +89,9 @@ package
 			Game.instance.onReload = function():void { loadWorld(currentWorld); };
 			
 			//	TODO: Revert this
-			//loadWorld("start");
+			loadWorld("start");
 			
-			loadWorld("cabin");
+			//loadWorld("cabin");
 		}
 		
 		private function getTemp():int

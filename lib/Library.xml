@@ -43,6 +43,8 @@
         <sound>sounds/heartBeat.mp3</sound>
         <sound>sounds/keyPickup.mp3</sound>
         <sound>sounds/paperRip.mp3</sound>
+        <sound>sounds/singleBeatFast.mp3</sound>
+        <sound>sounds/singleBeatSlow.mp3</sound>
         <sound>sounds/windHowl.mp3</sound>
     </sounds>
     <xmls>

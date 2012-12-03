@@ -15,20 +15,24 @@ package com.jacobalbano.cold
 		private static const IDEAL_BODY_TEMPERATURE:int = 98;
 		private static const MIN_BODY_TEMPERATURE:int = 70;
 		private static const MIN_NEUTRAL_CLIMATE:int = 50;
+		private var heartbeat:Heartbeat;
 		
 		public function Climate() 
 		{
 			bodyTemp = IDEAL_BODY_TEMPERATURE;
+			heartbeat = new Heartbeat;
 		}
 		
 		override public function removed():void 
 		{
 			super.removed();
+			world.remove(heartbeat);
 		}
 		
 		override public function added():void 
 		{
 			super.added();
+			world.add(heartbeat);
 			
 			var all:Array = [];
 			world.getClass(ClimateModifier, all);
@@ -51,22 +55,42 @@ package com.jacobalbano.cold
 		{
 			super.update();
 			
-			const seconds:int = 5;
+			const seconds:int = 10;
 			
 			if (++delay > FP.frameRate * seconds)
 			{
 				if (temperature < MIN_NEUTRAL_CLIMATE)
 				{
 					bodyTemp -= (MIN_NEUTRAL_CLIMATE / temperature) * 0.75;
+					trace(bodyTemp);
+				}
+				else
+				{
+					bodyTemp++;
 				}
 				
 				delay = 0;
-				
-				if (bodyTemp < MIN_BODY_TEMPERATURE)
-				{
-					trace("you are dead");
-				}
 			}
+			
+			
+			if (bodyTemp - MIN_BODY_TEMPERATURE <= 0)
+			{
+				heartbeat.stop();
+				return;
+			}
+			
+			if (bodyTemp - MIN_BODY_TEMPERATURE < 10)
+			{
+				heartbeat.fast();
+				return;
+			}
+			
+			if (bodyTemp - MIN_BODY_TEMPERATURE < 20)
+			{
+				heartbeat.slow();
+				return;
+			}
+			
 		}
 		
 	}
