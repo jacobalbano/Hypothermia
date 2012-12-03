@@ -9,12 +9,4 @@
 	<tick>
 		
 	</tick>
-	<message>
-		<onClick>
-			
-		</onClick>
-		<onDoorClicked>
-			
-		</onDoorClicked>
-	</message>
 </script>

@@ -2,12 +2,14 @@
   <UI>
     <Hotspot id="0" x="0" y="336" width="800" height="64" onClick="lastWorld" onEnter="" onExit="" />
     <CameraPan id="1" x="0" y="-32" wrapAround="False" scrollSpeed="10" buffer="75" />
+    <ClimateModifier id="2" x="432" y="-96" temperature="70" name="fireHeat" />
+    <ClimateModifier id="3" x="496" y="-96" temperature="-50" name="withoutFire" />
   </UI>
   <World>
     <Background id="0" x="0" y="0" width="64" height="64" source="inStove" />
     <WorldItem id="2" x="314" y="223" width="223" height="136" typeName="tinder" onClick="" onEnter="" onExit="" />
     <WorldReaction id="1" x="203" y="151" width="430" height="177" match="book" onMatch="playWorldSound &quot;rip&quot;&#xD;&#xA;remInvItem &quot;book&quot;;&#xD;&#xA;remWorldReaction &quot;book&quot;&#xD;&#xA;remember bookInFire true;&#xD;&#xA;world inStove;" />
     <Ambiance id="2" x="368" y="-96" source="windHowl.mp3" loop="True" tween="1.7" volume="0.2" />
-    <WorldSound id="3" x="498" y="-74" typeName="rip" source="paperRip.mp3" />
+    <WorldSound id="3" x="511" y="122" typeName="rip" source="paperRip.mp3" />
   </World>
 </level>

@@ -5,15 +5,4 @@
 	<tick>
 		
 	</tick>
-	<message>
-		<onClick>
-			
-		</onClick>
-		<onGet>
-			world halfway
-		</onGet>
-		<onDoorClicked>
-			
-		</onDoorClicked>
-	</message>
 </script>

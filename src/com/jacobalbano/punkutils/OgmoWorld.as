@@ -174,20 +174,5 @@ package com.jacobalbano.punkutils
 			
 			return mx;
 		}
-		
-		override public function get mouseY():int 
-		{
-			var my:int = super.mouseY;
-			
-			if (wraparound)
-			{
-				if (my < 0)
-				{
-					my += size.x;
-				}
-			}
-			
-			return my;
-		}
 	}
 }

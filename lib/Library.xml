@@ -6,6 +6,7 @@
         <image>ogmo/ambiance.png</image>
         <image>ogmo/background.png</image>
         <image>ogmo/camera.png</image>
+        <image>ogmo/climate.png</image>
         <image>ogmo/Decal.png</image>
         <image>ogmo/emitter.png</image>
         <image>ogmo/invitem.png</image>
@@ -39,6 +40,7 @@
         <sound>sounds/doorLocked.mp3</sound>
         <sound>sounds/getAxe.mp3</sound>
         <sound>sounds/getBook.mp3</sound>
+        <sound>sounds/heartBeat.mp3</sound>
         <sound>sounds/keyPickup.mp3</sound>
         <sound>sounds/paperRip.mp3</sound>
         <sound>sounds/windHowl.mp3</sound>

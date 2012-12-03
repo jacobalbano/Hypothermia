@@ -2,6 +2,8 @@ package
 {
 	import com.jacobalbano.cold.Ambiance;
 	import com.jacobalbano.cold.Background;
+	import com.jacobalbano.cold.Climate;
+	import com.jacobalbano.cold.ClimateModifier;
 	import com.jacobalbano.cold.Decal;
 	import com.jacobalbano.cold.Hotspot;
 	import com.jacobalbano.cold.Inventory;
@@ -37,6 +39,7 @@ package
 		private var lastWorld:String;
 		private var world:OgmoWorld;
 		private var inventory:Inventory;
+		private var climate:Climate;
 		
 		public function FPGame(width:uint, height:uint) 
 		{
@@ -44,6 +47,7 @@ package
 			lastWorld = "";
 			currentWorld = "";
 			inventory = new Inventory();
+			climate = new Climate();
 		}
 		
 		override public function init():void 
@@ -63,6 +67,7 @@ package
 			world.addClass("Decal", Decal);
 			world.addClass("WorldReaction", WorldReaction);
 			world.addClass("WorldSound", WorldSound);
+			world.addClass("ClimateModifier", ClimateModifier);
 			
 			Game.instance.console.slang.addFunction("world", loadWorld, [String], this, "Load a world from an Ogmo level");
 			Game.instance.console.slang.addFunction("lastWorld", loadLastWorld, [], this, "Load the previous world");
@@ -70,13 +75,14 @@ package
 			
 			Game.instance.console.slang.addFunction("playWorldSound", playWorldSound, [String], this, "Play a sound effect that was added to the world");
 			
-			Game.instance.console.slang.addFunction("message", message, [String], this, "Sends a message to all scripted entities");
-			
 			Game.instance.console.slang.addFunction("hasInvItem", inventory.hasItem, [String], inventory, "Check if an item exists in the inventory");
 			Game.instance.console.slang.addFunction("addInvItem", inventory.addItem, [String], inventory, "Add an item to the inventory");
 			Game.instance.console.slang.addFunction("remInvItem", inventory.removeItem, [String], inventory, "Remove an item from the inventory");
 			
 			Game.instance.console.slang.addFunction("remWorldReaction", remWorldReaction, [String], this, "Remove a reaction trigger from the world");
+			
+			Game.instance.console.slang.addFunction("remClimateMod", remClimateMod, [String], this, "Remove a climate modifier from the world");
+			Game.instance.console.slang.addFunction("getTemp", getTemp, [], this, "Get the current temperature");
 			
 			Game.instance.console.slang.addFunction("remWorldItem", remWorldItem, [String, Boolean], this, "Remove an item from the world");
 			
@@ -86,15 +92,35 @@ package
 			Game.instance.onReload = function():void { loadWorld(currentWorld); };
 			
 			//	TODO: Revert this
-			loadWorld("start");
+			//loadWorld("start");
 			
-			//loadWorld("cabin");
+			loadWorld("cabin");
+		}
+		
+		private function getTemp():int
+		{
+			return climate.temperature;
+		}
+		
+		private function remClimateMod(name:String):void 
+		{
+			var all:Array = [];
+			world.getClass(ClimateModifier, all);
+			
+			for each (var item:ClimateModifier in all) 
+			{
+				if (item.name == name)
+				{
+					item.remove();
+					world.remove(item);
+				}
+			}
 		}
 		
 		private function playWorldSound(type:String):void 
 		{
 			var all:Array = [];
-			FP.world.getClass(WorldSound, all);
+			world.getClass(WorldSound, all);
 			
 			for each (var item:WorldSound in all) 
 			{
@@ -113,7 +139,7 @@ package
 		private function remWorldReaction(itemName:String):void 
 		{
 			var list:Array = [];
-			FP.world.getClass(WorldReaction, list);
+			world.getClass(WorldReaction, list);
 			
 			for each (var item:WorldReaction in list) 
 			{
@@ -141,7 +167,7 @@ package
 		private function remWorldItem(worldItem:String, instant:Boolean):void
 		{
 			var list:Array = [];
-			FP.world.getClass(WorldItem, list);
+			world.getClass(WorldItem, list);
 			
 			for each (var item:WorldItem in list) 
 			{
@@ -166,17 +192,6 @@ package
 			}
 		}
 		
-		private function message(message:String):void 
-		{
-			var list:Array = [];
-			FP.world.getClass(ScriptTick, list);
-			
-			for each (var item:ScriptTick in list) 
-			{
-				item.onMessage(message);
-			}
-		}
-		
 		private function loadWorld(name:String):void 
 		{
 			if (name != currentWorld)
@@ -192,9 +207,10 @@ package
 			}
 			
 			world.buildWorld("worlds." + name + ".map.oel");
-			world.add(new ScriptTick(Game.instance.console.slang, "worlds." + name + ".script.xml"));
 			world.add(new Transition);
 			world.add(inventory);
+			world.add(climate);
+			world.add(new ScriptTick(Game.instance.console.slang, "worlds." + name + ".script.xml"));
 		}
 		
 	}

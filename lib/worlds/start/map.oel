@@ -1,6 +1,7 @@
 <level width="1400" height="400">
   <UI>
     <CameraPan id="1" x="624" y="0" wrapAround="False" scrollSpeed="10" buffer="75" />
+    <ClimateModifier id="0" x="640" y="-80" temperature="20" />
   </UI>
   <World>
     <Hotspot id="0" x="528" y="160" width="128" height="80" onClick="world halfway" onEnter="" onExit="" />

@@ -12,7 +12,6 @@ package com.jacobalbano.punkutils
 	public class ScriptTick extends Entity
 	{
 		private var launch:String, tick:String;
-		private var messages:Dictionary;
 		private var slang:SlangInterpreter;
 		private var delay:int;
 		private var failed:Boolean;
@@ -35,13 +34,6 @@ package com.jacobalbano.punkutils
 			this.slang = slang;
 			launch = xml.launch || "";
 			tick = xml.tick || "";
-			
-			messages = new Dictionary;
-			for each (var message:XML in xml.message.children())
-			{
-				messages[message.name()] = new String(message);
-			}
-			
 		}
 		
 		override public function added():void 
@@ -67,16 +59,6 @@ package com.jacobalbano.punkutils
 				slang.doLine(tick);
 			}
 		}
-		
-		public function onMessage(message:String):void
-		{
-			var m:String = messages[message]
-			if (m)
-			{
-				slang.doLine(m);
-			}
-		}
-		
 	}
 
 }
