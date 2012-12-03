@@ -15,11 +15,15 @@ package com.jacobalbano.punkutils
 	{
 		public var wrapAround:Boolean;
 		public var worldWidth:int;
+		public var worldHeight:int;
 		public var buffer:int;
 		public var scrollSpeed:int;
+		
 		private var tween:VarTween;
-		private var mouseInBuffer:Boolean;
-		public var speed:Number;
+		public var speedX:Number;
+		public var speedY:Number;
+		private var mouseInXBuffer:Boolean;
+		private var mouseInYBuffer:Boolean;
 		
 		public function CameraPan() 
 		{
@@ -27,7 +31,8 @@ package com.jacobalbano.punkutils
 			worldWidth = 0;	//	default
 			tween = new VarTween;
 			addTween(tween, true);
-			speed = 0;
+			speedX = 0;
+			speedY = 0;
 		}
 		
 		override public function added():void 
@@ -35,6 +40,7 @@ package com.jacobalbano.punkutils
 			super.added();
 			
 			FP.camera.x = x;
+			FP.camera.y = y;
 			
 			var oWorld:OgmoWorld = world as OgmoWorld;
 			if (!oWorld)
@@ -43,6 +49,7 @@ package com.jacobalbano.punkutils
 			}
 			
 			this.worldWidth = oWorld.size.x;
+			this.worldHeight = oWorld.size.y;
 			oWorld.wraparound = this.wrapAround;
 		}
 		
@@ -62,12 +69,30 @@ package com.jacobalbano.punkutils
 				}
 				else
 				{
-					speed = 0;
-					mouseInBuffer = false;
+					speedX = 0;
+					mouseInXBuffer = false;
 				}
 			}
 			
-			FP.camera.x += speed;
+			if (!wrapAround && FP.camera.y >= 0 && FP.camera.y + FP.height <= worldHeight)
+			{
+				if (Input.mouseY < buffer)
+				{
+					onEnterTop();
+				}
+				else if (Input.mouseY > FP.height - buffer )
+				{
+					onEnterBottom();
+				}
+				else
+				{
+					speedY = 0;
+					mouseInYBuffer = false;
+				}
+			}
+			
+			FP.camera.x += speedX;
+			FP.camera.y += speedY;
 			
 			if (!wrapAround)
 			{
@@ -82,31 +107,63 @@ package com.jacobalbano.punkutils
 						FP.camera.x = worldWidth - FP.width;
 					}
 				}
+				
+				if (FP.height <= worldHeight)
+				{
+					if (FP.camera.y < 0)
+					{
+						FP.camera.y = 0;
+					}
+					else if (FP.camera.y + FP.height >= worldHeight)
+					{
+						FP.camera.y = worldHeight - FP.height;
+					}
+				}
 			}
 			else
 			{
 				FP.camera.x = FP.camera.x % worldWidth;
+				FP.camera.y = FP.camera.y % worldHeight;
 			}
 		}
 		
 		private function onEnterRight():void 
 		{
-			
-			if (!mouseInBuffer)
+			if (!mouseInXBuffer)
 			{
-				mouseInBuffer = true;
-				speed = 0;
-				tween.tween(this, "speed", scrollSpeed, 0.25);
+				mouseInXBuffer = true;
+				speedX = 0;
+				tween.tween(this, "speedX", scrollSpeed, 0.25);
 			}
 		}
 		
 		private function onEnterLeft():void 
 		{
-			if (!mouseInBuffer)
+			if (!mouseInXBuffer)
 			{
-				mouseInBuffer = true;
-				speed = 0;
-				tween.tween(this, "speed", -scrollSpeed, 0.25);
+				mouseInXBuffer = true;
+				speedX = 0;
+				tween.tween(this, "speedX", -scrollSpeed, 0.25);
+			}
+		}
+		
+		private function onEnterBottom():void 
+		{
+			if (!mouseInYBuffer)
+			{
+				mouseInYBuffer = true;
+				speedY = 0;
+				tween.tween(this, "speedY", scrollSpeed, 0.25);
+			}
+		}
+		
+		private function onEnterTop():void 
+		{
+			if (!mouseInYBuffer)
+			{
+				mouseInYBuffer = true;
+				speedY = 0;
+				tween.tween(this, "speedY", -scrollSpeed, 0.25);
 			}
 		}
 	}

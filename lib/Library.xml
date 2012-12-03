@@ -33,6 +33,7 @@
         <image>art/backgrounds/halfway.png</image>
         <image>art/backgrounds/inStove.png</image>
         <image>art/backgrounds/outhouse.png</image>
+        <image>art/backgrounds/pantry.png</image>
         <image>art/backgrounds/start.png</image>
     </images>
     <sounds>
@@ -52,6 +53,7 @@
         <xml>worlds/start/script.xml</xml>
         <xml>worlds/start/map.oel</xml>
         <xml>worlds/peekWindow/map.oel</xml>
+        <xml>worlds/pantry/map.oel</xml>
         <xml>worlds/outhouseHole/script.xml</xml>
         <xml>worlds/outhouseHole/map.oel</xml>
         <xml>worlds/outhouse/script.xml</xml>

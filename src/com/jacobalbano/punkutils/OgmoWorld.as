@@ -78,9 +78,8 @@ package com.jacobalbano.punkutils
 			var level:XML = Library.getXML(source);
 			
 			removeAll();
-			
 			size.x = level.@width;
-			size.y = level.heigh;
+			size.y = level.@height;
 			
 			for each (var layer:XML in level.children()) 
 			{

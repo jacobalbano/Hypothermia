@@ -1,0 +1,9 @@
+<level width="800" height="600">
+  <UI>
+    <CameraPan id="0" x="-1" y="48" wrapAround="False" scrollSpeed="10" buffer="75" />
+  </UI>
+  <World>
+    <Background id="0" x="0" y="0" width="64" height="64" source="pantry" />
+    <Hotspot id="1" x="610" y="510" width="188" height="88" onClick="lastWorld" onEnter="" onExit="" />
+  </World>
+</level>
