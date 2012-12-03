@@ -11,7 +11,7 @@
     <Hotspot id="4" x="1754" y="77" width="178" height="126" onClick="world lookOutsideSouth" onEnter="" onExit="" />
     <Hotspot id="5" x="2054" y="15" width="175" height="305" onClick="world frontLawn;&#xD;&#xA;remember doorOpen true;&#xD;&#xA;playWorldSound &quot;door&quot;" onEnter="" onExit="" />
     <Hotspot id="6" x="525" y="250" width="148" height="82" onClick="world inStove" onEnter="" onExit="" />
-    <WorldSound id="7" x="1703" y="-85" typeName="door" source="door.mp3" />
+    <WorldSound id="7" x="2247" y="125" typeName="door" source="door.mp3" />
     <WorldItem id="8" x="1917" y="116" width="80" height="80" typeName="thermometerLow" onClick="" onEnter="" onExit="" />
     <WorldItem id="9" x="1917" y="116" width="80" height="80" typeName="thermometerMed" onClick="" onEnter="" onExit="" />
     <WorldItem id="10" x="1918" y="116" width="80" height="80" typeName="thermometerHigh" onClick="" onEnter="" onExit="" />

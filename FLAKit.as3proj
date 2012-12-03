@@ -76,6 +76,8 @@
   <hiddenPaths>
     <hidden path=".hg" />
     <hidden path="License.txt" />
+    <hidden path="lib\RecursiveAssetIterator.dll" />
+    <hidden path="tools" />
   </hiddenPaths>
   <!-- Executed before build -->
   <preBuildCommand />

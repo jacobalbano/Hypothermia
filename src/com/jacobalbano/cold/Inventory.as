@@ -95,7 +95,7 @@ package com.jacobalbano.cold
 			{
 				if (mouseItem != "")
 				{
-					mouseItem = "";
+					_mouseItem = "";
 					return;
 				}
 				
@@ -193,7 +193,7 @@ package com.jacobalbano.cold
 			
 			if (name == mouseItem)
 			{
-				mouseItem = "";
+				_mouseItem = "";
 			}
 			
 			_itemCount--;
