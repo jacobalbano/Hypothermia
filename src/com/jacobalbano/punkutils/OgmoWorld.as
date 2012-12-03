@@ -160,12 +160,15 @@ package com.jacobalbano.punkutils
 		override public function get mouseX():int 
 		{
 			var mx:int = super.mouseX;
-			
 			if (wraparound)
 			{
 				if (mx < 0)
 				{
 					mx += size.x;
+				}
+				else
+				{
+					mx %= size.x;
 				}
 			}
 			

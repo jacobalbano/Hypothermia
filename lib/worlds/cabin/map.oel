@@ -1,6 +1,6 @@
 <level width="3200" height="400">
   <UI>
-    <CameraPan id="0" x="352" y="-32" wrapAround="True" scrollSpeed="10" buffer="75" />
+    <CameraPan id="0" x="0" y="-48" wrapAround="True" scrollSpeed="10" buffer="75" />
   </UI>
   <World>
     <Ambiance id="0" x="1585" y="-112" source="windHowl.mp3" loop="True" tween="1.7" volume="0.2" />
@@ -15,5 +15,6 @@
     <WorldItem id="8" x="1917" y="116" width="80" height="80" typeName="thermometerLow" onClick="" onEnter="" onExit="" />
     <WorldItem id="9" x="1917" y="116" width="80" height="80" typeName="thermometerMed" onClick="" onEnter="" onExit="" />
     <WorldItem id="10" x="1918" y="116" width="80" height="80" typeName="thermometerHigh" onClick="" onEnter="" onExit="" />
+    <Hotspot id="11" x="87" y="-28" width="198" height="336" onClick="" onEnter="" onExit="" />
   </World>
 </level>

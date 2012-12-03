@@ -95,7 +95,7 @@ package com.jacobalbano.cold
 			{
 				if (mouseItem != "")
 				{
-					_mouseItem = "";
+					mouseItem = "";
 					return;
 				}
 				
