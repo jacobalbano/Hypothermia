@@ -86,9 +86,9 @@ package
 			Game.instance.onReload = function():void { loadWorld(currentWorld); };
 			
 			//	TODO: Revert this
-			//loadWorld("start");
+			loadWorld("start");
 			
-			loadWorld("cabin");
+			//loadWorld("cabin");
 		}
 		
 		private function playWorldSound(type:String):void 

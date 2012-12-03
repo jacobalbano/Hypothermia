@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<script>
+	<launch>
+		if hasInvItem "doorkey"
+			remWorldItem "doorkey" true;
+		if var doorOpen
+			remWorldItem "doorkey" true;
+	</launch>
+	<tick>
+		
+	</tick>
+	<message>
+		<onClick>
+			
+		</onClick>
+		<onDoorClicked>
+			
+		</onDoorClicked>
+	</message>
+</script>

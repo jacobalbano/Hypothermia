@@ -1,0 +1,13 @@
+<level width="800" height="400">
+  <UI>
+    <CameraPan id="0" x="0" y="-32" wrapAround="False" scrollSpeed="10" buffer="75" />
+  </UI>
+  <World>
+    <Decal id="1" x="0" y="0" source="iceInOuthouse" scrollX="0" scrollY="0" />
+    <WorldItem id="2" x="720" y="233" width="64" height="64" typeName="doorkey" onClick="addInvItem &quot;doorkey&quot;&#xD;&#xA;playWorldSound &quot;doorkey&quot;&#xD;&#xA;remWorldItem &quot;doorkey&quot;" onEnter="" onExit="" />
+    <Hotspot id="3" x="0" y="336" width="800" height="64" onClick="lastWorld" onEnter="" onExit="" />
+    <WorldSound id="4" x="673" y="247" typeName="doorkey" source="keyPickup.mp3" />
+    <Ambiance id="5" x="313" y="-94" source="windHowl.mp3" loop="True" tween="1.7" volume="1" />
+    <Decal id="0" x="0" y="0" source="outhouseSeat" scrollX="0" scrollY="0" />
+  </World>
+</level>

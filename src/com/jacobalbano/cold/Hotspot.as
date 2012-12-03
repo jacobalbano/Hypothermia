@@ -33,7 +33,10 @@ package com.jacobalbano.cold
 		override public function removed():void 
 		{
 			super.removed();
-			Mouse.cursor = MouseCursor.ARROW;
+			if (contains)
+			{
+				Mouse.cursor = MouseCursor.ARROW;
+			}
 		}
 		
 		override public function update():void 

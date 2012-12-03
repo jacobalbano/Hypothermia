@@ -25,6 +25,8 @@ package com.jacobalbano.cold
 			super.load(entity);
 			hotSpot.load(entity);
 			
+			trace(typeName);
+			
 			var image:Image = new Image(Library.getImage("art.worlditems." + typeName + ".png"));
 			graphic = image;
 			image.smooth = true;

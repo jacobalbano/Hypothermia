@@ -13,14 +13,19 @@
         <image>ogmo/worldSound.png</image>
         <image>art/worlditems/axe.png</image>
         <image>art/worlditems/book.png</image>
-        <image>art/worlditems/key.png</image>
+        <image>art/worlditems/doorkey.png</image>
+        <image>art/worlditems/thermometerHigh.png</image>
+        <image>art/worlditems/thermometerLow.png</image>
+        <image>art/worlditems/thermometerMed.png</image>
         <image>art/worlditems/tinder.png</image>
         <image>art/ui/inventory.png</image>
         <image>art/ui/inventoryMask.png</image>
         <image>art/particles/snowflake.png</image>
         <image>art/invitems/axe.png</image>
         <image>art/decals/cabinThroughWindow.png</image>
+        <image>art/decals/iceInOuthouse.png</image>
         <image>art/decals/outhouse.png</image>
+        <image>art/decals/outhouseSeat.png</image>
         <image>art/decals/windowPeekPane.png</image>
         <image>art/backgrounds/cabin.png</image>
         <image>art/backgrounds/frontLawn.png</image>
@@ -31,6 +36,10 @@
     </images>
     <sounds>
         <sound>sounds/door.mp3</sound>
+        <sound>sounds/doorLocked.mp3</sound>
+        <sound>sounds/getAxe.mp3</sound>
+        <sound>sounds/getBook.mp3</sound>
+        <sound>sounds/keyPickup.mp3</sound>
         <sound>sounds/paperRip.mp3</sound>
         <sound>sounds/windHowl.mp3</sound>
     </sounds>
@@ -39,6 +48,8 @@
         <xml>worlds/start/script.xml</xml>
         <xml>worlds/start/map.oel</xml>
         <xml>worlds/peekWindow/map.oel</xml>
+        <xml>worlds/outhouseHole/script.xml</xml>
+        <xml>worlds/outhouseHole/map.oel</xml>
         <xml>worlds/outhouse/script.xml</xml>
         <xml>worlds/outhouse/map.oel</xml>
         <xml>worlds/lookOutsideSouth/map.oel</xml>
@@ -48,6 +59,7 @@
         <xml>worlds/halfway/map.oel</xml>
         <xml>worlds/frontLawn/script.xml</xml>
         <xml>worlds/frontLawn/map.oel</xml>
+        <xml>worlds/cabin/script.xml</xml>
         <xml>worlds/cabin/map.oel</xml>
     </xmls>
 </library>

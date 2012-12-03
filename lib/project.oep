@@ -89,8 +89,8 @@
     </EntityDefinition>
     <EntityDefinition Name="Hotspot" Limit="-1" ResizableX="true" ResizableY="true" Rotatable="false" RotateIncrement="15">
       <Size>
-        <Width>64</Width>
-        <Height>64</Height>
+        <Width>32</Width>
+        <Height>32</Height>
       </Size>
       <Origin>
         <X>0</X>

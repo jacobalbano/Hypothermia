@@ -23,6 +23,18 @@
      id="defs2994">
     <linearGradient
        inkscape:collect="always"
+       id="linearGradient10863">
+      <stop
+         style="stop-color:#e6e6e6;stop-opacity:1;"
+         offset="0"
+         id="stop10865" />
+      <stop
+         style="stop-color:#848484;stop-opacity:1"
+         offset="1"
+         id="stop10867" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
        id="linearGradient4403">
       <stop
          style="stop-color:#191919;stop-opacity:1"
@@ -523,6 +535,15 @@
          stdDeviation="1.0605"
          id="feGaussianBlur5271-9-2" />
     </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient10863"
+       id="linearGradient10869"
+       x1="1989.6187"
+       y1="148.07631"
+       x2="2011.1836"
+       y2="147.81334"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -531,9 +552,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.6889424"
-     inkscape:cx="1814.3689"
-     inkscape:cy="233.19225"
+     inkscape:zoom="0.47534235"
+     inkscape:cx="1764.3701"
+     inkscape:cy="25.991646"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -547,7 +568,7 @@
      inkscape:guide-bbox="true">
     <sodipodi:guide
        orientation="1,0"
-       position="3200.884,77.455795"
+       position="3200.884,429.16437"
        id="guide4652" />
     <sodipodi:guide
        orientation="1,0"
@@ -1261,63 +1282,5 @@
        inkscape:export-filename="C:\Users\Jake\Documents\FlashDevelop\Cold\lib\art\decals\path5303.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
-    <text
-       xml:space="preserve"
-       style="font-size:169.20808411px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Andalus;-inkscape-font-specification:Andalus"
-       x="40.058235"
-       y="881.45062"
-       id="text5492"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5494"
-         x="40.058235"
-         y="881.45062">0</tspan></text>
-    <rect
-       style="fill:#ff0000;fill-opacity:1;stroke:none"
-       id="rect5501"
-       width="13.388164"
-       height="98.551758"
-       x="0.74378687"
-       y="770.46698" />
-    <rect
-       style="fill:#ff0000;fill-opacity:1;stroke:none"
-       id="rect5503"
-       width="7.4378686"
-       height="142.06329"
-       x="3190.8457"
-       y="702.78235" />
-    <text
-       xml:space="preserve"
-       style="font-size:169.20808411px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Andalus;-inkscape-font-specification:Andalus"
-       x="2807.3513"
-       y="832.93433"
-       id="text5492-8"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5494-1"
-         x="2807.3513"
-         y="832.93433">3200</tspan><tspan
-         sodipodi:role="line"
-         x="2807.3513"
-         y="1044.4443"
-         id="tspan5526" /></text>
-    <text
-       xml:space="preserve"
-       style="font-size:169.20808411px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Andalus;-inkscape-font-specification:Andalus"
-       x="1633.2731"
-       y="870.32416"
-       id="text5492-6"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="1633.2731"
-         y="870.32416"
-         id="tspan5552">1600</tspan></text>
-    <rect
-       style="fill:#ff0000;fill-opacity:1;stroke:none"
-       id="rect5501-9"
-       width="13.388164"
-       height="98.551758"
-       x="1593.9586"
-       y="759.34052" />
   </g>
 </svg>
