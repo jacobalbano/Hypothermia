@@ -12,6 +12,16 @@
 			remWorldItem "planks" true;
 		if var woodInFire
 			remWorldReaction "planks";
+		
+		<!-- if the fire isn't started, don't show the particle effects or play the ambiance -->
+		if not var fireStarted
+			remParticles "flame_01"
+			remParticles "flame_02"
+			remParticles "flame_03"
+			stopAmbiance "fire.mp3";
+		if var fireStarted
+			remWorldItem "tinder" true
+			remClimateMod "withoutFire"
 	</launch>
 	<tick>
 	</tick>

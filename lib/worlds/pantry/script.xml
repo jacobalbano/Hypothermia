@@ -13,7 +13,8 @@
 			remWorldItem "planks" true;
 		<!-- ...also remove the planks if we've put them in the fire-->
 		if var woodInFire
-			remWorldItem "planks" true;
+			remWorldItem "planks" true
+			remClimateMod "withoutFire";
 	</launch>
 	<tick>
 		

@@ -88,6 +88,10 @@ package
 			Game.instance.console.slang.addFunction("remWorldItem", remWorldItem, [String, Boolean], this, "Remove an item from the world");
 			Game.instance.console.slang.addFunction("restoreWorldItem", restoreWorldItem, [String, Boolean], this, "Restore a previously removed item to the world");
 			
+			Game.instance.console.slang.addFunction("remParticles", remParticles, [String], this, "Remove a particle emitter from the world");
+			
+			Game.instance.console.slang.addFunction("stopAmbiance", stopAmbiance, [String], this, "Stop an ambient sound from playing");
+			
 			Game.instance.console.slang.importModule(new Stdlib);
 			Game.instance.console.slang.importModule(new Memory);
 			
@@ -148,7 +152,34 @@ package
 				if (item.match == itemName)
 				{
 					world.remove(item);
-					return;
+				}
+			}
+		}
+		
+		private function remParticles(name:String):void 
+		{
+			var list:Array = [];
+			world.getClass(ParticleEmitter, list);
+			
+			for each (var item:ParticleEmitter in list) 
+			{
+				if (item.particleType == name)
+				{
+					world.remove(item);
+				}
+			}
+		}
+		
+		private function stopAmbiance(name:String):void 
+		{
+			var list:Array = [];
+			world.getClass(Ambiance, list);
+			
+			for each (var item:Ambiance in list) 
+			{
+				if (item.source == name)
+				{
+					world.remove(item);
 				}
 			}
 		}

@@ -4,7 +4,10 @@
 		<!-- if the fire isn't started, remove both thermometers to show the lowest -->
 		if not var fireStarted
 			remWorldItem "thermometerHigh" true
-			remWorldItem "thermometerMed" true;
+			remWorldItem "thermometerMed" true
+			stopAmbiance "fire.mp3";
+		if var fireStarted
+			remClimateMod "withoutFire"
 		<!-- may want to only show one or the other at some point -->
 	</launch>
 	<tick>

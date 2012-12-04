@@ -21,6 +21,7 @@ package com.jacobalbano.cold
 		public var angleRange:Number;
 		public var distanceRange:Number;
 		public var durationRange:Number;
+		public var fadeOut:Boolean;
 		
 		public function ParticleEmitter() 
 		{
@@ -36,7 +37,9 @@ package com.jacobalbano.cold
 			
 			emitter.relative = false;
 			emitter.newType(particleType);
-			emitter.setMotion("snowflake", -angle, distance, duration, angleRange, distanceRange, durationRange);
+			emitter.setMotion(particleType, -angle, distance, duration, angleRange, distanceRange, durationRange);
+			emitter.setAlpha(particleType, 1, fadeOut ? 0 : 1);
+			
 		}
 		
 		override public function update():void 

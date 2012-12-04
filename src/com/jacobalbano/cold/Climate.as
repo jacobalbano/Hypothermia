@@ -63,6 +63,7 @@ package com.jacobalbano.cold
 				}
 				else
 				{
+					trace("getting warmer");
 					bodyTemp++;
 				}
 				

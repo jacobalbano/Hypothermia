@@ -126,6 +126,7 @@
         <ValueDefinition xsi:type="FloatValueDefinition" Name="duration" Default="0" Min="0" Max="999" Round="0.1" />
         <ValueDefinition xsi:type="FloatValueDefinition" Name="durationRange" Default="0" Min="0" Max="100" Round="0.1" />
         <ValueDefinition xsi:type="FloatValueDefinition" Name="angleRange" Default="0" Min="0" Max="360" Round="0.1" />
+        <ValueDefinition xsi:type="BoolValueDefinition" Name="fadeOut" Default="false" />
       </ValueDefinitions>
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
     </EntityDefinition>

@@ -15,6 +15,7 @@
         <image>art/worlditems/axe.png</image>
         <image>art/worlditems/book.png</image>
         <image>art/worlditems/doorkey.png</image>
+        <image>art/worlditems/matches.png</image>
         <image>art/worlditems/planks.png</image>
         <image>art/worlditems/thermometerHigh.png</image>
         <image>art/worlditems/thermometerLow.png</image>
@@ -24,8 +25,12 @@
         <image>art/worlditems/trapDoorBroken.png</image>
         <image>art/ui/inventory.png</image>
         <image>art/ui/inventoryMask.png</image>
+        <image>art/particles/flame_01.png</image>
+        <image>art/particles/flame_02.png</image>
+        <image>art/particles/flame_03.png</image>
         <image>art/particles/snowflake.png</image>
         <image>art/invitems/axe.png</image>
+        <image>art/invitems/matches.png</image>
         <image>art/decals/cabinThroughWindow.png</image>
         <image>art/decals/iceInOuthouse.png</image>
         <image>art/decals/outhouse.png</image>
@@ -43,6 +48,7 @@
         <sound>sounds/chop.mp3</sound>
         <sound>sounds/door.mp3</sound>
         <sound>sounds/doorLocked.mp3</sound>
+        <sound>sounds/fire.mp3</sound>
         <sound>sounds/getAxe.mp3</sound>
         <sound>sounds/getBook.mp3</sound>
         <sound>sounds/heartBeat.mp3</sound>
@@ -50,6 +56,7 @@
         <sound>sounds/paperRip.mp3</sound>
         <sound>sounds/singleBeatFast.mp3</sound>
         <sound>sounds/singleBeatSlow.mp3</sound>
+        <sound>sounds/strikeMatch.mp3</sound>
         <sound>sounds/windHowl.mp3</sound>
     </sounds>
     <xmls>
