@@ -11,5 +11,8 @@
     <WorldReaction id="1" x="203" y="151" width="430" height="177" match="book" onMatch="playWorldSound &quot;rip&quot;&#xD;&#xA;remInvItem &quot;book&quot;;&#xD;&#xA;remWorldReaction &quot;book&quot;&#xD;&#xA;remember bookInFire true;&#xD;&#xA;world inStove;" />
     <Ambiance id="2" x="368" y="-96" source="windHowl.mp3" loop="True" tween="1.7" volume="0.2" />
     <WorldSound id="3" x="511" y="122" typeName="rip" source="paperRip.mp3" />
+    <WorldItem id="4" x="299" y="224" width="281" height="128" typeName="planks" onClick="" onEnter="" onExit="" />
+    <WorldReaction id="5" x="203" y="151" width="430" height="177" match="lighter" onMatch="if var bookInFire&#xD;&#xA;if var woodInFire&#xD;&#xA;print &quot;change the reaction for the fire!&quot;" />
+    <WorldReaction id="6" x="203" y="151" width="430" height="177" match="planks" onMatch="remInvItem &quot;planks&quot;;&#xD;&#xA;remember woodInFire true;&#xD;&#xA;world inStove;" />
   </World>
 </level>

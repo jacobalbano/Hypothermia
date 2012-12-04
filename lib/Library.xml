@@ -54,7 +54,6 @@
     </sounds>
     <xmls>
         <xml>Library.xml</xml>
-        <xml>worlds/start/script.xml</xml>
         <xml>worlds/start/map.oel</xml>
         <xml>worlds/peekWindow/map.oel</xml>
         <xml>worlds/pantry/script.xml</xml>

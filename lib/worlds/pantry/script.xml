@@ -11,6 +11,9 @@
 		<!-- likewise, if we have the planks already we don't want to show them here -->
 		if hasInvItem "planks"
 			remWorldItem "planks" true;
+		<!-- ...also remove the planks if we've put them in the fire-->
+		if var woodInFire
+			remWorldItem "planks" true;
 	</launch>
 	<tick>
 		
