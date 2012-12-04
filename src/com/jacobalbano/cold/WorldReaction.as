@@ -38,7 +38,6 @@ package com.jacobalbano.cold
 					if (Input.mouseReleased)
 					{
 						Game.instance.console.slang.doLine(onMatch);
-						trace("matched with", match);
 					}
 				}
 			}

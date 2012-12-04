@@ -15,10 +15,13 @@
         <image>art/worlditems/axe.png</image>
         <image>art/worlditems/book.png</image>
         <image>art/worlditems/doorkey.png</image>
+        <image>art/worlditems/planks.png</image>
         <image>art/worlditems/thermometerHigh.png</image>
         <image>art/worlditems/thermometerLow.png</image>
         <image>art/worlditems/thermometerMed.png</image>
         <image>art/worlditems/tinder.png</image>
+        <image>art/worlditems/trapDoor.png</image>
+        <image>art/worlditems/trapDoorBroken.png</image>
         <image>art/ui/inventory.png</image>
         <image>art/ui/inventoryMask.png</image>
         <image>art/particles/snowflake.png</image>
@@ -37,6 +40,7 @@
         <image>art/backgrounds/start.png</image>
     </images>
     <sounds>
+        <sound>sounds/chop.mp3</sound>
         <sound>sounds/door.mp3</sound>
         <sound>sounds/doorLocked.mp3</sound>
         <sound>sounds/getAxe.mp3</sound>
@@ -53,6 +57,7 @@
         <xml>worlds/start/script.xml</xml>
         <xml>worlds/start/map.oel</xml>
         <xml>worlds/peekWindow/map.oel</xml>
+        <xml>worlds/pantry/script.xml</xml>
         <xml>worlds/pantry/map.oel</xml>
         <xml>worlds/outhouseHole/script.xml</xml>
         <xml>worlds/outhouseHole/map.oel</xml>

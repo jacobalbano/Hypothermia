@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <script>
 	<launch>
-		if hasInvItem "axe"
-			remWorldItem "axe" true;
 		if var trapBroken
-			remWorldItem "axe" true;
-		if var doorOpen
-			remWorldReaction "key"
+			remWorldItem "trapDoor" true;
+		if not var trapBroken
+			remWorldItem "planks" true;
 	</launch>
 	<tick>
 		

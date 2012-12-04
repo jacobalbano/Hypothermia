@@ -1,9 +1,15 @@
 <level width="800" height="600">
   <UI>
-    <CameraPan id="0" x="-1" y="48" wrapAround="False" scrollSpeed="10" buffer="75" />
+    <CameraPan id="0" x="-1" y="288" wrapAround="False" scrollSpeed="10" buffer="75" />
   </UI>
   <World>
     <Background id="0" x="0" y="0" width="64" height="64" source="pantry" />
     <Hotspot id="1" x="610" y="510" width="188" height="88" onClick="lastWorld" onEnter="" onExit="" />
+    <Ambiance id="2" x="349" y="-92" source="windHowl.mp3" loop="True" tween="1.7" volume="0.3" />
+    <WorldItem id="4" x="201" y="403" width="400" height="150" typeName="trapDoorBroken" onClick="" onEnter="" onExit="" />
+    <WorldItem id="3" x="201" y="403" width="400" height="150" typeName="trapDoor" onClick="" onEnter="" onExit="" />
+    <WorldReaction id="5" x="195" y="391" width="419" height="174" match="axe" onMatch="playWorldSound &quot;chop&quot;;&#xD;&#xA;remWo&#xD;&#xA;rldReaction &quot;axe&quot;;&#xD;&#xA;remember trapBroken true;&#xD;&#xA;remInvItem &quot;axe&quot;;&#xD;&#xA;remWorldItem trapDoor false;" />
+    <WorldSound id="6" x="427" y="332" typeName="chop" source="chop.mp3" />
+    <WorldItem id="7" x="259" y="487" width="306" height="173" typeName="planks" onClick="remWorldItem &quot;planks&quot;;&#xD;&#xA;addInvItem &quot;planks&quot;;" onEnter="" onExit="" />
   </World>
 </level>

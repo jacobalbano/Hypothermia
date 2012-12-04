@@ -1,5 +1,6 @@
 package com.jacobalbano.punkutils 
 {
+	import flash.geom.Rectangle;
 	import flash.media.Camera;
 	import net.flashpunk.Entity;
 	import net.flashpunk.tweens.misc.VarTween;
@@ -19,6 +20,11 @@ package com.jacobalbano.punkutils
 		public var buffer:int;
 		public var scrollSpeed:int;
 		
+		private var leftBuffer:Rectangle;
+		private var rightBuffer:Rectangle;
+		private var topBuffer:Rectangle;
+		private var bottomBuffer:Rectangle;
+		
 		private var tween:VarTween;
 		public var speedX:Number;
 		public var speedY:Number;
@@ -28,7 +34,8 @@ package com.jacobalbano.punkutils
 		public function CameraPan() 
 		{
 			super();
-			worldWidth = 0;	//	default
+			worldWidth = 0;		//	default
+			worldHeight = 0;	//	default
 			tween = new VarTween;
 			addTween(tween, true);
 			speedX = 0;
@@ -51,6 +58,11 @@ package com.jacobalbano.punkutils
 			this.worldWidth = oWorld.size.x;
 			this.worldHeight = oWorld.size.y;
 			oWorld.wraparound = this.wrapAround;
+			
+			leftBuffer = new Rectangle(0, 0, buffer, FP.height);
+			rightBuffer = new Rectangle(FP.width - buffer, 0, buffer, FP.height);
+			topBuffer = new Rectangle(0, 0, FP.width, buffer);
+			bottomBuffer = new Rectangle(0, FP.height - buffer, FP.width, buffer);
 		}
 		
 		override public function update():void 
@@ -59,11 +71,11 @@ package com.jacobalbano.punkutils
 			
 			if (wrapAround || (FP.camera.x >= 0 && FP.camera.x + FP.width <= worldWidth))
 			{
-				if (Input.mouseX < buffer)
+				if (leftBuffer.contains(Input.mouseX, Input.mouseY))
 				{
 					onEnterLeft();
 				}
-				else if (Input.mouseX > FP.width - buffer )
+				else if (rightBuffer.contains(Input.mouseX, Input.mouseY))
 				{
 					onEnterRight();
 				}
@@ -76,11 +88,11 @@ package com.jacobalbano.punkutils
 			
 			if (!wrapAround && FP.camera.y >= 0 && FP.camera.y + FP.height <= worldHeight)
 			{
-				if (Input.mouseY < buffer)
+				if (topBuffer.contains(Input.mouseX, Input.mouseY))
 				{
 					onEnterTop();
 				}
-				else if (Input.mouseY > FP.height - buffer )
+				else if (bottomBuffer.contains(Input.mouseX, Input.mouseY))
 				{
 					onEnterBottom();
 				}

@@ -105,7 +105,6 @@ package com.jacobalbano.cold
 			}
 			
 			state = toState;
-			trace("changed state to ", ["stopped", "slow", "fast"][state]);
 			
 			pulseIn();
 			heartbeat.play(1.3);

@@ -169,7 +169,7 @@ package com.jacobalbano.cold
 			image.scrollX = 0;
 			image.scrollY = 0;
 			image.smooth = true;
-			image.scale = ITEM_SIZE / Math.min(image.width, image.height);
+			image.scale = ITEM_SIZE / Math.max(image.width, image.height);
 			
 			items[name] = item;
 			

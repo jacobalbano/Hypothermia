@@ -19,7 +19,6 @@ package com.jacobalbano.cold
 		public function remove():void
 		{
 			parent.temperature -= temperature;
-			trace(parent.temperature)
 		}
 		
 		override public function removed():void 

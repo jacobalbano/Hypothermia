@@ -361,7 +361,7 @@ sg20
 g116
 sbsa(dp118
 g12
-I00
+I01
 sg13
 (lp119
 F710.0
@@ -372,10 +372,11 @@ Tiddler
 p120
 (dp121
 g18
-g2
+VCan use book on stove to get tinder\u000aCan use matches on tinder to make small fire
+p122
 sg26
 VCloseup on stove
-p122
+p123
 sg28
 g21
 ((I2012
@@ -387,26 +388,26 @@ I22
 I4
 I335
 I0
-tp123
-(dp124
-tp125
-Rp126
+tp124
+(dp125
+tp126
+Rp127
 sg29
-(lp127
+(lp128
 sg20
-g126
-sbsa(dp128
+g127
+sbsa(dp129
 g12
 I00
 sg13
-(lp129
+(lp130
 F570.0
 aF850.0
 asg15
 (itiddlywiki
 Tiddler
-p130
-(dp131
+p131
+(dp132
 g18
 g2
 sg20
@@ -420,18 +421,18 @@ I17
 I4
 I335
 I0
-tp132
-(dp133
-tp134
-Rp135
+tp133
+(dp134
+tp135
+Rp136
 sg26
 VTrapdoor in floor
-p136
+p137
 sg28
-g135
+g136
 sg29
-(lp137
+(lp138
 sbsasS'scale'
-p138
+p139
 F0.80000000000000004
 ss.

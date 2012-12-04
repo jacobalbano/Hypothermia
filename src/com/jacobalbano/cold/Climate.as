@@ -47,8 +47,6 @@ package com.jacobalbano.cold
 					item.onAdded(this);
 				}
 			}
-			
-			trace(temperature);
 		}
 		
 		override public function update():void 
@@ -62,7 +60,6 @@ package com.jacobalbano.cold
 				if (temperature < MIN_NEUTRAL_CLIMATE)
 				{
 					bodyTemp -= (MIN_NEUTRAL_CLIMATE / temperature) * 0.75;
-					trace(bodyTemp);
 				}
 				else
 				{

@@ -33,7 +33,7 @@ package com.jacobalbano.cold
 			super.update();
 			
 			var image:Image = graphic as Image;
-			var rect:Rectangle = new Rectangle(x - image.originX, y - image.originY, image.width, image.height);
+			var rect:Rectangle = new Rectangle(x - (image.originX * (image.scale)), y - (image.originY * (image.scale)), image.width * image.scale, image.height * image.scale);
 			
 			if (rect.contains(Input.mouseX, Input.mouseY))
 			{
