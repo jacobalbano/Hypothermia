@@ -13,12 +13,14 @@ package
 	import com.jacobalbano.cold.WorldReaction;
 	import com.jacobalbano.cold.WorldSound;
 	import com.jacobalbano.punkutils.CameraPan;
+	import com.jacobalbano.punkutils.Image;
 	import com.jacobalbano.punkutils.OgmoWorld;
 	import com.jacobalbano.punkutils.ScriptTick;
 	import com.jacobalbano.punkutils.Transition;
 	import com.thaumaturgistgames.flakit.Library;
 	import com.thaumaturgistgames.slang.Memory;
 	import com.thaumaturgistgames.slang.Stdlib;
+	import flash.utils.Dictionary;
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
 	import net.flashpunk.Sfx;
@@ -36,6 +38,7 @@ package
 		private var world:OgmoWorld;
 		private var inventory:Inventory;
 		private var climate:Climate;
+		private var pool:Dictionary;
 		
 		public function FPGame(width:uint, height:uint) 
 		{
@@ -45,6 +48,7 @@ package
 			inventory = new Inventory();
 			climate = new Climate();
 			FP.screen.smoothing = true;
+			pool = new Dictionary;
 		}
 		
 		override public function init():void 
@@ -82,6 +86,7 @@ package
 			Game.instance.console.slang.addFunction("getTemp", getTemp, [], this, "Get the current temperature");
 			
 			Game.instance.console.slang.addFunction("remWorldItem", remWorldItem, [String, Boolean], this, "Remove an item from the world");
+			Game.instance.console.slang.addFunction("restoreWorldItem", restoreWorldItem, [String, Boolean], this, "Restore a previously removed item to the world");
 			
 			Game.instance.console.slang.importModule(new Stdlib);
 			Game.instance.console.slang.importModule(new Memory);
@@ -179,6 +184,7 @@ package
 					function realRemoveWorldItem():void 
 					{
 						world.remove(item);
+						pool[worldItem] = item;
 					}
 					
 					var tween:VarTween = new VarTween(realRemoveWorldItem, Tween.ONESHOT);
@@ -186,6 +192,30 @@ package
 					world.addTween(tween, true);
 					return;
 				}
+			}
+		}
+		
+		private function restoreWorldItem(worldItem:String, instant:Boolean):void
+		{
+			var item:WorldItem = pool[worldItem];
+			
+			if (!item)
+			{
+				return;
+			}
+			
+			world.add(item);
+			
+			if (instant)
+			{
+				(item.graphic as Image).alpha = 1;
+			}
+			else
+			{
+				(item.graphic as Image).alpha = 0;
+				var tween:VarTween = new VarTween(null, Tween.ONESHOT);
+				tween.tween(item.graphic, "alpha", 1, 1, Ease.backOut);
+				world.addTween(tween, true);
 			}
 		}
 		

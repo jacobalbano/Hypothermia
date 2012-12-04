@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <script>
 	<launch>
+		<!-- if the book hasn't been used, we shouldn't show the tinder -->
 		if not var bookInFire
 			remWorldItem "tinder" true;
 		if var bookInFire

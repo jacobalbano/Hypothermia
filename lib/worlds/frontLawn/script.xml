@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <script>
 	<launch>
+		<!-- remove the axe if we have it or have already used it -->
 		if hasInvItem "axe"
 			remWorldItem "axe" true;
 		if var trapBroken
 			remWorldItem "axe" true;
+		<!-- if the door is unlocked, key reaction isn't necessary any more -->
 		if var doorOpen
 			remWorldReaction "key"
 	</launch>

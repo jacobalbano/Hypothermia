@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <script>
 	<launch>
+		<!--- remove trapdoor and disable using the axe -->
 		if var trapBroken
-			remWorldItem "trapDoor" true;
+			remWorldItem "trapDoor" true
+			remWorldReaction "axe";
+		<!-- if we haven't broken the door, the planks shouldn't show up -->
 		if not var trapBroken
+			remWorldItem "planks" true;
+		<!-- likewise, if we have the planks already we don't want to show them here -->
+		if hasInvItem "planks"
 			remWorldItem "planks" true;
 	</launch>
 	<tick>

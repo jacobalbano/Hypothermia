@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <script>
 	<launch>
+		<!-- only show the key if we haven't picked it up or used it -->
 		if hasInvItem "doorkey"
 			remWorldItem "doorkey" true;
 		if var doorOpen
