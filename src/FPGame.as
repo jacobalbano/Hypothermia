@@ -71,7 +71,6 @@ package
 			world.addClass("ClimateModifier", ClimateModifier);
 			
 			Game.instance.console.slang.addFunction("world", loadWorld, [String], this, "Load a world from an Ogmo level");
-			Game.instance.console.slang.addFunction("lastWorld", loadLastWorld, [], this, "Load the previous world");
 			Game.instance.console.slang.addFunction("worlds", listWorlds, [], this, "Load a world from an Ogmo level");
 			
 			Game.instance.console.slang.addFunction("playWorldSound", playWorldSound, [String], this, "Play a sound effect that was added to the world");
@@ -135,11 +134,6 @@ package
 					item.play();
 				}
 			}
-		}
-		
-		private function loadLastWorld():void 
-		{
-			loadWorld(lastWorld);
 		}
 		
 		private function remWorldReaction(itemName:String):void 
@@ -252,8 +246,6 @@ package
 		
 		private function loadWorld(name:String):void 
 		{
-			trace(name);
-			
 			try
 			{
 				Library.getXML("worlds." + name + ".map.oel");
