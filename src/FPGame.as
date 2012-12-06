@@ -23,6 +23,7 @@ package
 		private var inventory:Inventory;
 		private var climate:Climate;
 		private var pool:Dictionary;
+		private var sleep:Sleep;
 		
 		public function FPGame(width:uint, height:uint) 
 		{
@@ -38,6 +39,8 @@ package
 		override public function init():void 
 		{
 			super.init();
+			
+			sleep = new Sleep();
 			
 			world = new OgmoWorld();
 			FP.world = world;
@@ -75,6 +78,8 @@ package
 			
 			Game.instance.console.slang.addFunction("stopAmbiance", stopAmbiance, [String], this, "Stop an ambient sound from playing");
 			
+			Game.instance.console.slang.addFunction("sleep", goToSleep, [], this, "Go to sleep");
+			
 			Game.instance.console.slang.importModule(new Stdlib);
 			Game.instance.console.slang.importModule(new Memory);
 			
@@ -84,6 +89,12 @@ package
 			//loadWorld("start");
 			
 			loadWorld("cabin");
+		}
+		
+		private function goToSleep():void 
+		{
+			inventory.mouseItem = "";
+			sleep.start();
 		}
 		
 		private function getTemp():int
@@ -256,6 +267,7 @@ package
 			world.add(inventory);
 			world.add(climate);
 			world.add(new ScriptTick(Game.instance.console.slang, "worlds." + name + ".script.xml"));
+			world.add(sleep);
 		}
 		
 	}

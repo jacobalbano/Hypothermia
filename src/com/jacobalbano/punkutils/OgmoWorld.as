@@ -160,7 +160,7 @@ package com.jacobalbano.punkutils
 				super.render();
 				FP.camera.x = original - size.x;
 				super.render();
-				FP.camera.x = original % size.x;
+				FP.camera.x = original;
 			}
 			
 			super.render();

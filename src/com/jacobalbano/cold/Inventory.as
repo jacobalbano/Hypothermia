@@ -223,6 +223,12 @@ package com.jacobalbano.cold
 				return;
 			}
 			
+			if (typeName == "")
+			{
+				_mouseItem = "";
+				return;
+			}
+			
 			if (items[typeName])
 			{
 				_mouseItem = typeName;
