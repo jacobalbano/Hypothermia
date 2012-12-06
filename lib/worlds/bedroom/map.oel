@@ -9,6 +9,6 @@
     <ParticleEmitter id="14" x="171" y="134" angle="15" max="200" particleType="snowflake" distance="600" distanceRange="0" duration="1" durationRange="0" angleRange="25" fadeOut="False" />
     <Background id="1" x="0" y="0" width="64" height="64" source="bedroom" />
     <Hotspot id="1" x="368" y="80" width="256" height="160" onClick="world lookOutsideNorth" onEnter="" onExit="" />
-    <WorldReaction id="1" x="0" y="272" width="352" height="128" match="blanket" onMatch="print &quot;yay&quot;" />
+    <WorldReaction id="1" x="0" y="272" width="352" height="128" match="blanket" onMatch="if var fireStarted sleep" />
   </World>
 </level>

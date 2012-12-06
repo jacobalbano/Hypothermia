@@ -96,6 +96,7 @@ package com.jacobalbano.cold
 				if (mouseItem != "")
 				{
 					_mouseItem = "";
+					extended = true;
 					return;
 				}
 				
@@ -106,6 +107,7 @@ package com.jacobalbano.cold
 				else
 				{
 					open();
+					extended = true;
 				}
 			}
 		}
