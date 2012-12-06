@@ -13,6 +13,7 @@
         <image>ogmo/worldreaction.png</image>
         <image>ogmo/worldSound.png</image>
         <image>art/worlditems/axe.png</image>
+        <image>art/worlditems/blanket.png</image>
         <image>art/worlditems/book.png</image>
         <image>art/worlditems/doorkey.png</image>
         <image>art/worlditems/matches.png</image>
@@ -33,12 +34,14 @@
         <image>art/invitems/axe.png</image>
         <image>art/invitems/matches.png</image>
         <image>art/decals/cabinThroughWindow.png</image>
+        <image>art/decals/cellarGloom.png</image>
         <image>art/decals/iceInOuthouse.png</image>
         <image>art/decals/outhouse.png</image>
         <image>art/decals/outhouseSeat.png</image>
         <image>art/decals/windowPeekPane.png</image>
         <image>art/backgrounds/bedroom.png</image>
         <image>art/backgrounds/cabin.png</image>
+        <image>art/backgrounds/cellar.png</image>
         <image>art/backgrounds/frontLawn.png</image>
         <image>art/backgrounds/halfway.png</image>
         <image>art/backgrounds/inStove.png</image>
@@ -79,6 +82,8 @@
         <xml>worlds/halfway/map.oel</xml>
         <xml>worlds/frontLawn/script.xml</xml>
         <xml>worlds/frontLawn/map.oel</xml>
+        <xml>worlds/cellar/script.xml</xml>
+        <xml>worlds/cellar/map.oel</xml>
         <xml>worlds/cabin/script.xml</xml>
         <xml>worlds/cabin/map.oel</xml>
         <xml>worlds/bedroom/map.oel</xml>

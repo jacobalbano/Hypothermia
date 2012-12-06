@@ -1,0 +1,11 @@
+<level width="800" height="400">
+  <UI>
+    <CameraPan id="0" x="0" y="0" wrapAround="False" scrollSpeed="10" buffer="75" />
+  </UI>
+  <World>
+    <Background id="0" x="0" y="0" width="64" height="64" source="cellar" />
+    <WorldItem id="1" x="84" y="230" width="200" height="200" typeName="blanket" onClick="remWorldItem &quot;blanket&quot; false;&#xD;&#xA;addInvItem &quot;blanket&quot;" onEnter="" onExit="" />
+    <Decal id="2" x="-172" y="-161" source="cellarGloom" scrollX="0" scrollY="0" />
+    <Hotspot id="3" x="284" y="307" width="220" height="95" onClick="world pantry" onEnter="" onExit="" />
+  </World>
+</level>

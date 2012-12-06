@@ -1,29 +1,13 @@
 package  
 {
-	import com.jacobalbano.cold.Ambiance;
-	import com.jacobalbano.cold.Background;
-	import com.jacobalbano.cold.Climate;
-	import com.jacobalbano.cold.ClimateModifier;
-	import com.jacobalbano.cold.Decal;
-	import com.jacobalbano.cold.Hotspot;
-	import com.jacobalbano.cold.Inventory;
-	import com.jacobalbano.cold.InventoryItem;
-	import com.jacobalbano.cold.ParticleEmitter;
-	import com.jacobalbano.cold.WorldItem;
-	import com.jacobalbano.cold.WorldReaction;
-	import com.jacobalbano.cold.WorldSound;
-	import com.jacobalbano.punkutils.CameraPan;
-	import com.jacobalbano.punkutils.Image;
-	import com.jacobalbano.punkutils.OgmoWorld;
-	import com.jacobalbano.punkutils.ScriptTick;
-	import com.jacobalbano.punkutils.Transition;
+	import com.jacobalbano.cold.*;
+	import com.jacobalbano.punkutils.*;
 	import com.thaumaturgistgames.flakit.Library;
 	import com.thaumaturgistgames.slang.Memory;
 	import com.thaumaturgistgames.slang.Stdlib;
 	import flash.utils.Dictionary;
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
-	import net.flashpunk.Sfx;
 	import net.flashpunk.Tween;
 	import net.flashpunk.tweens.misc.VarTween;
 	import net.flashpunk.utils.Ease;
