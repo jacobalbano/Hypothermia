@@ -17,6 +17,7 @@
         <image>art/worlditems/doorkey.png</image>
         <image>art/worlditems/matches.png</image>
         <image>art/worlditems/planks.png</image>
+        <image>art/worlditems/planksBurnt.png</image>
         <image>art/worlditems/thermometerHigh.png</image>
         <image>art/worlditems/thermometerLow.png</image>
         <image>art/worlditems/thermometerMed.png</image>
@@ -36,6 +37,7 @@
         <image>art/decals/outhouse.png</image>
         <image>art/decals/outhouseSeat.png</image>
         <image>art/decals/windowPeekPane.png</image>
+        <image>art/backgrounds/bedroom.png</image>
         <image>art/backgrounds/cabin.png</image>
         <image>art/backgrounds/frontLawn.png</image>
         <image>art/backgrounds/halfway.png</image>
@@ -51,6 +53,7 @@
         <sound>sounds/fire.mp3</sound>
         <sound>sounds/getAxe.mp3</sound>
         <sound>sounds/getBook.mp3</sound>
+        <sound>sounds/getMatches.mp3</sound>
         <sound>sounds/heartBeat.mp3</sound>
         <sound>sounds/keyPickup.mp3</sound>
         <sound>sounds/paperRip.mp3</sound>
@@ -78,5 +81,6 @@
         <xml>worlds/frontLawn/map.oel</xml>
         <xml>worlds/cabin/script.xml</xml>
         <xml>worlds/cabin/map.oel</xml>
+        <xml>worlds/bedroom/map.oel</xml>
     </xmls>
 </library>

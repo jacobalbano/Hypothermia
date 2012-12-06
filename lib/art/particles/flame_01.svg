@@ -17,7 +17,7 @@
    inkscape:export-filename="C:\Users\Jake\Documents\FlashDevelop\Cold\lib\art\particles\flame_01.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="flame_01.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -28,7 +28,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="11.2"
-     inkscape:cx="25.033263"
+     inkscape:cx="11.104692"
      inkscape:cy="2.4626204"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -56,8 +56,8 @@
      id="layer1"
      transform="translate(0,-1027.3622)">
     <path
-       style="fill:#d45500;fill-opacity:1;stroke:none"
-       d="m 7.2321427,1033.5229 4.9976543,-5.7167 1.073775,10.6274 0.357143,13.5715 -3.6607152,-5.8036 z"
+       style="fill:#d45500;fill-opacity:1;stroke:none;opacity:0.35840708"
+       d="m 7.142857,1038.255 4.908369,-7.0559 6.430917,5.8952 -1.428571,7.7679 -7.0535722,1.3393 z"
        id="rect2985"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccc" />

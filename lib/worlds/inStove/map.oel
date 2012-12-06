@@ -20,8 +20,9 @@
     <ParticleEmitter id="14" x="392" y="250" angle="0" max="30" particleType="flame_02" distance="65" distanceRange="5" duration="1" durationRange="0" angleRange="75" fadeOut="True" />
     <ParticleEmitter id="9" x="426" y="283" angle="-75" max="50" particleType="flame_01" distance="50" distanceRange="5" duration="1" durationRange="0" angleRange="45" fadeOut="True" />
     <WorldItem id="4" x="299" y="224" width="281" height="128" typeName="planks" onClick="" onEnter="" onExit="" />
+    <WorldItem id="16" x="299" y="224" width="281" height="128" typeName="planksBurnt" onClick="" onEnter="" onExit="" />
     <ParticleEmitter id="12" x="448" y="293" angle="-45" max="50" particleType="flame_01" distance="30" distanceRange="5" duration="1" durationRange="0" angleRange="180" fadeOut="True" />
-    <ParticleEmitter id="8" x="385" y="282" angle="-45" max="50" particleType="flame_01" distance="30" distanceRange="5" duration="1" durationRange="0" angleRange="120" fadeOut="True" />
+    <ParticleEmitter id="8" x="383" y="289" angle="-30" max="50" particleType="flame_01" distance="30" distanceRange="0.5" duration="0.5" durationRange="0" angleRange="90" fadeOut="True" />
     <Ambiance id="15" x="292" y="-97" source="fire.mp3" loop="True" tween="0.5" volume="1" />
   </World>
 </level>

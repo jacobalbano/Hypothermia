@@ -1,0 +1,14 @@
+<level width="800" height="400">
+  <UI>
+    <CameraPan id="0" x="0" y="0" wrapAround="False" scrollSpeed="10" buffer="75" />
+    <WorldReaction id="1" x="0" y="272" width="352" height="128" match="" onMatch="" />
+  </UI>
+  <World>
+    <Hotspot id="0" x="494" y="331" width="306" height="68" onClick="world cabin" onEnter="" onExit="" />
+    <Background id="0" x="294" y="1" width="64" height="64" source="outhouse" />
+    <Ambiance id="2" x="314" y="-90" source="windHowl.mp3" loop="True" tween="1.7" volume="0.3" />
+    <ParticleEmitter id="14" x="171" y="134" angle="15" max="200" particleType="snowflake" distance="600" distanceRange="0" duration="1" durationRange="0" angleRange="25" fadeOut="False" />
+    <Background id="1" x="0" y="0" width="64" height="64" source="bedroom" />
+    <Hotspot id="1" x="368" y="80" width="256" height="160" onClick="world lookOutsideNorth" onEnter="" onExit="" />
+  </World>
+</level>

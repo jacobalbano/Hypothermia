@@ -98,9 +98,9 @@ package
 			Game.instance.onReload = function():void { loadWorld(currentWorld); };
 			
 			//	TODO: Revert this
-			loadWorld("start");
+			//loadWorld("start");
 			
-			//loadWorld("cabin");
+			loadWorld("cabin");
 		}
 		
 		private function getTemp():int
@@ -252,6 +252,8 @@ package
 		
 		private function loadWorld(name:String):void 
 		{
+			trace(name);
+			
 			try
 			{
 				Library.getXML("worlds." + name + ".map.oel");

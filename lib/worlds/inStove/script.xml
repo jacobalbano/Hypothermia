@@ -15,6 +15,7 @@
 		
 		<!-- if the fire isn't started, don't show the particle effects or play the ambiance -->
 		if not var fireStarted
+			remWorldItem "planksBurnt" true
 			remParticles "flame_01"
 			remParticles "flame_02"
 			remParticles "flame_03"

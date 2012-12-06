@@ -29,7 +29,7 @@ package com.jacobalbano.punkutils
 				{	
 					//	Couldn't create the property. No big deal; just log it and keep moving
 					var s:String = e.getStackTrace().split("\n")[0];
-					trace(s.substring(s.lastIndexOf(": ") + 2));
+					//trace(s.substring(s.lastIndexOf(": ") + 2));
 					continue;
 				}
 			}

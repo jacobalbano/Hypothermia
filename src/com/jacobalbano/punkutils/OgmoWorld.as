@@ -22,6 +22,7 @@ package com.jacobalbano.punkutils
 		private var layerIndices:Dictionary;
 		private var numLayers:int;
 		private var defaultImage:Bitmap;
+		private var canLoad:Boolean;
 		
 		//public var levelName:String;
 		public var wraparound:Boolean;
@@ -34,6 +35,7 @@ package com.jacobalbano.punkutils
 			layerIndices = new Dictionary;
 			numLayers = 0;
 			size = new Point;
+			canLoad = true;
 			
 			defaultImage = new Bitmap(new BitmapData(100, 100, false, 0xFF0080));
 			var flip:Boolean = false;
@@ -48,6 +50,12 @@ package com.jacobalbano.punkutils
 					}
 				}
 			}
+		}
+		
+		override public function update():void 
+		{
+			super.update();
+			canLoad = true;
 		}
 		
 		/**
@@ -75,6 +83,11 @@ package com.jacobalbano.punkutils
 		 */
 		public function buildWorld(source:String):void
 		{
+			if (!canLoad)
+			{
+				return;
+			}
+			
 			var level:XML = Library.getXML(source);
 			
 			removeAll();
@@ -129,11 +142,8 @@ package com.jacobalbano.punkutils
 					add(ent);
 				}
 			}
-		}
-		
-		override public function update():void 
-		{
-			super.update();
+			
+			canLoad = false;
 		}
 		
 		override public function begin():void 

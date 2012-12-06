@@ -15,6 +15,11 @@
 		if var woodInFire
 			remWorldItem "planks" true
 			remClimateMod "withoutFire";
+		<!-- remove the matches if we've picked them up or used them -->
+		if var fireStarted
+			remWorldItem "matches" true;
+		if hasInvItem "matches"
+			remWorldItem "matches" true;
 	</launch>
 	<tick>
 		
