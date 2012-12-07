@@ -7,6 +7,7 @@
 	import flash.geom.Point;
 	import flash.utils.Dictionary;
 	
+	[Frame(factoryClass = "Preloader")]
 	[SWF(width = "800", height = "400")]
 	public class Game extends Engine 
 	{
@@ -22,7 +23,7 @@
 		{
 			super.init();
 			//	Entry point
-			addChild(new FPGame(stage.stageWidth, stage.stageHeight));
+			addChild(new FPGame());
 			console.print("initialized");
 		}
 	}

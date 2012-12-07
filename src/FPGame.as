@@ -16,6 +16,7 @@ package
 	/**
 	 * @author Jacob Albano
 	 */
+	
 	public class FPGame extends Engine 
 	{
 		private var currentWorld:String;
@@ -26,20 +27,15 @@ package
 		private var pool:Dictionary;
 		private var sleep:Sleep;
 		
-		public function FPGame(width:uint, height:uint) 
+		public function FPGame() 
 		{
-			super(width, height);
+			super(800, 400);
 			lastWorld = "";
 			currentWorld = "";
 			inventory = new Inventory();
 			climate = new Climate();
 			FP.screen.smoothing = true;
 			pool = new Dictionary;
-		}
-		
-		private function log(...rest):void
-		{
-			Game.instance.console.print(rest);
 		}
 		
 		override public function init():void 
@@ -50,8 +46,6 @@ package
 			
 			world = new OgmoWorld();
 			FP.world = world;
-			
-			log("init?");
 			
 			world.addGraphic(new Image(Library.getImage("art.worlditems.restart.png")));
 			
