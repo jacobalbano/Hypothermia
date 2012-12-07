@@ -47,8 +47,6 @@ package
 			world = new OgmoWorld();
 			FP.world = world;
 			
-			world.addGraphic(new Image(Library.getImage("art.worlditems.restart.png")));
-			
 			world.addClass("CameraPan", CameraPan);
 			world.addClass("Background", Background);
 			world.addClass("Hotspot", Hotspot);

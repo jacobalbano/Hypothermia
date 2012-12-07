@@ -5,6 +5,10 @@ package
 	import flash.display.Shape;
 	import flash.events.Event;
 	import flash.utils.getDefinitionByName;
+	import flash.display.StageScaleMode;
+	import flash.display.StageQuality;
+	import flash.display.StageAlign;
+	import flash.display.StageDisplayState;
 	
 	/**
 	 * ...
@@ -31,8 +35,10 @@ package
 		
 		public function Preloader()
 		{
-			stage.scaleMode = "noScale";
-		
+			stage.align = StageAlign.TOP_LEFT;
+			stage.quality = StageQuality.HIGH;
+			stage.scaleMode = StageScaleMode.NO_SCALE;
+			
 			sw = stage.stageWidth;
 			sh = stage.stageHeight;
 			
