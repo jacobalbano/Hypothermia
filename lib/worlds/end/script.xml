@@ -6,9 +6,14 @@
 		wake;
 		<!-- adjust for which ending we got -->
 		if var fireStarted
+			remWorldItem "restart" true
 			remDecal "loseText";
 		if not var fireStarted
-			remWorldItem "won";
+			remParticles "snowflake"
+			remDecal "credits"
+			remWorldItem "restartGrey" true
+			remParticles "smoke"
+			remDecal "win";
 	</launch>
 	<tick>
 		

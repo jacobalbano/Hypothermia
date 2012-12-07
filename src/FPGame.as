@@ -93,9 +93,7 @@ package
 			Game.instance.onReload = function():void { loadWorld(currentWorld); };
 			
 			//	TODO: Revert this
-			//loadWorld("start");
-			
-			loadWorld("end");
+			loadWorld("start");
 			
 			sleep.onComplete = function ():void { Game.instance.console.slang.doLine("world end"); };
 			climate.onDeath = sleep.start;
