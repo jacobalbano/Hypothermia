@@ -4,7 +4,7 @@
   </UI>
   <World>
     <Background id="0" x="0" y="0" width="64" height="64" source="pantry" />
-    <Hotspot id="1" x="610" y="510" width="188" height="88" onClick="world cabin" onEnter="" onExit="" />
+    <Hotspot id="1" x="612" y="198" width="188" height="404" onClick="world cabin" onEnter="" onExit="" />
     <Ambiance id="2" x="349" y="-92" source="windHowl.mp3" loop="True" tween="1.7" volume="0.3" />
     <WorldItem id="4" x="201" y="403" width="400" height="150" typeName="trapDoorBroken" onClick="if var trapBroken world cellar" onEnter="" onExit="" />
     <WorldItem id="3" x="201" y="403" width="400" height="150" typeName="trapDoor" onClick="3" onEnter="" onExit="" />

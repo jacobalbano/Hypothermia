@@ -37,6 +37,11 @@ package
 			pool = new Dictionary;
 		}
 		
+		private function log(...rest):void
+		{
+			Game.instance.console.print(rest);
+		}
+		
 		override public function init():void 
 		{
 			super.init();
@@ -45,6 +50,10 @@ package
 			
 			world = new OgmoWorld();
 			FP.world = world;
+			
+			log("init?");
+			
+			world.addGraphic(new Image(Library.getImage("art.worlditems.restart.png")));
 			
 			world.addClass("CameraPan", CameraPan);
 			world.addClass("Background", Background);
@@ -95,8 +104,8 @@ package
 			//	TODO: Revert this
 			loadWorld("start");
 			
-			sleep.onComplete = function ():void { Game.instance.console.slang.doLine("world end"); };
-			climate.onDeath = sleep.start;
+			climate.onDeath = function():void { sleep.start();};
+			sleep.onComplete = function ():void { inventory.mouseItem = ""; inventory.close(); Game.instance.console.slang.doLine("world end"); };
 		}
 		
 		private function remDecal(name:String):void 

@@ -118,7 +118,7 @@ package com.jacobalbano.cold
 			}
 		}
 		
-		private function open():void 
+		public function open():void 
 		{
 			if (isOpen)
 			{
@@ -131,7 +131,7 @@ package com.jacobalbano.cold
 			nextExtendState = true;
 		}
 		
-		private function close():void 
+		public function close():void 
 		{
 			if (!isOpen)
 			{

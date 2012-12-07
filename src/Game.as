@@ -14,7 +14,7 @@
 		public function Game()
 		{
 			//	Initialize library
-			super(Library.USE_XML);
+			super(Library.USE_EMBEDDED, EmbeddedAssets);
 			instance = this;
 		}
 		
@@ -22,7 +22,8 @@
 		{
 			super.init();
 			//	Entry point
-			addChild(new FPGame(stage.stageWidth, stage.stageHeight))
+			addChild(new FPGame(stage.stageWidth, stage.stageHeight));
+			console.print("initialized");
 		}
 	}
 
