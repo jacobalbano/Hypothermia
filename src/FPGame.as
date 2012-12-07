@@ -98,6 +98,7 @@ package
 			loadWorld("cabin");
 			
 			sleep.onComplete = function ():void { Game.instance.console.slang.doLine("world end"); };
+			climate.onDeath = sleep.start;
 		}
 		
 		private function remDecal(name:String):void 

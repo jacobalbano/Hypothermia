@@ -21,6 +21,7 @@ package com.jacobalbano.cold
 		public function Climate() 
 		{
 			heartbeat = new Heartbeat;
+			reset();
 		}
 		
 		override public function removed():void 
@@ -64,6 +65,7 @@ package com.jacobalbano.cold
 				else
 				{
 					bodyTemp += (MIN_NEUTRAL_CLIMATE / temperature) * 0.75;
+					bodyTemp = Math.min(bodyTemp, IDEAL_BODY_TEMPERATURE);
 				}
 				
 				delay = 0;
