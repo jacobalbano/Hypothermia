@@ -48,6 +48,7 @@ package com.jacobalbano.cold
 			mouseItem = "";
 			y = -(graphic as Image).height;
 			everUsed = false;
+			_itemCount = 0;
 		}
 		
 		override public function added():void 
