@@ -7,5 +7,7 @@
     <Background id="0" x="0" y="0" width="64" height="64" source="end" />
     <Decal id="1" x="100" y="150" source="loseText" scrollX="0" scrollY="0" />
     <WorldItem id="2" x="420" y="241" width="64" height="64" typeName="restart" onClick="world start" onEnter="" onExit="" />
+    <Decal id="2" x="0" y="0" source="win" scrollX="0" scrollY="0" />
+    <ParticleEmitter id="3" x="391" y="73" angle="-90" max="20" particleType="smoke" distance="100" distanceRange="0" duration="2" durationRange="0" angleRange="25" fadeOut="True" />
   </World>
 </level>

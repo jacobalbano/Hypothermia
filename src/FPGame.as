@@ -95,7 +95,7 @@ package
 			//	TODO: Revert this
 			//loadWorld("start");
 			
-			loadWorld("cabin");
+			loadWorld("end");
 			
 			sleep.onComplete = function ():void { Game.instance.console.slang.doLine("world end"); };
 			climate.onDeath = sleep.start;

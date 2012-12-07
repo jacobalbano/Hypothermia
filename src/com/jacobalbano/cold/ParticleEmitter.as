@@ -5,12 +5,14 @@ package com.jacobalbano.cold
 	import com.thaumaturgistgames.flakit.Library;
 	import flash.display.Bitmap;
 	import net.flashpunk.graphics.Emitter;
+	import flash.utils.getTimer;
 	
 	/**
 	 * @author Jake Albano
 	 */
 	public class ParticleEmitter extends XMLEntity 
 	{
+		private var lastTime:Number;
 		public var particleType:String;
 		public var vary:Number;
 		public var max:int;
@@ -25,6 +27,7 @@ package com.jacobalbano.cold
 		
 		public function ParticleEmitter() 
 		{
+			lastTime = 0;
 		}
 		
 		override public function load(entity:XML):void 
@@ -46,8 +49,12 @@ package com.jacobalbano.cold
 		{
 			super.update();
 			
-			if (emitter.particleCount < max)
+			var interval:Number = (1000 / max);
+			var deltaTime:Number = getTimer() - lastTime;
+			
+			if (deltaTime >= interval)
 			{
+				lastTime = getTimer();
 				emitter.emit(particleType, x, y);
 			}
 		}
