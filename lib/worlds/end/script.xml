@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<script>
+	<launch>
+		resetInv;
+		wake;
+		<!-- adjust for which ending we got -->
+		if var fireStarted
+			remDecal "loseText";
+		if not var fireStarted
+			remWorldItem "won";
+	</launch>
+	<tick>
+		
+	</tick>
+</script>

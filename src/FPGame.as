@@ -4,6 +4,7 @@ package
 	import com.jacobalbano.punkutils.*;
 	import com.thaumaturgistgames.flakit.Library;
 	import com.thaumaturgistgames.slang.Memory;
+	import com.thaumaturgistgames.slang.SlangInterpreter;
 	import com.thaumaturgistgames.slang.Stdlib;
 	import flash.utils.Dictionary;
 	import net.flashpunk.Engine;
@@ -57,6 +58,7 @@ package
 			world.addClass("WorldSound", WorldSound);
 			world.addClass("ClimateModifier", ClimateModifier);
 			
+			
 			Game.instance.console.slang.addFunction("world", loadWorld, [String], this, "Load a world from an Ogmo level");
 			Game.instance.console.slang.addFunction("worlds", listWorlds, [], this, "Load a world from an Ogmo level");
 			
@@ -65,20 +67,25 @@ package
 			Game.instance.console.slang.addFunction("hasInvItem", inventory.hasItem, [String], inventory, "Check if an item exists in the inventory");
 			Game.instance.console.slang.addFunction("addInvItem", inventory.addItem, [String], inventory, "Add an item to the inventory");
 			Game.instance.console.slang.addFunction("remInvItem", inventory.removeItem, [String], inventory, "Remove an item from the inventory");
+			Game.instance.console.slang.addFunction("resetInv", inventory.reset, [], inventory, "Reset the inventory");
 			
 			Game.instance.console.slang.addFunction("remWorldReaction", remWorldReaction, [String], this, "Remove a reaction trigger from the world");
 			
 			Game.instance.console.slang.addFunction("remClimateMod", remClimateMod, [String], this, "Remove a climate modifier from the world");
 			Game.instance.console.slang.addFunction("getTemp", getTemp, [], this, "Get the current temperature");
+			Game.instance.console.slang.addFunction("resetTemp", climate.reset, [], climate, "Get the current temperature");
 			
 			Game.instance.console.slang.addFunction("remWorldItem", remWorldItem, [String, Boolean], this, "Remove an item from the world");
 			Game.instance.console.slang.addFunction("restoreWorldItem", restoreWorldItem, [String, Boolean], this, "Restore a previously removed item to the world");
 			
 			Game.instance.console.slang.addFunction("remParticles", remParticles, [String], this, "Remove a particle emitter from the world");
 			
+			Game.instance.console.slang.addFunction("remDecal", remDecal, [String], this, "Remove a decal type from the world");
+			
 			Game.instance.console.slang.addFunction("stopAmbiance", stopAmbiance, [String], this, "Stop an ambient sound from playing");
 			
 			Game.instance.console.slang.addFunction("sleep", goToSleep, [], this, "Go to sleep");
+			Game.instance.console.slang.addFunction("wake", sleep.stop, [], sleep, "Wake up");
 			
 			Game.instance.console.slang.importModule(new Stdlib);
 			Game.instance.console.slang.importModule(new Memory);
@@ -89,6 +96,22 @@ package
 			//loadWorld("start");
 			
 			loadWorld("cabin");
+			
+			sleep.onComplete = function ():void { Game.instance.console.slang.doLine("world end"); };
+		}
+		
+		private function remDecal(name:String):void 
+		{
+			var all:Array = [];
+			world.getClass(Decal, all);
+			
+			for each (var item:Decal in all)
+			{
+				if (item.source == name)
+				{
+					world.remove(item);
+				}
+			}
 		}
 		
 		private function goToSleep():void 
@@ -107,7 +130,7 @@ package
 			var all:Array = [];
 			world.getClass(ClimateModifier, all);
 			
-			for each (var item:ClimateModifier in all) 
+			for each (var item:ClimateModifier in all)
 			{
 				if (item.name == name)
 				{

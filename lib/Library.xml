@@ -19,6 +19,7 @@
         <image>art/worlditems/matches.png</image>
         <image>art/worlditems/planks.png</image>
         <image>art/worlditems/planksBurnt.png</image>
+        <image>art/worlditems/restart.png</image>
         <image>art/worlditems/thermometerHigh.png</image>
         <image>art/worlditems/thermometerLow.png</image>
         <image>art/worlditems/thermometerMed.png</image>
@@ -37,12 +38,14 @@
         <image>art/decals/cabinThroughWindow.png</image>
         <image>art/decals/cellarGloom.png</image>
         <image>art/decals/iceInOuthouse.png</image>
+        <image>art/decals/loseText.png</image>
         <image>art/decals/outhouse.png</image>
         <image>art/decals/outhouseSeat.png</image>
         <image>art/decals/windowPeekPane.png</image>
         <image>art/backgrounds/bedroom.png</image>
         <image>art/backgrounds/cabin.png</image>
         <image>art/backgrounds/cellar.png</image>
+        <image>art/backgrounds/end.png</image>
         <image>art/backgrounds/frontLawn.png</image>
         <image>art/backgrounds/halfway.png</image>
         <image>art/backgrounds/inStove.png</image>
@@ -58,7 +61,6 @@
         <sound>sounds/getAxe.mp3</sound>
         <sound>sounds/getBook.mp3</sound>
         <sound>sounds/getMatches.mp3</sound>
-        <sound>sounds/heartBeat.mp3</sound>
         <sound>sounds/keyPickup.mp3</sound>
         <sound>sounds/paperRip.mp3</sound>
         <sound>sounds/singleBeatFast.mp3</sound>
@@ -68,6 +70,7 @@
     </sounds>
     <xmls>
         <xml>Library.xml</xml>
+        <xml>worlds/start/script.xml</xml>
         <xml>worlds/start/map.oel</xml>
         <xml>worlds/peekWindow/map.oel</xml>
         <xml>worlds/pantry/script.xml</xml>
@@ -83,6 +86,8 @@
         <xml>worlds/halfway/map.oel</xml>
         <xml>worlds/frontLawn/script.xml</xml>
         <xml>worlds/frontLawn/map.oel</xml>
+        <xml>worlds/end/script.xml</xml>
+        <xml>worlds/end/map.oel</xml>
         <xml>worlds/cellar/script.xml</xml>
         <xml>worlds/cellar/map.oel</xml>
         <xml>worlds/cabin/script.xml</xml>

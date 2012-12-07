@@ -19,10 +19,16 @@ package com.thaumaturgistgames.slang
 		{
 			super.bind(slang);
 			
+			slang.addFunction("clearMemory", clear, [], this, "Remove all values from memory");
 			slang.addFunction("remember", remember, [String, Object], this, "Store a value in memory");
 			slang.addFunction("forget", forget, [String], this, "Remove a value from memory");
 			slang.addFunction("var", getVar, [String], this, "Retrive a value from memory");
 			
+		}
+		
+		private function clear():void 
+		{
+			vars = new Dictionary;
 		}
 		
 		private function remember(s:String, o:Object):Object 

@@ -25,15 +25,11 @@ package com.jacobalbano.cold
 		
 		public function Sleep() 
 		{
+			
 			count = 0;
 			
 			topLid = new Image(Library.getImage("art.ui.drowsy.png"));
 			bottomLid = new Image(Library.getImage("art.ui.drowsy.png"));
-			
-			//	Flip the bottom image around
-			bottomLid.angle = 180;
-			bottomLid.originX = bottomLid.width;
-			bottomLid.originY = bottomLid.height;
 			
 			topLid.x = 0;
 			bottomLid.x = 0;
@@ -44,10 +40,14 @@ package com.jacobalbano.cold
 			topLid.scrollY = 0;
 			bottomLid.scrollY = 0;
 			
-			topLid.y = -topLid.height;
-			bottomLid.y = FP.height;
+			//	Flip the bottom image around
+			bottomLid.angle = 180;
+			bottomLid.originX = bottomLid.width;
+			bottomLid.originY = bottomLid.height;
 			
 			graphic = new Graphiclist(topLid, bottomLid);
+			
+			stop();
 		}
 		
 		public function start():void
@@ -65,6 +65,17 @@ package com.jacobalbano.cold
 				
 				running = true;
 			}
+		}
+		
+		public function stop():void
+		{
+			clearTweens();
+			
+			topLid.y = -topLid.height;
+			bottomLid.y = FP.height;
+			
+			count = 0;
+			running = false;
 		}
 		
 		private function onFinished():void 

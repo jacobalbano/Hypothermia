@@ -107,7 +107,7 @@ package com.jacobalbano.cold
 			state = toState;
 			
 			pulseIn();
-			heartbeat.play(1.3);
+			heartbeat.play(1.5);
 		}
 		
 	}

@@ -9,6 +9,7 @@ package com.jacobalbano.cold
 	public class Climate extends XMLEntity 
 	{
 		public var temperature:int;
+		public var onDeath:Function;
 		private var bodyTemp:Number;
 		private var delay:int;
 		
@@ -19,7 +20,6 @@ package com.jacobalbano.cold
 		
 		public function Climate() 
 		{
-			bodyTemp = IDEAL_BODY_TEMPERATURE;
 			heartbeat = new Heartbeat;
 		}
 		
@@ -63,8 +63,7 @@ package com.jacobalbano.cold
 				}
 				else
 				{
-					trace("getting warmer");
-					bodyTemp++;
+					bodyTemp += (MIN_NEUTRAL_CLIMATE / temperature) * 0.75;
 				}
 				
 				delay = 0;
@@ -74,6 +73,12 @@ package com.jacobalbano.cold
 			if (bodyTemp - MIN_BODY_TEMPERATURE <= 0)
 			{
 				heartbeat.stop();
+				
+				if (onDeath != null)
+				{
+					onDeath();
+				}
+				
 				return;
 			}
 			
@@ -89,6 +94,12 @@ package com.jacobalbano.cold
 				return;
 			}
 			
+		}
+		
+		public function reset():void 
+		{
+			bodyTemp = IDEAL_BODY_TEMPERATURE;
+			heartbeat.stop();
 		}
 		
 	}

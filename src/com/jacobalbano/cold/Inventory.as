@@ -32,17 +32,22 @@ package com.jacobalbano.cold
 		
 		public function Inventory() 
 		{
-			items = new Dictionary;
-			_mouseItem = "";
-			
 			var image:Bitmap = Library.getImage("art.ui.inventory.png");
 			graphic = new Image(image);
 			
 			mask = new Pixelmask(Library.getImage("art.ui.inventoryMask.png").bitmapData, 0, 0);
-			
-			y = -image.height;
 			graphic.scrollX = 0;
 			graphic.scrollY = 0;
+			
+			reset();
+		}
+		
+		public function reset():void 
+		{
+			items = new Dictionary;
+			mouseItem = "";
+			y = -(graphic as Image).height;
+			everUsed = false;
 		}
 		
 		override public function added():void 
