@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="Hypothermia" package="com.jacobalbano.hypothermia" version="1.0.0" company="Jacob Albano" />
+	<app main="FPGame" path="Export" file="Hypothermia" />
+	
+	<source path="src" />
+	<source path="submodules/hxpunk/" />
+	
+	<haxelib name="openfl" />
+	
+	<assets path="lib/art" rename="art" exclude="svg"/>
+	<assets path="lib/sounds" rename="sounds" />
+	<assets path="lib/worlds" rename="worlds" />
+	<assets path="submodules/hxpunk/net/hxpunk/assets" rename="hxpunk" />
+	
+</project>
