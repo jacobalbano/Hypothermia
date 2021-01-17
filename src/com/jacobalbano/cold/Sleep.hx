@@ -1,13 +1,13 @@
 package com.jacobalbano.cold;
 
-import net.hxpunk.graphics.Image;
+import haxepunk.graphics.Image;
 import haxe.Constraints.Function;
 import com.jacobalbano.punkutils.XMLEntity;
-import net.hxpunk.HP;
-import net.hxpunk.graphics.Graphiclist;
-import net.hxpunk.Tween;
-import net.hxpunk.tweens.misc.VarTween;
-import net.hxpunk.utils.Ease;
+import haxepunk.HXP;
+import haxepunk.graphics.Graphiclist;
+import haxepunk.Tween;
+import haxepunk.tweens.misc.VarTween;
+import haxepunk.utils.Ease;
 
 /**
 	 * ...
@@ -55,11 +55,13 @@ class Sleep extends XMLEntity
     {
         if (!running)
         {
-            var topTween : VarTween = new VarTween(onFinished, TweenType.ONESHOT);
-            var bottomTween : VarTween = new VarTween(onFinished, TweenType.ONESHOT);
+            var topTween : VarTween = new VarTween(TweenType.OneShot);
+            topTween.onComplete.bind(onFinished);
+            var bottomTween : VarTween = new VarTween(TweenType.OneShot);
+            bottomTween.onComplete.bind(onFinished);
             
             topTween.tween(topLid, "y", 0, DURATION, Ease.bounceInOut);
-            bottomTween.tween(bottomLid, "y", HP.height - bottomLid.height, DURATION, Ease.bounceInOut);
+            bottomTween.tween(bottomLid, "y", HXP.height - bottomLid.height, DURATION, Ease.bounceInOut);
             
             addTween(topTween, true);
             addTween(bottomTween, true);
@@ -73,7 +75,7 @@ class Sleep extends XMLEntity
         clearTweens();
         
         topLid.y = -topLid.height;
-        bottomLid.y = HP.height;
+        bottomLid.y = HXP.height;
         
         count = 0;
         running = false;

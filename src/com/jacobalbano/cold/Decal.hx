@@ -1,6 +1,6 @@
 package com.jacobalbano.cold;
 
-import net.hxpunk.graphics.Image;
+import haxepunk.graphics.Image;
 import com.jacobalbano.punkutils.XMLEntity;
 
 /**
@@ -17,11 +17,6 @@ class Decal extends XMLEntity
     public function new()
     {
         super();
-    }
-
-    override public function render():Void
-    {
-        super.render();
     }
     
     override public function load(entity : Xml) : Void

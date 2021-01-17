@@ -1,7 +1,8 @@
 package com.jacobalbano.cold;
 
 import com.jacobalbano.punkutils.XMLEntity;
-import net.hxpunk.graphics.Emitter;
+import haxepunk.graphics.emitter.Emitter;
+import haxepunk.HXP;
 
 /**
 	 * @author Jake Albano
@@ -38,20 +39,18 @@ class ParticleEmitter extends XMLEntity
         emitter.newType(particleType);
         emitter.setMotion(particleType, -angle, distance, duration, angleRange, distanceRange, durationRange);
         emitter.setAlpha(particleType, 1, (fadeOut) ? 0 : 1);
+        for (x in 0...100)
+        {
+            update();
+            emitter.update();
+        }
     }
     
     override public function update() : Void
     {
         super.update();
         
-        var interval : Float = (1000 / max);
-        var deltaTime : Float = Math.round(haxe.Timer.stamp() * 1000) - lastTime;
-        
-        if (deltaTime >= interval)
-        {
-            lastTime = Math.round(haxe.Timer.stamp() * 1000);
-            //emitter.emit(particleType, x, y);
-        }
+        emitter.emit(particleType, x, y);
     }
 }
 

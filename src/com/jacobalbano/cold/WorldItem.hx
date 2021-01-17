@@ -1,6 +1,6 @@
 package com.jacobalbano.cold;
 
-import net.hxpunk.graphics.Image;
+import haxepunk.graphics.Image;
 import com.jacobalbano.punkutils.XMLEntity;
 import flash.geom.Rectangle;
 

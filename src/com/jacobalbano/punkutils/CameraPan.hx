@@ -1,10 +1,11 @@
 package com.jacobalbano.punkutils;
 
+import haxepunk.input.Mouse;
 import flash.geom.Rectangle;
-import net.hxpunk.Entity;
-import net.hxpunk.tweens.misc.VarTween;
-import net.hxpunk.utils.Input;
-import net.hxpunk.HP;
+import haxepunk.Entity;
+import haxepunk.tweens.misc.VarTween;
+import haxepunk.input.Input;
+import haxepunk.HXP;
 import com.jacobalbano.punkutils.XMLEntity;
 import com.jacobalbano.punkutils.OgmoWorld;
 
@@ -45,8 +46,8 @@ class CameraPan extends XMLEntity
     {
         super.added();
         
-        HP.camera.x = x;
-        HP.camera.y = y;
+        HXP.camera.x = x;
+        HXP.camera.y = y;
         
         if (!Std.is(world, OgmoWorld))
             return;
@@ -56,23 +57,23 @@ class CameraPan extends XMLEntity
         this.worldHeight = Std.int(oWorld.size.y);
         oWorld.wraparound = this.wrapAround;
         
-        leftBuffer = new Rectangle(0, 0, buffer, HP.height);
-        rightBuffer = new Rectangle(HP.width - buffer, 0, buffer, HP.height);
-        topBuffer = new Rectangle(0, 0, HP.width, buffer);
-        bottomBuffer = new Rectangle(0, HP.height - buffer, HP.width, buffer);
+        leftBuffer = new Rectangle(0, 0, buffer, HXP.height);
+        rightBuffer = new Rectangle(HXP.width - buffer, 0, buffer, HXP.height);
+        topBuffer = new Rectangle(0, 0, HXP.width, buffer);
+        bottomBuffer = new Rectangle(0, HXP.height - buffer, HXP.width, buffer);
     }
     
     override public function update() : Void
     {
         super.update();
         
-        if (wrapAround || (HP.camera.x >= 0 && HP.camera.x + HP.width <= worldWidth))
+        if (wrapAround || (HXP.camera.x >= 0 && HXP.camera.x + HXP.width <= worldWidth))
         {
-            if (leftBuffer.contains(Input.mouseX, Input.mouseY))
+            if (leftBuffer.contains(Mouse.mouseX, Mouse.mouseY))
             {
                 onEnterLeft();
             }
-            else if (rightBuffer.contains(Input.mouseX, Input.mouseY))
+            else if (rightBuffer.contains(Mouse.mouseX, Mouse.mouseY))
             {
                 onEnterRight();
             }
@@ -83,13 +84,13 @@ class CameraPan extends XMLEntity
             }
         }
         
-        if (!wrapAround && HP.camera.y >= 0 && HP.camera.y + HP.height <= worldHeight)
+        if (!wrapAround && HXP.camera.y >= 0 && HXP.camera.y + HXP.height <= worldHeight)
         {
-            if (topBuffer.contains(Input.mouseX, Input.mouseY))
+            if (topBuffer.contains(Mouse.mouseX, Mouse.mouseY))
             {
                 onEnterTop();
             }
-            else if (bottomBuffer.contains(Input.mouseX, Input.mouseY))
+            else if (bottomBuffer.contains(Mouse.mouseX, Mouse.mouseY))
             {
                 onEnterBottom();
             }
@@ -100,39 +101,39 @@ class CameraPan extends XMLEntity
             }
         }
         
-        HP.camera.x += speedX;
-        HP.camera.y += speedY;
+        HXP.camera.x += speedX;
+        HXP.camera.y += speedY;
         
         if (!wrapAround)
         {
-            if (HP.width <= worldWidth)
+            if (HXP.width <= worldWidth)
             {
-                if (HP.camera.x < 0)
+                if (HXP.camera.x < 0)
                 {
-                    HP.camera.x = 0;
+                    HXP.camera.x = 0;
                 }
-                else if (HP.camera.x + HP.width >= worldWidth)
+                else if (HXP.camera.x + HXP.width >= worldWidth)
                 {
-                    HP.camera.x = worldWidth - HP.width;
+                    HXP.camera.x = worldWidth - HXP.width;
                 }
             }
             
-            if (HP.height <= worldHeight)
+            if (HXP.height <= worldHeight)
             {
-                if (HP.camera.y < 0)
+                if (HXP.camera.y < 0)
                 {
-                    HP.camera.y = 0;
+                    HXP.camera.y = 0;
                 }
-                else if (HP.camera.y + HP.height >= worldHeight)
+                else if (HXP.camera.y + HXP.height >= worldHeight)
                 {
-                    HP.camera.y = worldHeight - HP.height;
+                    HXP.camera.y = worldHeight - HXP.height;
                 }
             }
         }
         else
         {
-            HP.camera.x = HP.camera.x % worldWidth;
-            HP.camera.y = HP.camera.y % worldHeight;
+            HXP.camera.x = HXP.camera.x % worldWidth;
+            HXP.camera.y = HXP.camera.y % worldHeight;
         }
     }
     

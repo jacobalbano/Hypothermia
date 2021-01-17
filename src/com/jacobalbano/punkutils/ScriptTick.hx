@@ -3,8 +3,8 @@ package com.jacobalbano.punkutils;
 import openfl.Assets;
 import flash.errors.Error;
 import com.thaumaturgistgames.slang.SlangInterpreter;
-import net.hxpunk.Entity;
-import net.hxpunk.HP;
+import haxepunk.Entity;
+import haxepunk.HXP;
 
 /**
 	 * @author Jacob Albano
@@ -61,7 +61,7 @@ class ScriptTick extends Entity
     {
         super.update();
         
-        if (++delay >= HP.frameRate / 4)
+        if (++delay >= HXP.frameRate / 4)
         {
             delay = 0;
             slang.doLine(tick);

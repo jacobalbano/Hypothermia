@@ -1,7 +1,7 @@
 package com.jacobalbano.cold;
 
+import haxepunk.input.Mouse;
 import com.jacobalbano.punkutils.XMLEntity;
-import net.hxpunk.utils.Input;
 
 /**
 	 * @author Jake Albano
@@ -36,7 +36,7 @@ class WorldReaction extends XMLEntity
             
             if (inventory.mouseItem == match)
             {
-                if (Input.mouseReleased)
+                if (Mouse.mouseReleased)
                 {
                     FPGame.slang.doLine(onMatch);
                 }

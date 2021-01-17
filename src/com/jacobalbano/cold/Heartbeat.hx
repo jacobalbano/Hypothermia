@@ -1,11 +1,11 @@
 package com.jacobalbano.cold;
 
 import com.jacobalbano.punkutils.XMLEntity;
-import net.hxpunk.Sfx;
-import net.hxpunk.Tween;
-import net.hxpunk.tweens.misc.VarTween;
-import net.hxpunk.utils.Ease;
-import net.hxpunk.HP;
+import haxepunk.Sfx;
+import haxepunk.Tween;
+import haxepunk.tweens.misc.VarTween;
+import haxepunk.utils.Ease;
+import haxepunk.HXP;
 
 /**
 	 * ...
@@ -52,7 +52,7 @@ class Heartbeat extends XMLEntity
         
         toState = SLOW;
         
-        if (heartbeat != null && !heartbeat.isPlaying)
+        if (heartbeat != null && !heartbeat.playing)
         {
             beatHeart();
         }
@@ -67,7 +67,7 @@ class Heartbeat extends XMLEntity
         
         toState = FAST;
         
-        if (heartbeat != null && !heartbeat.isPlaying)
+        if (heartbeat != null && !heartbeat.playing)
         {
             beatHeart();
         }
@@ -75,14 +75,15 @@ class Heartbeat extends XMLEntity
     
     private function pulseIn() : Void
     {
-        var tween : VarTween = new VarTween(pulseOut, TweenType.ONESHOT);
-        tween.tween(HP.screen, "scale", 1, heartbeat.length / 2, Ease.sineOut);
+        var tween : VarTween = new VarTween(TweenType.OneShot);
+        tween.onComplete.bind(pulseOut);
+        tween.tween(HXP.screen, "scale", 1, heartbeat.length / 2, Ease.sineOut);
         world.addTween(tween);
     }
     
     private function pulseOut() : Void
     {
-        HP.screen.scale = 1.005;
+        HXP.screen.scaleX = HXP.screen.scaleY = 1.005;
     }
     
     private function beatHeart() : Void

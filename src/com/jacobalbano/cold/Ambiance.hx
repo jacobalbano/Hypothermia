@@ -1,9 +1,9 @@
 package com.jacobalbano.cold;
 
 import com.jacobalbano.punkutils.XMLEntity;
-import net.hxpunk.Sfx;
-import net.hxpunk.Tween;
-import net.hxpunk.tweens.sound.SfxFader;
+import haxepunk.Sfx;
+import haxepunk.Tween;
+import haxepunk.tweens.sound.SfxFader;
 
 /**
 	 * ...
@@ -36,7 +36,7 @@ class Ambiance extends XMLEntity
     private function repeat() : Void
     {
         sound.play(0);
-        fader = new SfxFader(sound, null, TweenType.ONESHOT);
+        fader = new SfxFader(sound, TweenType.OneShot);
         fader.fadeTo(volume, tween);
         addTween(fader, true);
     }
@@ -45,7 +45,8 @@ class Ambiance extends XMLEntity
     {
         super.removed();
         
-        fader = new SfxFader(sound, sound.stop, TweenType.ONESHOT);
+        fader = new SfxFader(sound, TweenType.OneShot);
+        fader.onComplete.bind(sound.stop);
         fader.fadeTo(0, tween);
         
         world.addTween(fader, true);

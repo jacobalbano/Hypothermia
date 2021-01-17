@@ -1,16 +1,17 @@
 package com.jacobalbano.cold;
 
-import net.hxpunk.graphics.Image;
+import haxepunk.input.Mouse;
+import haxepunk.graphics.Image;
 import com.jacobalbano.punkutils.XMLEntity;
 import flash.geom.Rectangle;
-import net.hxpunk.utils.Input;
+import haxepunk.input.Input;
 
 /**
 	 * @author Jake Albano
 	 */
 class InventoryItem extends XMLEntity
 {
-    private var parent : Inventory;
+    private var owner : Inventory;
     public var typeName : String;
     
     public function new()
@@ -18,9 +19,9 @@ class InventoryItem extends XMLEntity
         super();
     }
     
-    public function onAdded(parent : Inventory) : Void
+    public function onAdded(owner : Inventory) : Void
     {
-        this.parent = parent;
+        this.owner = owner;
     }
     
     override public function added() : Void
@@ -37,12 +38,12 @@ class InventoryItem extends XMLEntity
         var image : Image = cast graphic;
         var rect : Rectangle = new Rectangle(x - (image.originX * (image.scale)), y - (image.originY * (image.scale)), image.width * image.scale, image.height * image.scale);
         
-        if (rect.contains(Input.mouseX, Input.mouseY))
+        if (rect.contains(Mouse.mouseX, Mouse.mouseY))
         {
-            if (Input.mouseReleased)
+            if (Mouse.mouseReleased)
             {
                 //	Set this as the type at the mouse
-                parent.mouseItem = typeName;
+                owner.mouseItem = typeName;
             }
         }
     }

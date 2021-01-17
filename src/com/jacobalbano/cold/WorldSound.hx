@@ -1,7 +1,7 @@
 package com.jacobalbano.cold;
 
 import com.jacobalbano.punkutils.XMLEntity;
-import net.hxpunk.Sfx;
+import haxepunk.Sfx;
 
 /**
 	 * ...
@@ -27,7 +27,7 @@ class WorldSound extends XMLEntity
     
     public function play() : Void
     {
-        if (!sound.isPlaying)
+        if (!sound.playing)
         {
             sound.play();
         }

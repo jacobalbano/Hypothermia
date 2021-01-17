@@ -6,12 +6,12 @@ import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.geom.Point;
 import flash.geom.Rectangle;
-import net.hxpunk.Entity;
-import net.hxpunk.Graphic;
-import net.hxpunk.graphics.Image;
-import net.hxpunk.Sfx;
-import net.hxpunk.World;
-import net.hxpunk.HP;
+import haxepunk.Entity;
+import haxepunk.Graphic;
+import haxepunk.graphics.Image;
+import haxepunk.Sfx;
+import haxepunk.World;
+import haxepunk.HXP;
 
 /**
 	 * @author Jacob Albano
@@ -124,15 +124,18 @@ class OgmoWorld extends World
                 if (Std.is(ent.graphic, Image))
                 {
                     var image: Image = cast ent.graphic;
-                    var angle = Std.parseInt(entity.get("angle"));
-                    var size: Point = new Point(
-                        Std.parseFloat(entity.get("width")),
-                        Std.parseFloat(entity.get("height"))
-                    );
 
-                    image.angle = -angle;
-                    image.scaleX = size.x / image.width != 0 ? image.width : 1;
-                    image.scaleY = size.y / image.height != 0 ? image.height : 1;
+                    var angleStr = entity.get("angle");
+                    var widthStr = entity.get("width");
+                    var heightStr = entity.get("height");
+
+                    var angle = angleStr == null ? 0 : Std.parseInt(angleStr);
+                    var width = widthStr == null ? 0 : Std.parseFloat(widthStr);                    
+                    var height = heightStr == null ? 0 : Std.parseFloat(heightStr);
+
+                    if (angle != 0) image.angle = -angle;
+                    if (width != 0) image.scaleX = width / image.width;
+                    if (height != 0) image.scaleY = height / image.height;
                 }
                 
                 ent.layer = numLayers;
@@ -153,12 +156,12 @@ class OgmoWorld extends World
     {
         if (wraparound)
         {
-            var original = HP.camera.x;
-            HP.camera.x = original + size.x;
+            var original = HXP.camera.x;
+            HXP.camera.x = original + size.x;
             super.render();
-            HP.camera.x = original - size.x;
+            HXP.camera.x = original - size.x;
             super.render();
-            HP.camera.x = original;
+            HXP.camera.x = original;
         }
         
         super.render();

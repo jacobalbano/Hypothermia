@@ -3,9 +3,8 @@ package com.jacobalbano.cold;
 import com.jacobalbano.punkutils.XMLEntity;
 import flash.geom.Point;
 import flash.geom.Rectangle;
-import net.hxpunk.HP;
-import net.hxpunk.utils.Input;
-import flash.ui.Mouse;
+import haxepunk.HXP;
+import haxepunk.input.Mouse;
 import flash.ui.MouseCursor;
 import FPGame;
 
@@ -40,7 +39,7 @@ class Hotspot extends XMLEntity
         super.removed();
         if (contains)
         {
-            Mouse.cursor = MouseCursor.ARROW;
+            flash.ui.Mouse.cursor = MouseCursor.ARROW;
         }
     }
     
@@ -66,12 +65,12 @@ class Hotspot extends XMLEntity
             {
                 return;
             }
-            else if (Input.mouseReleased)
+            else if (Mouse.mouseReleased)
             {
                 callback(onClick);
             }
             
-            Mouse.cursor = MouseCursor.BUTTON;
+            flash.ui.Mouse.cursor = MouseCursor.BUTTON;
         }
         
         if (lastContain != contains)
@@ -82,7 +81,7 @@ class Hotspot extends XMLEntity
             }
             else
             {
-                Mouse.cursor = MouseCursor.ARROW;
+                flash.ui.Mouse.cursor = MouseCursor.ARROW;
                 callback(onExit);
             }
         }

@@ -1,17 +1,19 @@
+import haxepunk.debug.Console;
+import haxepunk.World;
 import openfl.Assets;
-import net.hxpunk.graphics.Image;
-import net.hxpunk.Entity;
+import haxepunk.graphics.Image;
+import haxepunk.Entity;
 import flash.errors.Error;
 import com.jacobalbano.cold.*;
 import com.jacobalbano.punkutils.*;
 import com.thaumaturgistgames.slang.Memory;
 import com.thaumaturgistgames.slang.SlangInterpreter;
 import com.thaumaturgistgames.slang.Stdlib;
-import net.hxpunk.Engine;
-import net.hxpunk.HP;
-import net.hxpunk.Tween;
-import net.hxpunk.tweens.misc.VarTween;
-import net.hxpunk.utils.Ease;
+import haxepunk.Engine;
+import haxepunk.HXP;
+import haxepunk.Tween;
+import haxepunk.tweens.misc.VarTween;
+import haxepunk.utils.Ease;
 
 /**
 	 * @author Jacob Albano
@@ -20,45 +22,48 @@ class FPGame extends Engine
 {
     private var currentWorld : String;
     private var lastWorld : String;
-    private var world : OgmoWorld;
+    private var ogmoWorld : OgmoWorld;
     private var inventory : Inventory;
     private var climate : Climate;
     private var pool : Map<String, WorldItem>;
     private var sleep : Sleep;
     public static var slang(default, never):SlangInterpreter = new SlangInterpreter();
 
+    public static function main() { new FPGame(); }
+
     public function new()
     {
-        super(800, 400);
-        lastWorld = "";
-        currentWorld = "";
-        inventory = new Inventory();
-        climate = new Climate();
-        HP.screen.smoothing = true;
-        pool = new Map();
+        super(800, 400, 60, true);
     }
 
     override public function init() : Void
     {
         super.init();
-        HP.console.enable();
+        Console.enable();
+        
+        lastWorld = "";
+        currentWorld = "";
+
+        inventory = new Inventory();
+        climate = new Climate();
+        pool = new Map();
         
         sleep = new Sleep();
         
-        world = new OgmoWorld();
-        HP.world = world;
+        ogmoWorld = new OgmoWorld();
+        HXP.world = ogmoWorld;
         
-        world.addClass("CameraPan", CameraPan);
-        world.addClass("Background", Background);
-        world.addClass("Hotspot", Hotspot);
-        world.addClass("ParticleEmitter", ParticleEmitter);
-        world.addClass("Ambiance", Ambiance);
-        world.addClass("WorldItem", WorldItem);
-        world.addClass("InventoryItem", InventoryItem);
-        world.addClass("Decal", Decal);
-        world.addClass("WorldReaction", WorldReaction);
-        world.addClass("WorldSound", WorldSound);
-        world.addClass("ClimateModifier", ClimateModifier);
+        ogmoWorld.addClass("CameraPan", CameraPan);
+        ogmoWorld.addClass("Background", Background);
+        ogmoWorld.addClass("Hotspot", Hotspot);
+        ogmoWorld.addClass("ParticleEmitter", ParticleEmitter);
+        ogmoWorld.addClass("Ambiance", Ambiance);
+        ogmoWorld.addClass("WorldItem", WorldItem);
+        ogmoWorld.addClass("InventoryItem", InventoryItem);
+        ogmoWorld.addClass("Decal", Decal);
+        ogmoWorld.addClass("WorldReaction", WorldReaction);
+        ogmoWorld.addClass("WorldSound", WorldSound);
+        ogmoWorld.addClass("ClimateModifier", ClimateModifier);
         
         
         slang.addFunction("world", loadWorld, [String], this, "Load a world from an Ogmo level");
@@ -231,7 +236,8 @@ class FPGame extends Engine
                     return;
                 }
                 
-                var tween : VarTween = new VarTween(realRemoveWorldItem, TweenType.ONESHOT);
+                var tween : VarTween = new VarTween(TweenType.OneShot);
+                tween.onComplete.bind(realRemoveWorldItem);
                 tween.tween(item.graphic, "alpha", 0, 1, Ease.backOut);
                 world.addTween(tween, true);
                 return;
@@ -258,7 +264,7 @@ class FPGame extends Engine
         else
         {
             img.alpha = 0;
-            var tween : VarTween = new VarTween(null, TweenType.ONESHOT);
+            var tween : VarTween = new VarTween(TweenType.OneShot);
             tween.tween(item.graphic, "alpha", 1, 1, Ease.backOut);
             world.addTween(tween, true);
         }
@@ -284,12 +290,12 @@ class FPGame extends Engine
             return;
         }
         
-        world.buildWorld(path);
-        world.add(new Transition());
-        world.add(inventory);
-        world.add(climate);
-        world.add(new ScriptTick(slang, 'worlds/${name}/script.xml'));
-        world.add(sleep);
+        ogmoWorld.buildWorld(path);
+        ogmoWorld.add(new Transition());
+        ogmoWorld.add(inventory);
+        ogmoWorld.add(climate);
+        ogmoWorld.add(new ScriptTick(slang, 'worlds/${name}/script.xml'));
+        ogmoWorld.add(sleep);
     }
 }
 

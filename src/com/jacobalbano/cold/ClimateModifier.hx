@@ -9,7 +9,7 @@ class ClimateModifier extends XMLEntity
 {
     public var temperature : Int;
     
-    private var parent : Climate;
+    private var owner : Climate;
     
     public function new()
     {
@@ -18,7 +18,7 @@ class ClimateModifier extends XMLEntity
     
     public function remove() : Void
     {
-        parent.temperature -= temperature;
+        owner.temperature -= temperature;
     }
     
     override public function removed() : Void
@@ -26,9 +26,9 @@ class ClimateModifier extends XMLEntity
         super.removed();
     }
     
-    public function onAdded(parent : Climate) : Void
+    public function onAdded(owner : Climate) : Void
     {
-        this.parent = parent;
+        this.owner = owner;
     }
 }
 

@@ -2,7 +2,7 @@ package com.jacobalbano.cold;
 
 import haxe.Constraints.Function;
 import com.jacobalbano.punkutils.XMLEntity;
-import net.hxpunk.HP;
+import haxepunk.HXP;
 
 /**
 	 * @author Jake Albano
@@ -59,7 +59,7 @@ class Climate extends XMLEntity
         
         var seconds : Int = 10;
         
-        if (++delay > HP.frameRate * seconds)
+        if (++delay > HXP.frameRate * seconds)
         {
             if (temperature < MIN_NEUTRAL_CLIMATE)
             {

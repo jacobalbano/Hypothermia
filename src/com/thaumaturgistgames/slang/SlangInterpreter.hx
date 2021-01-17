@@ -158,7 +158,7 @@ class SlangInterpreter
         var callstack : Array<Dynamic> = [];
         var argstack : Array<Dynamic> = [];
         var bytecode : Array<Dynamic> = [];
-        var checkCall:Void->Void;
+        var checkCall:Void->Void = null;
 
         //	Sexy stuff happening right here
         function pushArg(arg : Dynamic) : Void

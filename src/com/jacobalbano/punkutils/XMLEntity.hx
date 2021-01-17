@@ -1,7 +1,7 @@
 package com.jacobalbano.punkutils;
 
 import haxe.rtti.CType.Rights;
-import net.hxpunk.Entity;
+import haxepunk.Entity;
 import haxe.xml.Access;
 import haxe.rtti.Rtti;
 

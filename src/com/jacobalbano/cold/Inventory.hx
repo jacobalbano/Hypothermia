@@ -1,18 +1,18 @@
 package com.jacobalbano.cold;
 
+import haxepunk.input.Mouse;
 import openfl.Assets;
 import flash.errors.Error;
-import net.hxpunk.graphics.Image;
+import haxepunk.graphics.Image;
 import com.jacobalbano.punkutils.XMLEntity;
 import flash.display.Bitmap;
-import flash.ui.Mouse;
 import flash.ui.MouseCursor;
-import net.hxpunk.Entity;
-import net.hxpunk.masks.Pixelmask;
-import net.hxpunk.Tween;
-import net.hxpunk.tweens.misc.VarTween;
-import net.hxpunk.utils.Ease;
-import net.hxpunk.utils.Input;
+import haxepunk.Entity;
+import haxepunk.masks.Pixelmask;
+import haxepunk.Tween;
+import haxepunk.tweens.misc.VarTween;
+import haxepunk.utils.Ease;
+import haxepunk.input.Input;
 
 /**
 	 * @author Jake Albano
@@ -71,15 +71,15 @@ class Inventory extends XMLEntity
         extended = nextExtendState;
         
         var lastContain : Bool = contains;
-        contains = collidePoint(x, y, Input.mouseX, Input.mouseY);
+        contains = collidePoint(x, y, Mouse.mouseX, Mouse.mouseY);
         
         var count : Int = 0;
         for (item in items)
         {
             if (item.typeName == mouseItem)
             {
-                item.x = Input.mouseX;
-                item.y = Input.mouseY;
+                item.x = Mouse.mouseX;
+                item.y = Mouse.mouseY;
             }
             else
             {
@@ -92,15 +92,15 @@ class Inventory extends XMLEntity
         {
             if (contains)
             {
-                Mouse.cursor = MouseCursor.BUTTON;
+                flash.ui.Mouse.cursor = MouseCursor.BUTTON;
             }
             else
             {
-                Mouse.cursor = MouseCursor.ARROW;
+                flash.ui.Mouse.cursor = MouseCursor.ARROW;
             }
         }
         
-        if (Input.mouseReleased && contains)
+        if (Mouse.mouseReleased && contains)
         {
             if (mouseItem != "")
             {
@@ -128,7 +128,7 @@ class Inventory extends XMLEntity
             return;
         }
         
-        var tween : VarTween = new VarTween(null, TweenType.ONESHOT);
+        var tween : VarTween = new VarTween(TweenType.OneShot);
         tween.tween(this, "y", 0, 0.8, Ease.bounceOut);
         addTween(tween, true);
         nextExtendState = true;
@@ -141,7 +141,7 @@ class Inventory extends XMLEntity
             return;
         }
         
-        var tween : VarTween = new VarTween(null, TweenType.ONESHOT);
+        var tween : VarTween = new VarTween(TweenType.OneShot);
         tween.tween(this, "y", y - 150, 0.7, Ease.bounceOut);
         addTween(tween, true);
         nextExtendState = false;
@@ -183,7 +183,7 @@ class Inventory extends XMLEntity
         if (!everUsed && ++_itemCount == 1)
         {
             //	First item added to inventory, so show the button in a way that it'll be noticed.
-            var tween : VarTween = new VarTween(null, TweenType.ONESHOT);
+            var tween : VarTween = new VarTween(TweenType.OneShot);
             tween.tween(this, "y", y + 50, 0.9, Ease.bounceOut);
             addTween(tween, true);
         }
