@@ -114,15 +114,14 @@ class FPGame extends Engine
     
     private function remDecal(name : String) : Void
     {
-        var all : Array<Entity> = [];
+        var all : Array<Decal> = [];
         world.getClass(Decal, all);
         
         for (item in all)
         {
-            var decal:Decal = cast item;
-            if (decal.source == name)
+            if (item.source == name)
             {
-                world.remove(decal);
+                world.remove(item);
             }
         }
     }
@@ -140,48 +139,31 @@ class FPGame extends Engine
     
     private function remClimateMod(name : String) : Void
     {
-        var all : Array<Entity> = [];
+        var all : Array<ClimateModifier> = [];
         world.getClass(ClimateModifier, all);
-        
-        for (item in all)
+        for (item in all.filter(x -> x.name == name))
         {
-            var mod:ClimateModifier = cast item;
-            if (item.name == name)
-            {
-                mod.remove();
-                world.remove(mod);
-            }
+            item.remove();
+            world.remove(item);
         }
     }
     
     private function playWorldSound(type : String) : Void
     {
-        var all : Array<Entity> = [];
+        var all : Array<WorldSound> = [];
         world.getClass(WorldSound, all);
         
-        for (item in all)
-        {
-            var worldSound:WorldSound = cast item;
-            if (worldSound.typeName == type)
-            {
-                worldSound.play();
-            }
-        }
+        for (item in all.filter(x -> x.typeName == type))
+            item.play();
     }
     
     private function remWorldReaction(itemName : String) : Void
     {
-        var list : Array<Entity> = [];
+        var list : Array<WorldReaction> = [];
         world.getClass(WorldReaction, list);
         
-        for (item in list)
-        {
-            var reaction:WorldReaction = cast item;
-            if (reaction.match == itemName)
-            {
-                world.remove(reaction);
-            }
-        }
+        for (item in list.filter(x -> x.match == itemName))
+            world.remove(item);
     }
     
     private function remParticles(name : String) : Void
@@ -201,46 +183,34 @@ class FPGame extends Engine
     
     private function stopAmbiance(name : String) : Void
     {
-        var list : Array<Entity> = [];
+        var list : Array<Ambiance> = [];
         world.getClass(Ambiance, list);
         
-        for (item in list)
-        {
-            var ambiance:Ambiance = cast item;
-            if (ambiance.source == name)
-            {
-                world.remove(item);
-            }
-        }
+        for (item in list.filter(x -> x.source == name))
+            world.remove(item);
     }
     
     private function remWorldItem(worldItem : String, instant : Bool) : Void
     {
-        var list : Array<Entity> = [];
+        var list : Array<WorldItem> = [];
         world.getClass(WorldItem, list);
         
-        for (item in list)
+        for (item in list.filter(x -> x.typeName == worldItem))
         {
-            var wItem:WorldItem = cast item;
-            if (wItem.typeName == worldItem)
+            function realRemoveWorldItem() : Void
             {
-                function realRemoveWorldItem() : Void
-                {
-                    world.remove(item);
-                    pool.set(worldItem, wItem);
-                }
+                world.remove(item);
+                pool.set(worldItem, item);
+            }
 
-                if (instant)
-                {
-                    realRemoveWorldItem();
-                    return;
-                }
-                
+            if (instant)
+                realRemoveWorldItem();
+            else
+            {
                 var tween : VarTween = new VarTween(TweenType.OneShot);
                 tween.onComplete.bind(realRemoveWorldItem);
                 tween.tween(item.graphic, "alpha", 0, 1, Ease.backOut);
                 world.addTween(tween, true);
-                return;
             }
         }
     }
@@ -248,19 +218,13 @@ class FPGame extends Engine
     private function restoreWorldItem(worldItem : String, instant : Bool) : Void
     {
         var item = pool.get(worldItem);
-        
-        if (item == null)
-        {
-            return;
-        }
+        if (item == null) return;
         
         world.add(item);
         
         var img:Image = cast item.graphic;
         if (instant)
-        {
             img.alpha = 1;
-        }
         else
         {
             img.alpha = 0;

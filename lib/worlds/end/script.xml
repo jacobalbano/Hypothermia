@@ -4,7 +4,7 @@
 		resetTemp;
 		resetInv;
 		wake;
-		<!-- adjust for which ending we got -->
+		#  adjust for which ending we got ;
 		if var fireStarted
 			remWorldItem "restart" true
 			remDecal "loseText";

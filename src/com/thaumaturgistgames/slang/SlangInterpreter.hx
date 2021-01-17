@@ -3,6 +3,7 @@ package com.thaumaturgistgames.slang;
 import flash.errors.ArgumentError;
 import flash.errors.Error;
 import haxe.Constraints.Function;
+using StringTools;
 
 /**
 	 * Interpreter for the Slang scripting language
@@ -382,9 +383,9 @@ class SlangInterpreter
         var builder : String = "";
         var result : Array<String> = [];
         
-        var pushAndReset : Void->Void = function() : Void
+        function pushAndReset()
         {
-            result.push(builder);
+            result.push(builder.trim());
             builder = "";
         }
         
@@ -432,6 +433,7 @@ class SlangInterpreter
         
         for (item in separateLines(str))
         {
+            if (item.startsWith("#")) continue;
             done.push(separateWords(item));
         }
         

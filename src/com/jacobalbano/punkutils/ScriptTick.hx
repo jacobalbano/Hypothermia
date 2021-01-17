@@ -1,5 +1,6 @@
 package com.jacobalbano.punkutils;
 
+import haxe.xml.Access;
 import openfl.Assets;
 import flash.errors.Error;
 import com.thaumaturgistgames.slang.SlangInterpreter;
@@ -27,18 +28,14 @@ class ScriptTick extends Entity
             return;
         }
         
-        var xml = Xml.parse(Assets.getText(script));
-        for (e in xml.elementsNamed("launch"))
-        {
-            launch = e.nodeValue;
-            break;
-        }
+        var xml = new Access(Xml.parse(Assets.getText(script)));
+        var maybeLaunch = xml.node.script.node.launch.innerData;
+        if (maybeLaunch != null)
+            launch = maybeLaunch;
         
-        for (e in xml.elementsNamed("tick"))
-        {
-            tick = e.nodeValue;
-            break;
-        }
+        var maybeTick = xml.node.script.node.tick.innerData;
+        if (maybeTick != null)
+            tick = maybeTick;
         
         delay = 0;
         this.slang = slang;

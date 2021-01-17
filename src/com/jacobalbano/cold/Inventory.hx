@@ -1,5 +1,6 @@
 package com.jacobalbano.cold;
 
+import haxepunk.masks.Hitbox;
 import haxepunk.input.Mouse;
 import openfl.Assets;
 import flash.errors.Error;
@@ -8,11 +9,11 @@ import com.jacobalbano.punkutils.XMLEntity;
 import flash.display.Bitmap;
 import flash.ui.MouseCursor;
 import haxepunk.Entity;
-import haxepunk.masks.Pixelmask;
 import haxepunk.Tween;
 import haxepunk.tweens.misc.VarTween;
 import haxepunk.utils.Ease;
 import haxepunk.input.Input;
+import haxepunk.HXP;
 
 /**
 	 * @author Jake Albano
@@ -38,9 +39,10 @@ class Inventory extends XMLEntity
     {
         super();
         graphic = new Image("art/ui/inventory.png");
-        mask = new Pixelmask("art/ui/inventoryMask.png", 0, 0);
         graphic.scrollX = 0;
         graphic.scrollY = 0;
+
+        mask = new Hitbox(100, 100, HXP.width - 200, 100);
         
         reset();
     }

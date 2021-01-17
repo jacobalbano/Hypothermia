@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <script>
 	<launch>
-		<!-- if the book hasn't been used, we shouldn't show the tinder -->
+		#  if the book hasn't been used, we shouldn't show the tinder ;
 		if not var bookInFire
 			remWorldItem "tinder" true;
 		if var bookInFire
 			remWorldReaction "book";
 			
-		<!-- if the book hasn't been used, we shouldn't show the tinder -->
+		#  if the book hasn't been used, we shouldn't show the tinder ;
 		if not var woodInFire
 			remWorldItem "planks" true;
 		if var woodInFire
 			remWorldReaction "planks";
 		
-		<!-- if the fire isn't started, don't show the particle effects or play the ambiance -->
+		#  if the fire isn't started, don't show the particle effects or play the ambiance ;
 		if not var fireStarted
 			remWorldItem "planksBurnt" true
 			remParticles "flame_01"

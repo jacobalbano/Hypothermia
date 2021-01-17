@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <script>
 	<launch>
-		<!-- only show the book if we haven't picked it up or used it yet -->
+		#  only show the book if we haven't picked it up or used it yet ;
 		if hasInvItem "book"
 			remWorldItem "book" true;
 		if var bookInFire

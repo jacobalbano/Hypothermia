@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <script>
 	<launch>
-		<!-- if the fire isn't started, remove both thermometers to show the lowest -->
-		<!-- may want to only show one or the other at some point -->
+		#  if the fire isn't started, remove both thermometers to show the lowest ;
+		#  may want to only show one or the other at some point ;
 		if not var fireStarted
 			remWorldItem "thermometerHigh" true
 			remWorldItem "thermometerMed" true

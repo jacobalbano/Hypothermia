@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <script>
 	<launch>
-		<!-- remove the blanket if we have it -->
+		#  remove the blanket if we have it ;
 		if hasInvItem "blanket"
 			remWorldItem "blanket" true;
 	</launch>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <script>
 	<launch>
-		<!--- remove trapdoor and disable using the axe -->
+		# - remove trapdoor and disable using the axe ;
 		if var trapBroken
 			remWorldItem "trapDoor" true
 			remWorldReaction "axe";
-		<!-- if we haven't broken the door, the planks shouldn't show up -->
+		#  if we haven't broken the door, the planks shouldn't show up ;
 		if not var trapBroken
 			remWorldItem "planks" true;
-		<!-- likewise, if we have the planks already we don't want to show them here -->
+		#  likewise, if we have the planks already we don't want to show them here ;
 		if hasInvItem "planks"
 			remWorldItem "planks" true;
-		<!-- ...also remove the planks if we've put them in the fire-->
+		#  ...also remove the planks if we've put them in the fire;
 		if var woodInFire
 			remWorldItem "planks" true
 			remClimateMod "withoutFire";
-		<!-- remove the matches if we've picked them up or used them -->
+		#  remove the matches if we've picked them up or used them ;
 		if var fireStarted
 			remWorldItem "matches" true;
 		if hasInvItem "matches"

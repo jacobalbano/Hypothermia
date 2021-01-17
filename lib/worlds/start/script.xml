@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <script>
 	<launch>
-		<!-- reset all variables in case we're starting a new game-->
+		# reset all variables in case we're starting a new game;
 		clearMemory;
 		resetInv;
 	</launch>
