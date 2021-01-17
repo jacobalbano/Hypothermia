@@ -295,11 +295,12 @@ class SlangInterpreter
         }
         else
         {
-            var type : Class<Dynamic> = functions[funcID][ARG_TYPES][param];
-            return Type.createInstance(type, [value]);
+            if (value == "true") return true;
+            if (value == "false") return false;
+            //  hack to get this working for literally one game
         }
         
-        return null;
+        throw "broken";
     }
     
     /**

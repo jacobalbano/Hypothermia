@@ -24,6 +24,7 @@ class ScriptTick extends Entity
         {
             trace("Failed to load script file \"", script, "\"");
             failed = true;
+            return;
         }
         
         var xml = Xml.parse(Assets.getText(script));

@@ -50,7 +50,7 @@ class ParticleEmitter extends XMLEntity
         if (deltaTime >= interval)
         {
             lastTime = Math.round(haxe.Timer.stamp() * 1000);
-            emitter.emit(particleType, x, y);
+            //emitter.emit(particleType, x, y);
         }
     }
 }

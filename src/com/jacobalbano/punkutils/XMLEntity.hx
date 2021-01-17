@@ -41,12 +41,12 @@ class XMLEntity extends Entity
     private static function createMapper(entClass:Class<XMLEntity>):XMLEntityMapper
     {
         var result = new XMLEntityMapper();
-        var thisRtti = Rtti.getRtti(entClass);
-        for (field in thisRtti.fields)
-        {
-            if (field.set == Rights.RNo)
-                continue;
+        var fields = Rtti.getRtti(entClass).fields
+            .concat(Rtti.getRtti(Entity).fields)
+            .filter(x -> x.isPublic && x.set != Rights.RNo);
 
+        for (field in fields)
+        {
             var handler:String->Dynamic = switch (field.type)
             {
                 case CAbstract(name, params):

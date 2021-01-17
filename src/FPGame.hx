@@ -41,6 +41,7 @@ class FPGame extends Engine
     override public function init() : Void
     {
         super.init();
+        HP.console.enable();
         
         sleep = new Sleep();
         

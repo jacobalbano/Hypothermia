@@ -10,19 +10,27 @@ import com.jacobalbano.punkutils.XMLEntity;
 class Decal extends XMLEntity
 {
     public var source : String;
+
+    public var scrollX:Float;
+    public var scrollY:Float;
     
     public function new()
     {
         super();
+    }
+
+    override public function render():Void
+    {
+        super.render();
     }
     
     override public function load(entity : Xml) : Void
     {
         super.load(entity);
         graphic = new Image('art/decals/${source}.png');
-        
-        graphic.scrollX = Std.parseFloat(entity.get("scrollX"));
-        graphic.scrollY = Std.parseFloat(entity.get("scrollY"));
+
+        graphic.scrollX = scrollY;
+        graphic.scrollY = scrollX;
     }
 }
 

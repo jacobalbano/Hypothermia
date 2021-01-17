@@ -88,20 +88,20 @@ class OgmoWorld extends World
             return;
         }
         
-        var level = Xml.parse(Assets.getText(source));
+        var level = Xml.parse(Assets.getText(source)).firstChild();
         
         removeAll();
         size.x = Std.parseFloat(level.get("width"));
         size.y = Std.parseFloat(level.get("height"));
         
-        for (layer in level)
+        for (layer in level.elements())
         {
             if (layer.firstChild() == null)
                 continue; //	This node has no children, so it isn't really a layer
             
             layerIndices[layer.nodeName] = ++numLayers;
             
-            for (entity in layer)
+            for (entity in layer.elements())
             {
                 var ent : Entity;
                 

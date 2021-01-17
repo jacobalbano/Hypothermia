@@ -1,5 +1,6 @@
 package com.jacobalbano.cold;
 
+import openfl.Assets;
 import flash.errors.Error;
 import net.hxpunk.graphics.Image;
 import com.jacobalbano.punkutils.XMLEntity;
@@ -160,15 +161,11 @@ class Inventory extends XMLEntity
         
         var image : Image;
         
-        try
-        {
-            image = new Image('art/invitems/${name}.png');
-        }
-        catch (e : Error)
-        {
-            //	Alternate image doesn't exist; don't worry about it
-            image = new Image('art/worlditems/${name}.png');
-        }
+        var source = 'art/worlditems/${name}.png';
+        if (Assets.exists('art/invitems/${name}.png'))
+            source = 'art/invitems/${name}.png';
+
+        image = new Image(source);
         
         var item : InventoryItem = new InventoryItem();
         item.typeName = name;
@@ -185,7 +182,6 @@ class Inventory extends XMLEntity
         
         if (!everUsed && ++_itemCount == 1)
         {
-                
             //	First item added to inventory, so show the button in a way that it'll be noticed.
             var tween : VarTween = new VarTween(null, TweenType.ONESHOT);
             tween.tween(this, "y", y + 50, 0.9, Ease.bounceOut);
@@ -240,7 +236,7 @@ class Inventory extends XMLEntity
             return typeName;
         }
         
-        if (Reflect.field(items, typeName) != null)
+        if (items.exists(typeName))
         {
             _mouseItem = typeName;
             close();
