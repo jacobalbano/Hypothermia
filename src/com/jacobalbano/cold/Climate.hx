@@ -12,7 +12,7 @@ class Climate extends XMLEntity
     public var temperature : Int;
     public var onDeath : Function;
     private var bodyTemp : Float;
-    private var delay : Int;
+    private var delay : Int = 0;
     
     private static inline var IDEAL_BODY_TEMPERATURE : Int = 98;
     private static inline var MIN_BODY_TEMPERATURE : Int = 70;

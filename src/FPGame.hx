@@ -1,4 +1,3 @@
-import js.html.FontFaceDescriptors;
 import haxepunk.Graphic.ImageType;
 import openfl.display.BitmapData;
 import haxepunk.debug.Console;

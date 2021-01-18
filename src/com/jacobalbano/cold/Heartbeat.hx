@@ -3,7 +3,7 @@ package com.jacobalbano.cold;
 import com.jacobalbano.punkutils.XMLEntity;
 import haxepunk.Sfx;
 import haxepunk.Tween;
-import haxepunk.tweens.misc.VarTween;
+import haxepunk.tweens.misc.MultiVarTween;
 import haxepunk.utils.Ease;
 import haxepunk.HXP;
 
@@ -75,10 +75,10 @@ class Heartbeat extends XMLEntity
     
     private function pulseIn() : Void
     {
-        var tween : VarTween = new VarTween(TweenType.OneShot);
+        var tween = new MultiVarTween(TweenType.OneShot);
+        tween.tween(HXP.screen, { scaleX: 1, scaleY : 1}, heartbeat.length / 2, Ease.sineOut);
         tween.onComplete.bind(pulseOut);
-        tween.tween(HXP.screen, "scale", 1, heartbeat.length / 2, Ease.sineOut);
-        world.addTween(tween);
+        world.addTween(tween, true);
     }
     
     private function pulseOut() : Void
@@ -94,9 +94,9 @@ class Heartbeat extends XMLEntity
                 heartbeat.stop();
                 return;
             case SLOW:
-                heartbeat = new Sfx("sounds.singleBeatSlow.mp3", beatHeart);
+                heartbeat = new Sfx("sounds/singleBeatSlow.mp3", beatHeart);
             case FAST:
-                heartbeat = new Sfx("sounds.singleBeatFast.mp3", beatHeart);
+                heartbeat = new Sfx("sounds/singleBeatFast.mp3", beatHeart);
             default:
                 throw "WHAT'S GOING ON";
         }
