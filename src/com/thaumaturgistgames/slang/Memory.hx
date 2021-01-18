@@ -28,10 +28,9 @@ class Memory extends Module
         vars = new Map();
     }
     
-    private function remember(s : String, o : Dynamic) : Dynamic
+    private function remember(s : String, o : Dynamic) : Void
     {
         vars.set(s, o);
-        return o;
     }
     
     private function forget(s : String) : Dynamic
