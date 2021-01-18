@@ -9,7 +9,7 @@ import haxe.rtti.Rtti;
 	 * ...
 	 * @author Jacob Albano
      */
-@:rtti
+//@:rtti
 class XMLEntity extends Entity
 {
     

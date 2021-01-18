@@ -48,21 +48,21 @@ class CameraPan extends XMLEntity
         
         HXP.camera.x = x;
         HXP.camera.y = y;
-        
+
         if (!Std.is(world, OgmoWorld))
             return;
         
         var oWorld : OgmoWorld = cast world;
         this.worldWidth = Std.int(oWorld.size.x);
         this.worldHeight = Std.int(oWorld.size.y);
-        oWorld.wraparound = this.wrapAround;
+        oWorld.wraps = wrapAround;
         
         leftBuffer = new Rectangle(0, 0, buffer, HXP.height);
         rightBuffer = new Rectangle(HXP.width - buffer, 0, buffer, HXP.height);
         topBuffer = new Rectangle(0, 0, HXP.width, buffer);
         bottomBuffer = new Rectangle(0, HXP.height - buffer, HXP.width, buffer);
     }
-    
+
     override public function update() : Void
     {
         super.update();

@@ -61,9 +61,15 @@ class Inventory extends XMLEntity
         super.added();
         
         for (item in items)
-        {
             world.add(item);
-        }
+    }
+    
+    override public function removed() : Void
+    {
+        super.removed();
+        
+        for (item in items)
+            world.remove(item);
     }
     
     override public function update() : Void

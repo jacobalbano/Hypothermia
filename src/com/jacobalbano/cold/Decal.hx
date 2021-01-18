@@ -6,7 +6,7 @@ import com.jacobalbano.punkutils.XMLEntity;
 /**
 	 * ...
 	 * @author Jake Albano
-	 */
+     */
 class Decal extends XMLEntity
 {
     public var source : String;
@@ -24,8 +24,8 @@ class Decal extends XMLEntity
         super.load(entity);
         graphic = new Image('art/decals/${source}.png');
 
-        graphic.scrollX = scrollY;
-        graphic.scrollY = scrollX;
+        graphic.scrollX = scrollX;
+        graphic.scrollY = scrollY;
     }
 }
 

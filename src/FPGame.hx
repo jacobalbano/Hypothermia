@@ -1,3 +1,6 @@
+import js.html.FontFaceDescriptors;
+import haxepunk.Graphic.ImageType;
+import openfl.display.BitmapData;
 import haxepunk.debug.Console;
 import haxepunk.World;
 import openfl.Assets;
@@ -20,13 +23,12 @@ import haxepunk.utils.Ease;
 	 */
 class FPGame extends Engine
 {
-    private var currentWorld : String;
-    private var lastWorld : String;
-    private var ogmoWorld : OgmoWorld;
     private var inventory : Inventory;
     private var climate : Climate;
     private var pool : Map<String, WorldItem>;
     private var sleep : Sleep;
+    private var transition:Entity;
+    private var loader:OgmoLoader = new OgmoLoader();
     public static var slang(default, never):SlangInterpreter = new SlangInterpreter();
 
     public static function main() { new FPGame(); }
@@ -40,32 +42,81 @@ class FPGame extends Engine
     {
         super.init();
         Console.enable();
-        
-        lastWorld = "";
-        currentWorld = "";
 
         inventory = new Inventory();
         climate = new Climate();
         pool = new Map();
+
+        var fadeImage = Image.createRect(HXP.width, HXP.height, 0x333333);
+        fadeImage.scrollX = fadeImage.scrollY = 0;
+        transition = new Entity(0, 0, fadeImage);
+        transition.layer = -100000;
         
         sleep = new Sleep();
         
-        ogmoWorld = new OgmoWorld();
-        HXP.world = ogmoWorld;
+        climate.onDeath = sleep.start;
+        sleep.onComplete = () ->  {
+            inventory.mouseItem = "";
+            inventory.close();
+            slang.doLine("world end");
+        };
         
-        ogmoWorld.addClass("CameraPan", CameraPan);
-        ogmoWorld.addClass("Background", Background);
-        ogmoWorld.addClass("Hotspot", Hotspot);
-        ogmoWorld.addClass("ParticleEmitter", ParticleEmitter);
-        ogmoWorld.addClass("Ambiance", Ambiance);
-        ogmoWorld.addClass("WorldItem", WorldItem);
-        ogmoWorld.addClass("InventoryItem", InventoryItem);
-        ogmoWorld.addClass("Decal", Decal);
-        ogmoWorld.addClass("WorldReaction", WorldReaction);
-        ogmoWorld.addClass("WorldSound", WorldSound);
-        ogmoWorld.addClass("ClimateModifier", ClimateModifier);
+        loader.addClass("CameraPan", CameraPan);
+        loader.addClass("Background", Background);
+        loader.addClass("Hotspot", Hotspot);
+        loader.addClass("ParticleEmitter", ParticleEmitter);
+        loader.addClass("Ambiance", Ambiance);
+        loader.addClass("WorldItem", WorldItem);
+        loader.addClass("InventoryItem", InventoryItem);
+        loader.addClass("Decal", Decal);
+        loader.addClass("WorldReaction", WorldReaction);
+        loader.addClass("WorldSound", WorldSound);
+        loader.addClass("ClimateModifier", ClimateModifier);
         
+        setupSlang();
         
+        //	TODO: Revert this
+        loadWorld("start");
+    }
+    
+    private var loading:Bool = false;
+    private function loadWorld(name : String) : Void
+    {
+        if (loading) return;
+        var path = 'worlds/${name}/map.oel';
+        if (!Assets.exists(path))
+            return;
+        
+        loading = true;
+        var persistant:Array<Entity> = [inventory, climate, sleep, transition];
+        var xml = Xml.parse(Assets.getText(path));
+        var newWorld = loader.buildWorld(path);
+        var oldWorld = world;
+
+        var fadeOut = new VarTween(TweenType.OneShot);
+        fadeOut.tween(transition.graphic, "alpha", 1, 0.5);
+        fadeOut.onComplete.bind(() -> {
+            oldWorld.removeList(persistant);
+            oldWorld.updateLists(true);
+
+            newWorld.addList(persistant);
+            newWorld.add(new ScriptTick(slang, 'worlds/${name}/script.xml'));
+            newWorld.updateLists(true);
+
+            var fadeIn = new VarTween(TweenType.OneShot);
+            fadeIn.tween(transition.graphic, "alpha", 0, 0.5);
+            fadeIn.onComplete.bind(() -> loading = false );
+            newWorld.addTween(fadeIn, true);
+            
+            world = newWorld;
+        });
+        
+
+        oldWorld.addTween(fadeOut, true);
+    }
+
+    private function setupSlang()
+    {
         slang.addFunction("world", loadWorld, [String], this, "Load a world from an Ogmo level");
         
         slang.addFunction("playWorldSound", playWorldSound, [String], this, "Play a sound effect that was added to the world");
@@ -95,21 +146,6 @@ class FPGame extends Engine
         
         slang.importModule(new Stdlib());
         slang.importModule(new Memory());
-        
-        //	TODO: Revert this
-        loadWorld("start");
-        
-        climate.onDeath = function() : Void
-        {
-            sleep.start();
-        };
-
-        sleep.onComplete = function() : Void
-        {
-            inventory.mouseItem = "";
-            inventory.close();
-            slang.doLine("world end");
-        };
     }
     
     private function remDecal(name : String) : Void
@@ -232,34 +268,6 @@ class FPGame extends Engine
             tween.tween(item.graphic, "alpha", 1, 1, Ease.backOut);
             world.addTween(tween, true);
         }
-    }
-    
-    private function loadWorld(name : String) : Void
-    {
-        var path = 'worlds/${name}/map.oel';
-        if (!Assets.exists(path))
-            return;
-        
-        var xml = Xml.parse(Assets.getText(path));
-        
-        if (name != currentWorld)
-        {
-            lastWorld = currentWorld;
-        }
-        
-        currentWorld = name;
-        
-        if (currentWorld == "")
-        {
-            return;
-        }
-        
-        ogmoWorld.buildWorld(path);
-        ogmoWorld.add(new Transition());
-        ogmoWorld.add(inventory);
-        ogmoWorld.add(climate);
-        ogmoWorld.add(new ScriptTick(slang, 'worlds/${name}/script.xml'));
-        ogmoWorld.add(sleep);
     }
 }
 
