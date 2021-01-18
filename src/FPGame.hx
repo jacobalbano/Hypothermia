@@ -100,8 +100,8 @@ class FPGame extends Engine
             oldWorld.updateLists(true);
 
             newWorld.addList(persistant);
-            newWorld.add(new ScriptTick(slang, 'worlds/${name}/script.xml'));
             newWorld.updateLists(true);
+            newWorld.add(new ScriptTick(slang, 'worlds/${name}/script.xml'));
 
             var fadeIn = new VarTween(TweenType.OneShot);
             fadeIn.tween(transition.graphic, "alpha", 0, 0.5);

@@ -1,5 +1,6 @@
 package com.thaumaturgistgames.slang;
 
+import haxe.CallStack.StackItem;
 import flash.errors.ArgumentError;
 import flash.errors.Error;
 import haxe.Constraints.Function;
@@ -19,7 +20,7 @@ class SlangInterpreter
     private static inline var THIS_OBJ : Int = 3;  //	The object to use as the 'this' reference in a function call  
     private static inline var DOC : Int = 4;  //	The object to use as the 'this' reference in a function call  
     
-    private var functions : Array<Dynamic>;
+    private var functions : Array<Array<Dynamic>>;
     private var callback : String->Void;
     private var errors : Array<Dynamic>;
     private var executing : Bool;
@@ -110,7 +111,7 @@ class SlangInterpreter
         
         for (item in functions)
         {
-            if (Reflect.field(item, Std.string(DECLARATION)) == declaration)
+            if (item[DECLARATION] == declaration)
             {
                 write(["Failed to bind function '", declaration, "': a function by that name already exists"]);
                 return;
@@ -178,7 +179,7 @@ class SlangInterpreter
         {
             if (callstack.length > 0)
             {
-                var definition : Array<Dynamic> = Reflect.field(functions, Std.string(callstack[callstack.length - 1]));
+                var definition : Array<Dynamic> = functions[callstack[callstack.length - 1]];
                 var types : Array<Dynamic> = definition[ARG_TYPES];
                 var paramCount : Int = types.length;
                 
@@ -491,13 +492,11 @@ class SlangInterpreter
 		 */
     private function replaceChar(s : String, a : String, b : String) : String
     {
-        var ar : Array<Dynamic> = s.split(a);
+        var ar : Array<String> = s.split(a);
         s = "";
-        var i : Float = 0;
-        while (i < ar.length)
+        for (i in 0...ar.length)
         {
-            s += (i < ar.length - 1) ? Reflect.field(ar, Std.string(i)) + b : Reflect.field(ar, Std.string(i));
-            i++;
+            s += (i < ar.length - 1) ? ar[i] + b :ar[i];
         }
         return s;
     }
