@@ -17,6 +17,7 @@ class InventoryItem extends XMLEntity
     public function new()
     {
         super();
+        active = false;
     }
     
     public function onAdded(owner : Inventory) : Void
@@ -35,12 +36,12 @@ class InventoryItem extends XMLEntity
     {
         super.update();
         
-        var image : Image = cast graphic;
-        var rect : Rectangle = new Rectangle(x - (image.originX * (image.scale)), y - (image.originY * (image.scale)), image.width * image.scale, image.height * image.scale);
-        
-        if (rect.contains(Mouse.mouseX, Mouse.mouseY))
+        if (Mouse.mouseReleased)
         {
-            if (Mouse.mouseReleased)
+            var image : Image = cast graphic;
+            var rect : Rectangle = new Rectangle(x - (image.originX * (image.scale)), y - (image.originY * (image.scale)), image.width * image.scale, image.height * image.scale);
+            
+            if (rect.contains(Mouse.mouseX, Mouse.mouseY))
             {
                 //	Set this as the type at the mouse
                 owner.mouseItem = typeName;

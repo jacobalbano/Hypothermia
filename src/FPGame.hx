@@ -1,3 +1,5 @@
+import haxepunk.screen.FixedScaleMode;
+import haxepunk.screen.ScaleMode;
 import haxepunk.Graphic.ImageType;
 import openfl.display.BitmapData;
 import haxepunk.debug.Console;
@@ -35,6 +37,7 @@ class FPGame extends Engine
     public function new()
     {
         super(800, 400, 60, true);
+        HXP.screen.scaleMode = new FixedScaleMode();
     }
 
     override public function init() : Void
@@ -55,7 +58,7 @@ class FPGame extends Engine
         
         climate.onDeath = sleep.start;
         sleep.onComplete = () ->  {
-            inventory.mouseItem = "";
+            inventory.mouseItem = null;
             inventory.close();
             slang.doLine("world end");
         };
@@ -163,7 +166,7 @@ class FPGame extends Engine
     
     private function goToSleep() : Void
     {
-        inventory.mouseItem = "";
+        inventory.mouseItem = null;
         sleep.start();
     }
     

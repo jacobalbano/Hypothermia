@@ -25,6 +25,7 @@
 	<assets path="lib/art" rename="art"/>
 	<assets path="lib/sounds" rename="sounds"/>
 	<assets path="lib/worlds" rename="worlds" />
+	<assets path="lib/shaders" rename="shaders" />
 
 	<assets path="lib/haxepunk/font" rename="font" />
 	<assets path="lib/haxepunk/graphics" rename="graphics"/>

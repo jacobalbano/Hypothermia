@@ -20,20 +20,8 @@ import haxepunk.HXP;
 	 */
 class Inventory extends XMLEntity
 {
-    public var itemCount(get, never) : Int;
-    public var isOpen(get, never) : Bool;
-    public var mouseItem(get, set) : String;
-
-    private var _mouseItem : String;
-    private var _itemCount : Int;
-    private var items : Map<String, InventoryItem>;
-    private var extended : Bool;
-    private var everUsed : Bool;
-    private var mouseEntity : Entity;
-    private var contains : Bool;
-    private static inline var ITEM_PADDING : Float = 20;
-    private static inline var ITEM_SIZE : Float = 100;
-    private var nextExtendState : Bool;
+    public var isOpen(default, null) : Bool = false;
+    public var mouseItem(default, set) : String = null;
     
     public function new()
     {
@@ -50,10 +38,8 @@ class Inventory extends XMLEntity
     public function reset() : Void
     {
         items = new Map();
-        mouseItem = "";
         y = -cast(graphic, Image).height;
         everUsed = false;
-        _itemCount = 0;
     }
     
     override public function added() : Void
@@ -76,8 +62,6 @@ class Inventory extends XMLEntity
     {
         super.update();
         
-        extended = nextExtendState;
-        
         var lastContain : Bool = contains;
         contains = collidePoint(x, y, Mouse.mouseX, Mouse.mouseY);
         
@@ -93,6 +77,7 @@ class Inventory extends XMLEntity
             {
                 item.x = count++ * ITEM_SIZE + ITEM_PADDING + (ITEM_SIZE / 2);
                 item.y = y + (ITEM_SIZE / 2) + 15;
+                item.update();
             }
         }
         
@@ -110,49 +95,35 @@ class Inventory extends XMLEntity
         
         if (Mouse.mouseReleased && contains)
         {
-            if (mouseItem != "")
-            {
-                _mouseItem = "";
-                extended = true;
-                return;
-            }
-            
-            if (extended)
-            {
-                close();
-            }
-            else
-            {
-                open();
-                extended = true;
-            }
+            if (isOpen) close(); else if (mouseItem == null) open();
+            mouseItem = null;
         }
     }
     
     public function open() : Void
     {
-        if (isOpen)
-        {
+        if (isOpen || transitioning)
             return;
-        }
         
+        transitioning = true;
         var tween : VarTween = new VarTween(TweenType.OneShot);
         tween.tween(this, "y", 0, 0.8, Ease.bounceOut);
+        tween.onComplete.bind(() -> transitioning = false);
         addTween(tween, true);
-        nextExtendState = true;
+        isOpen = true;
     }
     
     public function close() : Void
     {
-        if (!isOpen)
-        {
+        if (!isOpen || transitioning)
             return;
-        }
         
+        transitioning = true;
         var tween : VarTween = new VarTween(TweenType.OneShot);
         tween.tween(this, "y", y - 150, 0.7, Ease.bounceOut);
+        tween.onComplete.bind(() -> transitioning = false);
         addTween(tween, true);
-        nextExtendState = false;
+        isOpen = false;
     }
     
     public function hasItem(name : String) : Bool
@@ -188,15 +159,17 @@ class Inventory extends XMLEntity
         
         items.set(name, item);
         
-        if (!everUsed && ++_itemCount == 1)
+        if (!everUsed)
         {
             //	First item added to inventory, so show the button in a way that it'll be noticed.
+            transitioning = true;
             var tween : VarTween = new VarTween(TweenType.OneShot);
             tween.tween(this, "y", y + 50, 0.9, Ease.bounceOut);
+            tween.onComplete.bind(() -> transitioning = false);
             addTween(tween, true);
+            everUsed = true;
         }
         
-        everUsed = true;
     }
     
     public function removeItem(name : String) : Void
@@ -207,49 +180,29 @@ class Inventory extends XMLEntity
         }
         
         if (name == mouseItem)
-        {
-            _mouseItem = "";
-        }
+            mouseItem = null;
         
-        _itemCount--;
         world.remove(items.get(name));
         items.remove(name);
     }
     
-    private function get_itemCount() : Int
-    {
-        return _itemCount;
-    }
-    
-    private function get_isOpen() : Bool
-    {
-        return extended;
-    }
-    
-    private function get_mouseItem() : String
-    {
-        return _mouseItem;
-    }
-    
     private function set_mouseItem(typeName : String) : String
     {
-        if (typeName == mouseItem)
+        if (typeName == null || items.exists(typeName))
         {
-            return typeName;
-        }
-        
-        if (typeName == "")
-        {
-            _mouseItem = "";
-            return typeName;
-        }
-        
-        if (items.exists(typeName))
-        {
-            _mouseItem = typeName;
+            mouseItem = typeName;
             close();
         }
+
         return typeName;
     }
+    
+    private var items : Map<String, InventoryItem> = new Map();
+    private var extended : Bool = false;
+    private var everUsed : Bool = false;
+    private var contains : Bool = false;
+    private var transitioning:Bool = false;
+    private static inline var ITEM_PADDING : Float = 20;
+    private static inline var ITEM_SIZE : Float = 100;
 }
 

@@ -61,22 +61,16 @@ class Hotspot extends XMLEntity
         
         if (contains)
         {
-            if (inventory != null && inventory.isOpen)
-            {
-                return;
-            }
-            else if (Mouse.mouseReleased)
-            {
+            var allow:Bool = inventory == null || !(inventory.isOpen || inventory.mouseItem != null);
+            if (Mouse.mouseReleased && allow)
                 callback(onClick);
-            }
-            
-            flash.ui.Mouse.cursor = MouseCursor.BUTTON;
         }
         
         if (lastContain != contains)
-        {
+        {    
             if (contains)
             {
+                flash.ui.Mouse.cursor = MouseCursor.BUTTON;
                 callback(onEnter);
             }
             else
