@@ -43,7 +43,6 @@ class FPGame extends Engine
     override public function init() : Void
     {
         super.init();
-        Console.enable();
 
         inventory = new Inventory();
         climate = new Climate();
